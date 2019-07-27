@@ -3,9 +3,9 @@ class Translator:
     Translator with full game dialog, but spoken by Alexa. Useful for player 
     testing before recording lines
     """
-    launch = "Language of Love Launched Test "
+    launch = "Language of Love Launched"
 
-    launch_first_time = ("""because this is your first time, lets play the 
+    launch_first_time = ("""Language of Love Launched. Because this is your first time, lets play the 
     tutorial""")
 
     class Tutorial:
