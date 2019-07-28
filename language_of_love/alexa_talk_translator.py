@@ -22,4 +22,16 @@ class Translator:
 
     class Testing:
         not_implemented = "Not implemented yet. Come back soon"
+
         error = "Error logged"
+
+    class Practice:
+        begin = "Practice started. Lets go through some key spanish phrases that you will need to progress through the dates"
+
+        what_is_your_name = "¿Cuál es tu nombre? In english, what is your name"
+
+        where_are_you_from = "de donde eres? In english, where are you from"
+
+        what_is_your_job = "en qué trabajas? In english, what is your job or what do you do for a living"
+
+        end = "Practice over. Good luck out there hope you find love"

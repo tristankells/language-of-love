@@ -1,6 +1,7 @@
 from language_of_love.response import Response
 from language_of_love.slots import AreaEnum
 from language_of_love.alexa_talk_translator import Translator
+import random
 
 
 class LanguageOfLove:
@@ -9,7 +10,7 @@ class LanguageOfLove:
     based on game state
     """
 
-    speech_text = None
+    speech_text = []
 
     @staticmethod
     def launch(session_variables):
@@ -19,7 +20,8 @@ class LanguageOfLove:
         """
         if session_variables.first_time:
             LanguageOfLove.speech_text = Translator.launch_first_time
-        if not session_variables.first_time:
+
+        elif not session_variables.first_time:
             LanguageOfLove.speech_text = Translator.launch
 
         return Response(LanguageOfLove.speech_text)
@@ -37,9 +39,6 @@ class LanguageOfLove:
             if session_variables.area == AreaEnum.tutorial:
                 LanguageOfLove.speech_text = Translator.Tutorial.answer_to_your_name
 
-            if LanguageOfLove.speech_text is None:
-                LanguageOfLove.speech_text = Translator.Testing.error
-
             return Response(LanguageOfLove.speech_text)
 
     class Questions:
@@ -54,6 +53,33 @@ class LanguageOfLove:
             if session_variables.area == AreaEnum.tutorial:
                 LanguageOfLove.speech_text = Translator.Tutorial.answer_to_question_where_are_you_from
 
-            if LanguageOfLove.speech_text is None:
-                LanguageOfLove.speech_text = Translator.Testing.error
             return Response(LanguageOfLove.speech_text)
+
+    class Practice:
+        """
+        Store all the response handler for starting practice
+        """
+
+        @staticmethod
+        def start(session_variables):
+            """
+            Handler when the player launches the start practice intent
+            """
+
+            LanguageOfLove.speech_text.append(Translator.Practice.begin)
+            LanguageOfLove.speech_text.append(get_rand_practice_phrase())
+
+            return Response(LanguageOfLove.speech_text)
+
+
+def get_rand_practice_phrase():
+    """
+    Returns a random practice phrase to use an a response
+    """
+    x = random.randint(1, 3)
+    dict = {
+        1: Translator.Practice.what_is_your_name,
+        2: Translator.Practice.where_are_you_from,
+        3: Translator.Practice.what_is_your_job,
+    }
+    return dict[x]
