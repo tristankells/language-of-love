@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/LanguageOfLove.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LanguageOfLove.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/language_of_love/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/lambda_function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/love.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/love.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +19,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/language_of_love/love.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" selection-start-column="5" selection-end-column="5" />
+            <state relative-caret-position="680">
+              <caret line="40" column="90" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="90" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/language_of_love/session_variables.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="41" column="82" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -33,14 +50,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/language_of_love/tests/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/language_of_love/test_translator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
+            <state relative-caret-position="764">
               <caret line="95" selection-start-line="95" selection-end-line="95" />
             </state>
           </provider>
@@ -49,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/language_of_love/response.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+            <state relative-caret-position="357">
+              <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -90,8 +102,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/language_of_love/lambda_function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="90" column="54" lean-forward="true" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="54" />
+            <state relative-caret-position="345">
+              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
               <folding>
                 <element signature="e#196#209#0" expanded="true" />
               </folding>
@@ -139,7 +151,6 @@
         <option value="$PROJECT_DIR$/language_of_love_0.01/response.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/language_of_love/alexa_talk_translator.py" />
-        <option value="$PROJECT_DIR$/language_of_love/response.py" />
         <option value="$PROJECT_DIR$/language_of_love/tutorial.py" />
         <option value="$PROJECT_DIR$/tests/test_languageOfLove.py" />
         <option value="$PROJECT_DIR$/language_of_love/language_of_love.py" />
@@ -148,11 +159,12 @@
         <option value="$PROJECT_DIR$/dev_LanguageOfLove/session_variables.py" />
         <option value="$PROJECT_DIR$/dev_LanguageOfLove/lambda_function.py" />
         <option value="$PROJECT_DIR$/scripts/deploy.sh" />
-        <option value="$PROJECT_DIR$/language_of_love/love.py" />
-        <option value="$PROJECT_DIR$/language_of_love/session_variables.py" />
         <option value="$PROJECT_DIR$/language_of_love/tests/__init__.py" />
         <option value="$PROJECT_DIR$/language_of_love/tests/test_languageOfLove.py" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/language_of_love/response.py" />
+        <option value="$PROJECT_DIR$/language_of_love/love.py" />
+        <option value="$PROJECT_DIR$/language_of_love/session_variables.py" />
         <option value="$PROJECT_DIR$/language_of_love/lambda_function.py" />
       </list>
     </option>
@@ -232,7 +244,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for language_of_love.tests.test_languageOfLove.Test_LanguageOfLove">
+  <component name="RunManager" selected="Python tests.Unittests for test_languageOfLove.TestLanguageOfLove">
     <configuration name="Unittests for language_of_love.tests.test_languageOfLove.Test_LanguageOfLove" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -361,8 +373,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for language_of_love.tests.test_languageOfLove.Test_LanguageOfLove" />
         <item itemvalue="Python tests.Unittests for test_languageOfLove.TestLanguageOfLove" />
+        <item itemvalue="Python tests.Unittests for language_of_love.tests.test_languageOfLove.Test_LanguageOfLove" />
         <item itemvalue="Python tests.Unittests for tests.test_languageOfLove.TestLanguageOfLove" />
         <item itemvalue="Python tests.Unittests for tests.test_languageOfLove.TestLanguageOfLove" />
         <item itemvalue="Python tests.Unittests for tests.test_languageOfLove.TestLanguageOfLove.test_start_practice" />
@@ -674,13 +686,24 @@
       <option name="project" value="LOCAL" />
       <updated>1564309161528</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Testing">
+      <created>1564309448321</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1564309448321</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Testing">
+      <created>1564310089070</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1564310089070</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_languageOfLove_TestLanguageOfLove - 2019.07.28 at 19h 32m 19s.xml">
-      <configuration name="Unittests for test_languageOfLove.TestLanguageOfLove" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_test_languageOfLove_TestLanguageOfLove - 2019.07.28 at 19h 32m 21s.xml">
       <configuration name="Unittests for test_languageOfLove.TestLanguageOfLove" configurationId="tests" />
     </history-entry>
@@ -708,6 +731,9 @@
     <history-entry file="Unittests_for_language_of_love_tests_test_languageOfLove_Test_LanguageOfLove - 2019.07.28 at 22h 11m 22s.xml">
       <configuration name="Unittests for language_of_love.tests.test_languageOfLove.Test_LanguageOfLove" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_for_test_languageOfLove_TestLanguageOfLove - 2019.07.28 at 22h 42m 08s.xml">
+      <configuration name="Unittests for test_languageOfLove.TestLanguageOfLove" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
@@ -718,7 +744,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289183" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920383" weight="0.2560175" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920383" visible="true" weight="0.2560175" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -753,7 +779,8 @@
     <MESSAGE value="Updated the AnswerNameIntent" />
     <MESSAGE value="Added test setup class" />
     <MESSAGE value="Changed references" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed references" />
+    <MESSAGE value="Testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -825,13 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/language_of_love/session_variables.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/language_of_love/slots.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -839,32 +859,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/language_of_love/test_translator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/language_of_love/tests/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/language_of_love/response.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/language_of_love/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/language_of_love/tests/test_languageOfLove.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
@@ -887,17 +886,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/language_of_love/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/language_of_love/test_translator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/language_of_love/love.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        <state relative-caret-position="680">
+          <caret line="40" column="90" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="90" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/language_of_love/tests/test_languageOfLove.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/language_of_love/session_variables.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="82" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/language_of_love/lambda_function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="90" column="54" lean-forward="true" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="54" />
+        <state relative-caret-position="345">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
           <folding>
             <element signature="e#196#209#0" expanded="true" />
           </folding>

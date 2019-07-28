@@ -1,5 +1,5 @@
 class Response:
-    def __init__(self, speech_input, reprompt="repeat yourself"):
+    def __init__(self, speech_input, reprompt="repeat yourself", session_variables=None):
         # if speech_text is not null
         if (speech_input is not None):
 
@@ -19,3 +19,4 @@ class Response:
             self.speech_text = "Error logged"
 
         self.reprompt = reprompt
+        self.session_variables = session_variables

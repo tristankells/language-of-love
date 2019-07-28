@@ -38,7 +38,7 @@ class LanguageOfLove:
             if session_variables.area == AreaEnum.tutorial:
                 LanguageOfLove.speech_text = Translator.Tutorial.answer_to_your_name
 
-            return Response(LanguageOfLove.speech_text)
+            return Response(LanguageOfLove.speech_text, session_variables=session_variables)
 
     class Questions:
         """

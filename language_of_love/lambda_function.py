@@ -7,7 +7,7 @@ import random
 import logging
 
 from ask_sdk.standard import StandardSkillBuilder
-from ask_sdk_core.utils import is_request_type, is_intent_name
+from ask_sdk_core.utils import is_request_type, is_intent_name, get_intent_name
 from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from session_variables import SessionVariables
@@ -82,21 +82,37 @@ def player_area(handler_input):
 @sb.request_handler(can_handle_func=lambda input: player_area(input) == 1)
 def tutorial_handler(handler_input):
     """
-    Tutorial handler: Reply when the player answers with there name
+    Tutorial handlers
     """
-    if (is_intent_name("AnswerNameIntent")(handler_input)):
-        state_variables = handler_input.attributes_manager.session_attributes
+    state_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
+    intent_name = get_intent_name(handler_input)
+    dict = {
+        "AnswerNameIntent": LanguageOfLove.Answers.my_name_is,
+        "QuestionWhereYouFromIntent": LanguageOfLove.Questions.where_are_you_from
+    }
 
-        response = LanguageOfLove.Answers.my_name_is(SessionVariables(state_variables))
+    response = dict[intent_name](state_variables)
 
-        handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
+    # # Handle player answering with there name
+    # if (is_intent_name("AnswerNameIntent")(handler_input)):
+    #     response = LanguageOfLove.Answers.my_name_is(state_variables)
+    #
+    # # Handle player asking where the tutorial host is from
+    # elif(is_intent_name("QuestionWhereYouFromIntent")(handler_input)):
+    #     response = LanguageOfLove.Questions.where_are_you_from(state_variables)
+
+    handler_input.attributes_manager.session_attributes = response.session_variables.get()
+
+    handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
 
     return handler_input.response_builder.response
 
 
 @sb.request_handler(can_handle_func = is_intent_name("QuestionWhereYouFromIntent"))
 def question_where_are_you_from_handler(handler_input):
-    """Handler for use asking where their date is from"""
+    """
+    Tutorial Handler: Answer for when the player ask the tutorial host where they are from
+    """
     # type: (HandlerInput) -> Response
 
     state_variables = handler_input.attributes_manager.persistent_attributes
@@ -105,7 +121,7 @@ def question_where_are_you_from_handler(handler_input):
 
     language_of_love.handleQuestionWhereAreYouFrom()
 
-    handler_input.response_builder.speak(language_of_love.Response).ask("Ask")    
+    handler_input.response_builder.speak(language_of_love.Response).ask("Ask")
 
     handler_input.attributes_manager.session_attributes = language_of_love.getStateVariables()
 

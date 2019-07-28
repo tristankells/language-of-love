@@ -32,3 +32,12 @@ class SessionVariables:
             SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both
         }
         return session_variables
+
+    @staticmethod
+    def get():
+        return {
+            SessionVariables.FIRST_TIME: SessionVariables.FIRST_TIME,
+            SessionVariables.NAME: SessionVariables.NAME,
+            SessionVariables.AREA: SessionVariables.AREA,
+            SessionVariables.GENDER_PREFERENCE: SessionVariables.GENDER_PREFERENCE,
+        }
