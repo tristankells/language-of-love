@@ -10,9 +10,9 @@ from ask_sdk.standard import StandardSkillBuilder
 from ask_sdk_core.utils import is_request_type, is_intent_name
 from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
-from language_of_love.session_variables import SessionVariables
+from session_variables import SessionVariables
 
-from language_of_love.language_of_love import LanguageOfLove
+from LanguageOfLove import LanguageOfLove
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
