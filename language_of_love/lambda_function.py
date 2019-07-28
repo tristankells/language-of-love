@@ -77,39 +77,23 @@ def player_area(handler_input):
     return session_attr["area"]
 
 
+##Tutorial intent handlers
 
-@sb.request_handler(can_handle_func = lambda input:
-player_area(input) == 1 and
-is_intent_name("AnswerNameIntent")(input))
+@sb.request_handler(can_handle_func=lambda input: player_area(input) == 1)
 def tutorial_handler(handler_input):
+    """
+    Tutorial handler: Reply when the player answers with there name
+    """
+    if (is_intent_name("AnswerNameIntent")(handler_input)):
         state_variables = handler_input.attributes_manager.session_attributes
 
         response = LanguageOfLove.Answers.my_name_is(SessionVariables(state_variables))
 
         handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
 
-        return handler_input.response_builder.response
+    return handler_input.response_builder.response
 
 
-# @sb.request_handler(can_handle_func = lambda input:
-#                     is_intent_name("AnswerNameIntent")(input))
-# def answer_name_handler(handler_input):
-#     """
-#     Handler the player answering a question with their name
-#     """
-#     # type: (HandlerInput) -> Response
-#
-#     state_variables = handler_input.attributes_manager.persistent_attributes
-#
-#     state_variables["name"] = input
-#
-#     response = LanguageOfLove.Answers.my_name_is(SessionVariables(state_variables))
-#
-#     handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
-#
-#     return handler_input.response_builder.response
-
-# # Handle the player asking where their date is from 
 @sb.request_handler(can_handle_func = is_intent_name("QuestionWhereYouFromIntent"))
 def question_where_are_you_from_handler(handler_input):
     """Handler for use asking where their date is from"""
