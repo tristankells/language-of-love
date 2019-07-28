@@ -11,6 +11,7 @@ from ask_sdk_core.utils import is_request_type, is_intent_name, get_intent_name
 from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from session_variables import SessionVariables
+from slots import AreaEnum
 
 from love import LanguageOfLove
 
@@ -79,7 +80,7 @@ def player_area(handler_input):
 
 ##Tutorial intent handlers
 
-@sb.request_handler(can_handle_func=lambda input: player_area(input) == 1)
+@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.tutorial.value)
 def tutorial_handler(handler_input):
     """
     Tutorial handlers
@@ -93,39 +94,24 @@ def tutorial_handler(handler_input):
 
     response = dict[intent_name](state_variables)
 
-    # # Handle player answering with there name
-    # if (is_intent_name("AnswerNameIntent")(handler_input)):
-    #     response = LanguageOfLove.Answers.my_name_is(state_variables)
-    #
-    # # Handle player asking where the tutorial host is from
-    # elif(is_intent_name("QuestionWhereYouFromIntent")(handler_input)):
-    #     response = LanguageOfLove.Questions.where_are_you_from(state_variables)
-
-    handler_input.attributes_manager.session_attributes = response.session_variables.get()
+    if (response.session_variables is not None):
+        handler_input.attributes_manager.session_attributes = response.session_variables.get()
 
     handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
 
     return handler_input.response_builder.response
 
 
-@sb.request_handler(can_handle_func = is_intent_name("QuestionWhereYouFromIntent"))
-def question_where_are_you_from_handler(handler_input):
-    """
-    Tutorial Handler: Answer for when the player ask the tutorial host where they are from
-    """
-    # type: (HandlerInput) -> Response
+##Practice intent handlers
+@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.practice.value)
+def tutorial_handler(handler_input):
+    return None
 
-    state_variables = handler_input.attributes_manager.persistent_attributes
 
-    language_of_love.setup(state_variables)
-
-    language_of_love.handleQuestionWhereAreYouFrom()
-
-    handler_input.response_builder.speak(language_of_love.Response).ask("Ask")
-
-    handler_input.attributes_manager.session_attributes = language_of_love.getStateVariables()
-
-    return handler_input.response_builder.response
+##Date intent handlers
+@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date.value)
+def tutorial_handler(handler_input):
+    return None
 
 #endregion
 
