@@ -1,6 +1,6 @@
-from dev_LanguageOfLove.response import Response
-from dev_LanguageOfLove.slots import AreaEnum
-from dev_LanguageOfLove.alexa_talk_translator import Translator
+from language_of_love.response import Response
+from language_of_love.slots import AreaEnum
+from language_of_love.alexa_talk_translator import Translator
 import random
 
 class LanguageOfLove:
