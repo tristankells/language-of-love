@@ -79,9 +79,9 @@ def player_area(handler_input):
 
 
 @sb.request_handler(can_handle_func = lambda input:
-player_area(input) == 1)
+player_area(input) == 1 and
+is_intent_name("AnswerNameIntent")(input))
 def tutorial_handler(handler_input):
-    if (is_intent_name("AnswerNameIntent")(input)):
         state_variables = handler_input.attributes_manager.session_attributes
 
         response = LanguageOfLove.Answers.my_name_is(SessionVariables(state_variables))
