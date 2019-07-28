@@ -12,7 +12,7 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from session_variables import SessionVariables
 
-from LanguageOfLove import LanguageOfLove
+from love import LanguageOfLove
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)

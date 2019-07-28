@@ -1,5 +1,5 @@
 import unittest
-from language_of_love.LanguageOfLove import LanguageOfLove
+from language_of_love.love import LanguageOfLove
 from language_of_love.alexa_talk_translator import Translator
 from language_of_love.session_variables import SessionVariables
 from language_of_love.slots import AreaEnum
