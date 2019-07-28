@@ -1,5 +1,5 @@
-from slots import AreaEnum
-from slots import GenderPreferenceEnum
+from .slots import AreaEnum
+from .slots import GenderPreferenceEnum
 
 
 class SessionVariables:

@@ -1,6 +1,6 @@
-from response import Response
-from slots import AreaEnum
-from alexa_talk_translator import Translator
+from .response import Response
+from .slots import AreaEnum
+from .alexa_talk_translator import Translator
 import random
 
 class LanguageOfLove:
