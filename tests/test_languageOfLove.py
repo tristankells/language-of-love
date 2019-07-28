@@ -10,6 +10,7 @@ class TestLanguageOfLove(unittest.TestCase):
     """
 
     def setUp(self):
+        LanguageOfLove.speech_text = []
 
     # Launch handler tests
     def test_launch__first_time(self):

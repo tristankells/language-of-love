@@ -11,6 +11,11 @@ class SessionVariables:
     AREA = "area"
     GENDER_PREFERENCE = "gender_preference"
 
+    first_time = None
+    name = None
+    area = None
+    gender_preference = None
+
     def __init__(self, state_variables):
         self.first_time = state_variables[self.FIRST_TIME] if self.FIRST_TIME in state_variables else True
         self.name = state_variables[self.NAME] if self.NAME in state_variables else "default"
