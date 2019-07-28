@@ -1,5 +1,5 @@
-from language_of_love.slots import AreaEnum
-from language_of_love.slots import GenderPreferenceEnum
+from slots import AreaEnum
+from slots import GenderPreferenceEnum
 
 
 class SessionVariables:
