@@ -6,7 +6,7 @@ from intents import Intents
 from alexa_talk_translator import Translator
 
 
-class MyTestCase(unittest.TestCase):
+class TestTutorial(unittest.TestCase):
     # Tutorial -> MyNameIsIntent
     def test_my_name_is_returns_the_correct_speech_text(self):
         session_variables = SessionVariables({

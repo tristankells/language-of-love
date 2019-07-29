@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="Testing">
-      <change afterPath="$PROJECT_DIR$/language_of_love/intents.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/language_of_love/tests/test_Tutorial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LanguageOfLove.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LanguageOfLove.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/language_of_love/menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/language_of_love/practice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/language_of_love/tests/test_Menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/language_of_love/alexa_talk_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/alexa_talk_translator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/area.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/lambda_function.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/slots.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/slots.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tutorial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Tutorial.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Unit Test" />
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -61,22 +57,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_Tutorial.MyTestCase">
-    <configuration name="Unittests for language_of_love.tests.test_languageOfLove.Test_LanguageOfLove" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="LanguageOfLove" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;language_of_love.tests.test_languageOfLove.Test_LanguageOfLove&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_Tutorial.MyTestCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests for test_Menu.TestMenu">
+    <configuration name="Unittests for test_Menu.TestMenu" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -86,11 +68,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Tutorial.MyTestCase&quot;" />
+      <option name="_new_target" value="&quot;test_Menu.TestMenu&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_languageOfLove.TestLanguageOfLove" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_Menu.TestMenu.test_bad_intent_give_correct_response" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -100,11 +82,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_languageOfLove.TestLanguageOfLove&quot;" />
+      <option name="_new_target" value="&quot;test_Menu.TestMenu.test_bad_intent_give_correct_response&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.test_languageOfLove.TestLanguageOfLove" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_Menu.TestMenu.test_begin_practice_give_correct_response" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -114,11 +96,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_languageOfLove.TestLanguageOfLove&quot;" />
+      <option name="_new_target" value="&quot;test_Menu.TestMenu.test_begin_practice_give_correct_response&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.test_languageOfLove.TestLanguageOfLove" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_Menu.TestMenu.test_begin_speed_date_give_correct_response" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -128,11 +110,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_languageOfLove.TestLanguageOfLove&quot;" />
+      <option name="_new_target" value="&quot;test_Menu.TestMenu.test_begin_speed_date_give_correct_response&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.test_languageOfLove.TestLanguageOfLove" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_Tutorial.TestTutorial" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -142,7 +124,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_languageOfLove.TestLanguageOfLove&quot;" />
+      <option name="_new_target" value="&quot;test_Tutorial.TestTutorial&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -160,7 +142,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.test_languageOfLove.TestLanguageOfLove.test_where_are__in_tutorial" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for tests.test_languageOfLove.TestLanguageOfLove" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -170,7 +152,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_languageOfLove.TestLanguageOfLove.test_where_are__in_tutorial&quot;" />
+      <option name="_new_target" value="&quot;tests.test_languageOfLove.TestLanguageOfLove&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -190,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test_Tutorial.MyTestCase" />
-        <item itemvalue="Python tests.Unittests for test_languageOfLove.TestLanguageOfLove" />
-        <item itemvalue="Python tests.Unittests for language_of_love.tests.test_languageOfLove.Test_LanguageOfLove" />
-        <item itemvalue="Python tests.Unittests for tests.test_languageOfLove.TestLanguageOfLove" />
-        <item itemvalue="Python tests.Unittests for tests.test_languageOfLove.TestLanguageOfLove" />
+        <item itemvalue="Python tests.Unittests for test_Menu.TestMenu" />
+        <item itemvalue="Python tests.Unittests for test_Menu.TestMenu.test_bad_intent_give_correct_response" />
+        <item itemvalue="Python tests.Unittests for test_Menu.TestMenu.test_begin_speed_date_give_correct_response" />
+        <item itemvalue="Python tests.Unittests for test_Menu.TestMenu.test_begin_practice_give_correct_response" />
+        <item itemvalue="Python tests.Unittests for test_Tutorial.TestTutorial" />
       </list>
     </recent_temporary>
   </component>
@@ -517,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564310089070</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Made tutorial class, added new tests">
+      <created>1564389056264</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1564389056264</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -555,7 +544,8 @@
     <MESSAGE value="Added test setup class" />
     <MESSAGE value="Changed references" />
     <MESSAGE value="Testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing" />
+    <MESSAGE value="Made tutorial class, added new tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made tutorial class, added new tests" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -570,6 +560,16 @@
           <url>file://$PROJECT_DIR$/language_of_love/lambda_function.py</url>
           <line>5</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/language_of_love/tests/test_Menu.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/language_of_love/tests/test_Menu.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

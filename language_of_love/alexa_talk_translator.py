@@ -30,3 +30,12 @@ class Translator:
         what_is_your_job = "en qué trabajas? In english, what is your job or what do you do for a living"
 
         end = "Practice over. Good luck out there hope you find love"
+
+    class SpeedDate:
+        begin = "Speed date begun. Have fun and good luck"
+
+    class Error:
+        bad_option = "Not an option right now."
+
+    class Reprompt:
+        menu = "You decided what you want to do yet?"
