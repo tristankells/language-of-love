@@ -9,7 +9,7 @@ class Translator:
     tutorial""")
 
     class Tutorial:
-        intro = ("""Let's practice some basic Spanish Greetings. What's 
+        begin = ("""Let's practice some basic Spanish Greetings. What's 
         your name? como te llamas?""")
 
         answer_to_your_name = ("""Great start! Alexa likes you. Try asking it 

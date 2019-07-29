@@ -12,6 +12,7 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from session_variables import SessionVariables
 from slots import AreaEnum
+from tutorial import Tutorial
 
 from love import LanguageOfLove
 
@@ -20,6 +21,7 @@ sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
+
 
 @sb.request_handler(can_handle_func=is_request_type("LaunchRequest"))
 def launch_request_handler(handler_input):
@@ -30,18 +32,19 @@ def launch_request_handler(handler_input):
 
     state_variables = handler_input.attributes_manager.persistent_attributes
     if not state_variables:
-       state_variables = SessionVariables.get_initial()
+        state_variables = SessionVariables.get_initial()
 
     handler_input.attributes_manager.session_attributes = state_variables
- 
+
     response = LanguageOfLove.launch(SessionVariables(state_variables))
 
     handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
 
     return handler_input.response_builder.response
 
+
 # # # GENERAL request_handlers # # #
-#region
+# region
 @sb.request_handler(can_handle_func=is_intent_name("AMAZON.HelpIntent"))
 def help_intent_handler(handler_input):
     """Handler for Help Intent."""
@@ -59,6 +62,7 @@ def help_intent_handler(handler_input):
 
     return handler_input.response_builder.response
 
+
 @sb.request_handler(can_handle_func=is_intent_name("TutorialIntent"))
 def tutorial_intent_handler(handler_input):
     """
@@ -73,28 +77,46 @@ def tutorial_intent_handler(handler_input):
 
 
 def player_area(handler_input):
+    """
+    Takes the handler_input and returns an AreaEnum representing what area the play is in
+    :param handler_input:
+    :return: a AreaEnum representing the players current area
+    """
     session_attr = handler_input.attributes_manager.session_attributes
 
-    return session_attr["area"]
+    return AreaEnum(session_attr["area"])
 
 
-##Tutorial intent handlers
+@sb.request_handler(can_handle_func=lambda input: is_intent_name("BeginTutorialIntent") and
+                                                  player_area(input) is not AreaEnum.tutorial)
+def begin_tutorial(handler_input):
+    """
+    Handler for beginning tutorial intent
+    """
+    response = Tutorial.begin()
+    handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
 
-@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.tutorial.value)
+    return handler_input.response_builder.response
+
+
+# Tutorial intent handlers
+
+@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.tutorial)
 def tutorial_handler(handler_input):
     """
     Tutorial handlers
     """
-    state_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
-    intent_name = get_intent_name(handler_input)
-    dict = {
+    intent_dictionary = {
         "AnswerNameIntent": LanguageOfLove.Answers.my_name_is,
         "QuestionWhereYouFromIntent": LanguageOfLove.Questions.where_are_you_from
     }
+    state_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
 
-    response = dict[intent_name](state_variables)
+    intent_name = get_intent_name(handler_input)
+    if intent_name in intent_dictionary:
+        response = intent_dictionary[get_intent_name(handler_input)](state_variables)
 
-    if (response.session_variables is not None):
+    if response.session_variables is not None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get()
 
     handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
@@ -102,82 +124,79 @@ def tutorial_handler(handler_input):
     return handler_input.response_builder.response
 
 
-##Practice intent handlers
+# Practice intent handlers
 @sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.practice.value)
 def tutorial_handler(handler_input):
     return None
 
 
-##Date intent handlers
+# Date intent handlers
 @sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date.value)
 def tutorial_handler(handler_input):
     return None
 
-#endregion
+
+# endregion
 
 
 # # # Date request_handlers # # # 
-#region
-@sb.request_handler(can_handle_func = is_intent_name("StartSpeedDateIntent"))
+# region
+@sb.request_handler(can_handle_func=is_intent_name("StartSpeedDateIntent"))
 def start_speed_date_handler(handler_input):
     """
     Handler for starting speed dating
     """
     # type: (HandlerInput) -> Response
-    
+
     language_of_love.handleStartDate()
 
-    handler_input.response_builder.speak(language_of_love.Response).ask("Ask")    
-   
+    handler_input.response_builder.speak(language_of_love.Response).ask("Ask")
+
     return handler_input.response_builder.response
 
 
-#endregion
+# endregion
 
 # # # Practice request_handlers # # # 
-#region
-@sb.request_handler(can_handle_func = is_intent_name("StartPracticeIntent"))
+# region
+@sb.request_handler(can_handle_func=is_intent_name("StartPracticeIntent"))
 def start_practice_handler(handler_input):
     """
     Handler for starting practice
     """
     # type: (HandlerInput) -> Response
-    
+
     language_of_love.handleStartPractice()
 
-    handler_input.response_builder.speak(language_of_love.Response).ask("Ask")    
-   
+    handler_input.response_builder.speak(language_of_love.Response).ask("Ask")
+
     return handler_input.response_builder.response
 
 
-#endregion
-
+# endregion
 
 
 #
 #  MOVE INTENT
 #                                 
 
-@sb.request_handler(can_handle_func = lambda input:
-                    is_intent_name("MoveIntent")(input))
+@sb.request_handler(can_handle_func=lambda input:
+is_intent_name("MoveIntent")(input))
 def movement_handler(handler_input):
     """Handler for processing guess with target."""
     # type: (HandlerInput) -> Response
 
-    direction = str(handler_input.request_envelope.request.intent.slots["movement"].value) # value of movement slot
+    direction = str(handler_input.request_envelope.request.intent.slots["movement"].value)  # value of movement slot
 
-    game_variables = handler_input.attributes_manager.session_attributes # session variables
+    game_variables = handler_input.attributes_manager.session_attributes  # session variables
 
     return handler_input.response_builder.response
 
 
-
-
-
 @sb.request_handler(
     can_handle_func=lambda input:
-        is_intent_name("AMAZON.CancelIntent")(input) or
-        is_intent_name("AMAZON.StopIntent")(input))
+    is_intent_name("AMAZON.CancelIntent")(input) or
+    is_intent_name("AMAZON.StopIntent")(input))
 def cancel_and_stop_intent_handler(handler_input):
     """Single handler for Cancel and Stop Intent."""
     # type: (HandlerInput) -> Response
@@ -212,20 +231,18 @@ def currently_playing(handler_input):
 
 
 @sb.request_handler(can_handle_func=lambda input:
-                    not currently_playing(input) and
-                    is_intent_name("AMAZON.YesIntent")(input))
+not currently_playing(input) and
+is_intent_name("AMAZON.YesIntent")(input))
 def yes_handler(handler_input):
     """Handler for Yes Intent, only if the player said yes for
     a new game.
     """
     # type: (HandlerInput) -> Response
-   
+
     session_attr = handler_input.attributes_manager.session_attributes
     session_attr['game_state'] = "STARTED"
     session_attr['guess_number'] = random.randint(0, 100)
     session_attr['no_of_guesses'] = 0
- 
-
 
     speech_text = "Great! Try saying a number to start the game."
     reprompt = "Try saying a number."
@@ -235,8 +252,8 @@ def yes_handler(handler_input):
 
 
 @sb.request_handler(can_handle_func=lambda input:
-                    not currently_playing(input) and
-                    is_intent_name("AMAZON.NoIntent")(input))
+not currently_playing(input) and
+is_intent_name("AMAZON.NoIntent")(input))
 def no_handler(handler_input):
     """Handler for No Intent, only if the player said no for
     a new game.
@@ -255,12 +272,10 @@ def no_handler(handler_input):
     return handler_input.response_builder.response
 
 
-
-
 @sb.request_handler(can_handle_func=lambda input:
-                    is_intent_name("AMAZON.FallbackIntent")(input) or
-                    is_intent_name("AMAZON.YesIntent")(input) or
-                    is_intent_name("AMAZON.NoIntent")(input))
+is_intent_name("AMAZON.FallbackIntent")(input) or
+is_intent_name("AMAZON.YesIntent")(input) or
+is_intent_name("AMAZON.NoIntent")(input))
 def fallback_handler(handler_input):
     """AMAZON.FallbackIntent is only available in en-US locale.
     This handler will not be triggered except in that locale,
@@ -270,7 +285,7 @@ def fallback_handler(handler_input):
     game_variables = handler_input.attributes_manager.session_attributes
 
     if ("game_state" in game_variables and
-            game_variables["game_state"]=="STARTED"):
+            game_variables["game_state"] == "STARTED"):
         speech_text = (
             "The {} skill can't help you with that.  "
             "Try guessing a number between 0 and 100. ".format(SKILL_NAME))
