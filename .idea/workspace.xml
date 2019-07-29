@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/lambda_function.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/love.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/love.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +16,7 @@
         <entry file="file://$PROJECT_DIR$/language_of_love/love.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="680">
-              <caret line="40" column="90" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="90" />
+              <caret line="40" column="91" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="91" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
               </folding>
@@ -102,8 +98,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/language_of_love/lambda_function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="578">
+              <caret line="111" column="91" selection-start-line="111" selection-start-column="91" selection-end-line="111" selection-end-column="91" />
               <folding>
                 <element signature="e#196#209#0" expanded="true" />
               </folding>
@@ -174,6 +170,7 @@
     <option name="width" value="1294" />
     <option name="height" value="1047" />
   </component>
+  <component name="ProjectId" id="1Og0r9QPQjXrf1u36WIk6SteJTv" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
@@ -700,7 +697,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564310089070</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Testing">
+      <created>1564311060962</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1564311060962</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Big refactoring on the intent handlers in python">
+      <created>1564311562624</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1564311562624</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -737,21 +748,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27070063" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27070063" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289183" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920383" visible="true" weight="0.2560175" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49761146" visible="true" weight="0.2560175" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4980185" weight="0.42560175" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3249453" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019815" side_tool="true" weight="0.42574257" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.50238854" side_tool="true" visible="true" weight="0.2560175" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32932165" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -780,7 +790,8 @@
     <MESSAGE value="Added test setup class" />
     <MESSAGE value="Changed references" />
     <MESSAGE value="Testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing" />
+    <MESSAGE value="Big refactoring on the intent handlers in python" />
+    <option name="LAST_COMMIT_MESSAGE" value="Big refactoring on the intent handlers in python" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -903,7 +914,7 @@
     <entry file="file://$PROJECT_DIR$/language_of_love/love.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
-          <caret line="40" column="90" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="90" />
+          <caret line="40" column="91" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="91" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
@@ -929,8 +940,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/language_of_love/lambda_function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="578">
+          <caret line="111" column="91" selection-start-line="111" selection-start-column="91" selection-end-line="111" selection-end-column="91" />
           <folding>
             <element signature="e#196#209#0" expanded="true" />
           </folding>
