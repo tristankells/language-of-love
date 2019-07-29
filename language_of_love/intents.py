@@ -1,0 +1,10 @@
+class Intents:
+    ANSWER_NAME = "AnswerNameIntent"
+    QUESTION_WHERE_YOU_FROM = "QuestionWhereYouFromIntent"
+    START_SPEED_DATE = "StartSpeedDateIntent"
+    START_PRACTICE = "StartPracticeIntent"
+    ANSWER_MY_JOB = "AnswerMyJobIntent"
+    ANSWER_WHERE_YOU_FROM = "AnswerWhereYouFromIntent"
+    QUESTION_WHAT_DO_YOU_DO_FOR_FUN = "QuestionWhatDoYouDoForFun"
+    ANIMAL_IS = "AnimalsIntent"
+    BOOK = "BookIntent"

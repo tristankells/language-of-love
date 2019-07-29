@@ -6,6 +6,7 @@ class AreaEnum(Enum):
     Represents the area the player is currently playing in; tutorial, practice 
     or speed date
     """
+    menu = 0
     tutorial = 1
     practice = 2
     speed_date = 3

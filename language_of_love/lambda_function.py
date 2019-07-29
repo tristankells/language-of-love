@@ -31,6 +31,7 @@ def launch_request_handler(handler_input):
     # type: (HandlerInput) -> Response
 
     state_variables = handler_input.attributes_manager.persistent_attributes
+
     if not state_variables:
         state_variables = SessionVariables.get_initial()
 
@@ -63,17 +64,7 @@ def help_intent_handler(handler_input):
     return handler_input.response_builder.response
 
 
-@sb.request_handler(can_handle_func=is_intent_name("TutorialIntent"))
-def tutorial_intent_handler(handler_input):
-    """
-    Handler for Tutorial Intent.
-    """
-    # type: (HandlerInput) -> Response
-    language_of_love.handleHelpInput()
 
-    handler_input.response_builder.speak(language_of_love.Response)
-
-    return handler_input.response_builder.response
 
 
 def player_area(handler_input):
@@ -87,18 +78,6 @@ def player_area(handler_input):
     return AreaEnum(session_attr["area"])
 
 
-@sb.request_handler(can_handle_func=lambda input: is_intent_name("BeginTutorialIntent") and
-                                                  player_area(input) is not AreaEnum.tutorial)
-def begin_tutorial(handler_input):
-    """
-    Handler for beginning tutorial intent
-    """
-    response = Tutorial.begin()
-    handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
-
-    return handler_input.response_builder.response
-
-
 # Tutorial intent handlers
 
 @sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.tutorial)
@@ -106,15 +85,10 @@ def tutorial_handler(handler_input):
     """
     Tutorial handlers
     """
-    intent_dictionary = {
-        "AnswerNameIntent": LanguageOfLove.Answers.my_name_is,
-        "QuestionWhereYouFromIntent": LanguageOfLove.Questions.where_are_you_from
-    }
-    state_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
-
     intent_name = get_intent_name(handler_input)
-    if intent_name in intent_dictionary:
-        response = intent_dictionary[get_intent_name(handler_input)](state_variables)
+    session_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
+
+    response = Tutorial.request_handler(intent_name, session_variables)
 
     if response.session_variables is not None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get()
