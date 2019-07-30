@@ -73,9 +73,9 @@ def player_area(handler_input):
     :param handler_input:
     :return: a AreaEnum representing the players current area
     """
-    session_attr = handler_input.attributes_manager.session_attributes
+    session_variables = handler_input.attributes_manager.session_attributes
 
-    return AreaEnum(session_attr["area"])
+    return AreaEnum(session_variables[SessionVariables.AREA])
 
 
 # Tutorial intent handlers
@@ -99,9 +99,22 @@ def tutorial_handler(handler_input):
 
 
 # Practice intent handlers
-@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.practice.value)
+@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.practice)
 def tutorial_handler(handler_input):
-    return None
+    """
+    Practice handlers
+    """
+    intent_name = get_intent_name(handler_input)
+    session_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
+
+    response = Tutorial.request_handler(intent_name, session_variables)
+
+    if response.session_variables is not None:
+        handler_input.attributes_manager.session_attributes = response.session_variables.get()
+
+    handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
+
+    return handler_input.response_builder.response
 
 
 # Date intent handlers

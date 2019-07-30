@@ -17,7 +17,7 @@ class TestMenu(unittest.TestCase):
         # Check the player is in the practice area now
         self.assertTrue(response.session_variables.area is slots.AreaEnum.practice)
         # Check the correct speech text has been received
-        self.assertTrue(response.speech_text is Translator.Practice.begin)
+        self.assertEqual(response.speech_text, Translator.Practice.begin)
 
     def test_begin_speed_date_give_correct_response(self):
         session_variables = SessionVariables({

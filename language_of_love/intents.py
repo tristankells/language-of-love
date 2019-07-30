@@ -8,3 +8,6 @@ class Intents:
     QUESTION_WHAT_DO_YOU_DO_FOR_FUN = "QuestionWhatDoYouDoForFun"
     ANIMAL_IS = "AnimalsIntent"
     BOOK = "BookIntent"
+    CANCEL = "AMAZON.CancelIntent"
+    REPEAT = "RepeatIntent"
+    NEW_PHRASE = "NewPracticePhraseIntent"
