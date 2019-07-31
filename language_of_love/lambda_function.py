@@ -145,7 +145,7 @@ def practice_handler(handler_input):
 
 # Date intent handlers
 @sb.request_handler(can_handle_func=lambda input: can_handle_date(input))
-def handle(handler_input):
+def handle_date(handler_input):
     # type: (HandlerInput) -> Response
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     z = int(session_attr.conversation)
@@ -164,11 +164,12 @@ def handle(handler_input):
 # endregion
 
 @sb.request_handler(can_handle_func=lambda input: not can_handle_date(input))
-speech_text = "I don't know what you're saying"
-handler_input.response_builder.speak(speech_text).set_card(
-    SimpleCard("Hello World", speech_text)).set_should_end_session(
-    False)
-return handler_input.response_builder.response
+def handle_date_problems(handler_input):
+    speech_text = "I don't know what you're saying"
+    handler_input.response_builder.speak(speech_text).set_card(
+        SimpleCard("Hello World", speech_text)).set_should_end_session(
+        False)
+    return handler_input.response_builder.response
 
 # # # Date request_handlers # # # 
 # region
