@@ -2,7 +2,7 @@ import json
 
 IntentList = [["QuestionWhereYouFromIntent", "AnswerWhereYouFromIntent"],
               ["QuestionJobIntent", "AnswerMyJobIntent"],
-              ["QuestionAnimalIntent", "AnswerAnimalIntent"]
+              ["QuestionAnimalsIntent", "AnswerAnimalIntent"]
               ]
 
 ResponseDict = {"QuestionWhereYouFromIntent": "I'm from Columbia",
