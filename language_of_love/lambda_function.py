@@ -149,7 +149,7 @@ def handle(handler_input):
     # type: (HandlerInput) -> Response
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     z = int(session_attr.conversation)
-    y = int(session_attr.place) + 1
+    y = int(session_attr.place)
     speech_text = ResponseDict[IntentList[z][y]]
 
     if y == 1:
