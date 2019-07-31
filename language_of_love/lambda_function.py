@@ -166,7 +166,8 @@ def can_handle(handler_input):
     print(IntentList[z][y])
     return is_intent_name(IntentList[z][y])(handler_input)
 
-def handle(self, handler_input):
+
+def handle(handler_input):
     # type: (HandlerInput) -> Response
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     z = int(session_attr.conversation)
