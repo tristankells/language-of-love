@@ -11,7 +11,7 @@ class Tutorial:
         Handlers when the player responds with there name
         """
 
-        speech_text = Translator.Practice.what_is_your_name
+        speech_text = Translator.Tutorial.answer_to_your_name
 
         return Response(speech_text, session_variables=session_variables)
 

@@ -12,25 +12,6 @@ class TestLanguageOfLove(unittest.TestCase):
     def setUp(self):
         LanguageOfLove.speech_text = []
 
-    # Launch handler tests
-    def test_launch__first_time(self):
-        session_variables = SessionVariables({
-            SessionVariables.FIRST_TIME: True
-        })
-
-        response = LanguageOfLove.launch(session_variables)
-
-        self.assertEqual(response.speech_text, Translator.launch_first_time)
-
-    def test_launch__not_first_time(self):
-        session_variables = SessionVariables({
-            SessionVariables.FIRST_TIME: False
-        })
-
-        response = LanguageOfLove.launch(session_variables)
-
-        self.assertEqual(response.speech_text, Translator.launch)
-
     # Answers handler tests
 
     def test_my_name_is__in_tutorial(self):
