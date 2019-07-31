@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/alexa_talk_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/alexa_talk_translator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,13 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00001" summary="New github repo">
-      <created>1563954050232</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1563954050232</updated>
     </task>
     <task id="LOCAL-00002" summary="Big old rejig, file structure, references, testing, changes from to circleci to travis, plus lots of PEP">
       <created>1564049820370</created>
@@ -530,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564556657911</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Added luanch audio">
+      <created>1564557389508</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1564557389508</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -547,7 +546,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Big old rejig, file structure, references, testing, changes from to circleci to travis, plus lots of PEP" />
     <MESSAGE value="Added missing files to repo" />
     <MESSAGE value="Update travis.yml" />
     <MESSAGE value="Updated test" />
@@ -572,7 +570,8 @@
     <MESSAGE value="Added practice class" />
     <MESSAGE value="Reworking the lambda function menu" />
     <MESSAGE value="Added audio package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added audio package" />
+    <MESSAGE value="Added luanch audio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added luanch audio" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
