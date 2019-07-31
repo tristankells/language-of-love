@@ -36,8 +36,8 @@ def can_handle_date(handler_input):
             if is_intent_name(IntentList[x][0])(handler_input):
                 session_attr.conversation = x
                 print(str(x) + " - x just before break")
-                session_attr.place = 0
                 break
+        session_attr.place = 0
         session_attr.conversation = x  # set conversation
         print(str(x) + " - x just after break")
     elif session_attr.conversation != 'None':
@@ -46,6 +46,7 @@ def can_handle_date(handler_input):
             session_attr.place = 1
     z = int(session_attr.conversation)
     y = int(session_attr.place)
+    print("handler z,y = " + str(z) + " " + str(y))
     handler_input.attributes_manager.session_attributes = session_attr.get()
     print("handler z,y = " + str(z) + " " + str(y))
     print(IntentList[z][y])
