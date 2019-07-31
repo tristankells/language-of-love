@@ -147,21 +147,21 @@ def practice_handler(handler_input):
 def can_handle(handler_input):
     # type: (HandlerInput) -> bool
 
-    session_attr = handler_input.attributes_manager.session_attributes
-    if session_attr[CONVERSATION] == 'None':
+    session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
+    if session_attr.conversation == 'None':
         for x in range(0, len(IntentList)):
             if is_intent_name(IntentList[x][0])(handler_input):
-                session_attr[CONVERSATION] = x
-                session_attr[PLACE] = 0
+                session_attr.conversation = x
+                session_attr.place = 0
                 break
-        session_attr[CONVERSATION] = z  # set conversation
+        session_attr.conversation = z  # set conversation
 
-    elif session_attr[CONVERSATION] != 'None':
-        z = session_attr[CONVERSATION]
+    elif session_attr.conversation != 'None':
+        z = session_attr.conversation
         if is_intent_name(IntentList[z][1])(handler_input):
-            session_attr[PLACE] = 1
-    z = int(session_attr[CONVERSATION])
-    y = int(session_attr[PLACE])
+            session_attr.place = 1
+    z = int(session_attr.conversation)
+    y = int(session_attr.place)
     handler_input.attributes_manager.session_attributes = session_attr
     return is_intent_name(IntentList[z][y])(handler_input)
 
@@ -169,13 +169,13 @@ def can_handle(handler_input):
 def handle(self, handler_input):
     # type: (HandlerInput) -> Response
     session_attr = handler_input.attributes_manager.session_attributes
-    z = int(session_attr[CONVERSATION])
-    y = int(session_attr[PLACE])
+    z = int(session_attr.conversation)
+    y = int(session_attr.place)
     speech_text = ResponseDict[IntentList[z][y]]
 
     if y == 1:
-        session_attr[PLACE] = 0
-        session_attr[CONVERSATION] = 'None'
+        session_attr.place = 0
+        session_attr.conversation = 'None'
     handler_input.attributes_manager.session_attributes = session_attr
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
