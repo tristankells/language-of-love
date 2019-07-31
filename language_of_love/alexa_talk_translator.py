@@ -5,10 +5,9 @@ class Translator:
     Translator with full game dialog, but spoken by Alexa. Useful for player 
     testing before recording lines
     """
-    launch = Audio.tutorial
+    launch = Audio.welcome + Audio.fantastico + Audio.mucho_gusto
 
-    launch_first_time = (
-        "Language of Love Launched. Because this is your first time, lets play the tutorial. Let's practice some basic Spanish Greetings. What's your name? como te llamas?")
+    launch_first_time = Audio.tutorial
 
     class Tutorial:
         answer_to_your_name = (
