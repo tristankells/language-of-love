@@ -25,6 +25,7 @@ logger.setLevel(logging.INFO)
 IntentList, IntentDict = conversations()
 IntentList, IntentDict = json.loads(IntentList), json.loads(IntentDict)
 
+from session_variables import SessionVariables
 
 def can_handle_date(handler_input):
     # type: (HandlerInput) -> bool
