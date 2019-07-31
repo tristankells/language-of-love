@@ -35,10 +35,11 @@ def can_handle_date(handler_input):
         for x in range(0, len(IntentList)):
             if is_intent_name(IntentList[x][0])(handler_input):
                 session_attr.conversation = x
+                print(str(x) " - x just before break")
                 session_attr.place = 0
                 break
         session_attr.conversation = x  # set conversation
-
+        print(str(x) " - x just after break")
     elif session_attr.conversation != 'None':
         z = session_attr.conversation
         if is_intent_name(IntentList[z][1])(handler_input):
