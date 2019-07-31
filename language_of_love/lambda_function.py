@@ -143,7 +143,7 @@ def tutorial_handler(handler_input):
 
 # Date intent handlers
 @sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date)
-def can_handle(self, handler_input):
+def can_handle(handler_input):
     # type: (HandlerInput) -> bool
     global z
     z = 0
@@ -170,11 +170,11 @@ def can_handle(self, handler_input):
 def handle(self, handler_input):
     # type: (HandlerInput) -> Response
     speech_text = IntentDict[IntentList[z][0]][IntentList[z][y]]
-    session_attr['conversation'] = IntentList[z][y]
-    session_attr['place'] = int(session_attr['place']) + 1
-    if int(session_attr['place']) > 1:
-        session_attr['place'] = 0
-        session_attr['conversation'] = 'None'
+    session_attr[CONVERSATION] = IntentList[z][y]
+    session_attr[PLACE] = int(session_attr['place']) + 1
+    if int(session_attr[PLACE]) > 1:
+        session_attr[PLACE] = 0
+        session_attr[CONVERSATION] = 'None'
     handler_input.attributes_manager.session_attributes = session_attr
     # speech_text = session_attr['conversation']
     # speech_text = 'test'

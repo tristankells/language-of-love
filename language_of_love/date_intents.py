@@ -9,6 +9,5 @@ IntentDict = {
     "QuestionJobIntent": {"QuestionJobIntent": "I am a doctor, what do you do?",
                           "AnswerMyJobIntent": "Great"}}
 
-
 def conversations():
     return json.dumps(IntentList), json.dumps(IntentDict)
