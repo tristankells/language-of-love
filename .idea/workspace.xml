@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/lambda_function.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/practice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Tutorial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/tutorial.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,13 +173,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added missing files to repo">
-      <created>1564050202789</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1564050202789</updated>
     </task>
     <task id="LOCAL-00005" summary="Added missing files to repo">
       <created>1564050212942</created>
@@ -525,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564570850424</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="CHanged varaibles names and fixed tests accordingly">
+      <created>1564574399206</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1564574399206</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -542,7 +534,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated test" />
     <MESSAGE value="Updated test to check for travis failures" />
     <MESSAGE value="Added deployment script" />
     <MESSAGE value="Removed gitignore for now" />
@@ -567,7 +558,8 @@
     <MESSAGE value="Added luanch audio" />
     <MESSAGE value="Updated default session variables" />
     <MESSAGE value="Fixed the null session varaibles values" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the null session varaibles values" />
+    <MESSAGE value="CHanged varaibles names and fixed tests accordingly" />
+    <option name="LAST_COMMIT_MESSAGE" value="CHanged varaibles names and fixed tests accordingly" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
