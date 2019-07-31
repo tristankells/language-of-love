@@ -23,7 +23,7 @@ class LanguageOfLove:
         elif not session_variables.first_time:
             LanguageOfLove.speech_text = Translator.launch
 
-        return Response(LanguageOfLove.speech_text)
+        return Response(Translator.launch)
 
     class Answers:
         """

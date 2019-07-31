@@ -15,6 +15,7 @@ from session_variables import SessionVariables
 from slots import AreaEnum
 from areas.tutorial import Tutorial
 from areas.menu import Menu
+from areas.practice import Practice
 
 import json
 from love import LanguageOfLove
