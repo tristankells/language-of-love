@@ -163,6 +163,7 @@ def can_handle(handler_input):
     z = int(session_attr.conversation)
     y = int(session_attr.place)
     handler_input.attributes_manager.session_attributes = session_attr
+    print(IntentList[z][y])
     return is_intent_name(IntentList[z][y])(handler_input)
 
 
