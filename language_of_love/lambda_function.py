@@ -13,7 +13,7 @@ from ask_sdk_model import Response
 from ask_sdk_model.ui import SimpleCard
 from session_variables import SessionVariables
 from slots import AreaEnum
-from areas.tutorial import Tutorial
+from areas.intro import Introduction
 from areas.menu import Menu
 from areas.practice import Practice
 
@@ -105,7 +105,7 @@ def menu_handler(handler_input):
 
 
 # Tutorial intent handlers
-@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.tutorial)
+@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.introduction)
 def tutorial_handler(handler_input):
     """
     Tutorial handlers
@@ -113,7 +113,7 @@ def tutorial_handler(handler_input):
     intent_name = get_intent_name(handler_input)
     session_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
 
-    response = Tutorial.request_handler(intent_name, session_variables)
+    response = Introduction(intent_name, session_variables)
 
     if response.session_variables is not None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get()

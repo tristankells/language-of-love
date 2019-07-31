@@ -35,7 +35,7 @@ class LanguageOfLove:
             Handlers when the player responds with there name
             """
             LanguageOfLove.speech_text = None
-            if session_variables.area == AreaEnum.tutorial:
+            if session_variables.area == AreaEnum.introduction:
                 LanguageOfLove.speech_text = Translator.Tutorial.answer_to_your_name
 
             return Response(LanguageOfLove.speech_text, session_variables=session_variables)
@@ -49,7 +49,7 @@ class LanguageOfLove:
             """
             Handler when the player ask's their date where they are from
             """
-            if session_variables.area == AreaEnum.tutorial:
+            if session_variables.area == AreaEnum.introduction:
                 LanguageOfLove.speech_text = Translator.Tutorial.answer_to_question_where_are_you_from
 
             return Response(LanguageOfLove.speech_text)
