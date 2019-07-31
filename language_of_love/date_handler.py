@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 IntentList, ResponseDict = conversations()
-IntentList, ResponseDict = json.loads(IntentList), json.loads(IntentDict)
+IntentList, ResponseDict = json.loads(IntentList), json.loads(ResponseDict)
 
 from session_variables import SessionVariables
 
