@@ -37,15 +37,19 @@ class SessionVariables:
             SessionVariables.FIRST_TIME: True,
             SessionVariables.NAME: "default",
             SessionVariables.AREA: AreaEnum.tutorial,
-            SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both
+            SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both,
+            SessionVariables.CURRENT_TUTORIAL_PHRASE: None,
+            SessionVariables.TUTORIAL_REPEAT_OR_NEW: False
         }
         return session_variables
 
     @staticmethod
     def get():
         return {
-            SessionVariables.FIRST_TIME: SessionVariables.FIRST_TIME,
-            SessionVariables.NAME: SessionVariables.NAME,
-            SessionVariables.AREA: SessionVariables.AREA,
-            SessionVariables.GENDER_PREFERENCE: SessionVariables.GENDER_PREFERENCE,
+            SessionVariables.FIRST_TIME: SessionVariables.first_time,
+            SessionVariables.NAME: SessionVariables.name,
+            SessionVariables.AREA: SessionVariables.area,
+            SessionVariables.GENDER_PREFERENCE: SessionVariables.gender_preference,
+            SessionVariables.CURRENT_TUTORIAL_PHRASE: SessionVariables.current_tutorial_phrase,
+            SessionVariables.TUTORIAL_REPEAT_OR_NEW: SessionVariables.tutorial_repeat_or_new,
         }

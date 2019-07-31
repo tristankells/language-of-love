@@ -9,5 +9,5 @@ class Intents:
     ANIMAL_IS = "AnimalsIntent"
     BOOK = "BookIntent"
     CANCEL = "AMAZON.CancelIntent"
-    REPEAT = "RepeatIntent"
+    REPEAT = "RepeatPracticePhraseIntent"
     NEW_PHRASE = "NewPracticePhraseIntent"
