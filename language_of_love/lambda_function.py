@@ -144,6 +144,10 @@ def tutorial_handler(handler_input):
 @sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date)
 def can_handle(self, handler_input):
     # type: (HandlerInput) -> bool
+    global z
+    z = 2
+    global y
+    y = 2
 
     global session_attr  # Load up conversation and point in conversation
     session_attr = handler_input.attributes_manager.session_attributes
@@ -152,20 +156,15 @@ def can_handle(self, handler_input):
         for x in range(0, len(IntentList)):
             if session_attr[CONVERSATION] == IntentList[x][0]:  # If we found which convo, then stop and take it
                 break
-            global z
             z = x  # Save intent index
 
     elif session_attr[CONVERSATION] == 'None':  # If not in a conversation, find what conversation has been started
         for x in range(0, len(IntentList)):
             if is_intent_name(IntentList[x][0])(handler_input):
                 break
-        global z
-        z
         z = x
-    global y
     y = int(session_attr[PLACE])  # Get index of what we're expecting from the conversation
     return is_intent_name(IntentList[z][y])(handler_input)
-
 
 def handle(self, handler_input):
     # type: (HandlerInput) -> Response
