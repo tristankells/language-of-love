@@ -43,10 +43,10 @@ def can_handle_date(handler_input):
     elif session_attr.conversation != 'None':
         z = session_attr.conversation
         if is_intent_name(IntentList[z][1])(handler_input):
-            print('continue')
+            session_attr.place = 1
     z = int(session_attr.conversation)
     y = int(session_attr.place)
-    print("handler z,y = " + str(z) + " " + str(y))
     handler_input.attributes_manager.session_attributes = session_attr.get()
+    print("handler z,y = " + str(z) + " " + str(y))
     print(IntentList[z][y])
     return is_intent_name(IntentList[z][y])(handler_input)
