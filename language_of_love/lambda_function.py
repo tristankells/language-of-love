@@ -164,6 +164,23 @@ def can_handle(handler_input):
     y = int(session_attr[PLACE])
     handler_input.attributes_manager.session_attributes = session_attr
     return is_intent_name(IntentList[z][y])(handler_input)
+
+
+def handle(self, handler_input):
+    # type: (HandlerInput) -> Response
+    session_attr = handler_input.attributes_manager.session_attributes
+    z = int(session_attr[CONVERSATION])
+    y = int(session_attr[PLACE])
+    speech_text = ResponseDict[IntentList[z][y]]
+
+    if y == 1:
+        session_attr[PLACE] = 0
+        session_attr[CONVERSATION] = 'None'
+    handler_input.attributes_manager.session_attributes = session_attr
+    handler_input.response_builder.speak(speech_text).set_card(
+        SimpleCard("Hello World", speech_text)).set_should_end_session(
+        False)
+    return handler_input.response_builder.response
 # endregion
 
 # # # Date request_handlers # # # 
