@@ -23,4 +23,3 @@ class Audio():
     fantastico = "<audio src='https://s3.amazonaws.com/language-of-love/tristan-fantastico.mp3'/>"
     mucho_gusto = "<audio src='https://s3.amazonaws.com/language-of-love/tristan-mucho_gusto.mp3'/>"
     pracrice_or_date = "<audio src='https://s3.amazonaws.com/language-of-love/practice_or_speed_date.mp3'/>"
-    
