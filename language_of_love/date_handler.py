@@ -22,8 +22,8 @@ sb = SkillBuilder()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-IntentList, IntentDict = conversations()
-IntentList, IntentDict = json.loads(IntentList), json.loads(IntentDict)
+IntentList, ResponseDict = conversations()
+IntentList, ResponseDict = json.loads(IntentList), json.loads(IntentDict)
 
 from session_variables import SessionVariables
 
