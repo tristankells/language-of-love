@@ -3,7 +3,7 @@ from areas.menu import Menu
 from session_variables import SessionVariables
 import slots
 from intents import Intents
-from alexa_talk_translator import Translator
+from translators.alexa_talk_translator import Translator
 
 
 class TestMenu(unittest.TestCase):
@@ -17,7 +17,7 @@ class TestMenu(unittest.TestCase):
         # Check the player is in the practice area now
         self.assertTrue(response.session_variables.area is slots.AreaEnum.practice)
         # Check the correct speech text has been received
-        self.assertEqual(response.speech_text, Translator.Practice.begin)
+        self.assertEqual(response.speech_text, Translator.Practice.start)
 
     def test_begin_speed_date_give_correct_response(self):
         session_variables = SessionVariables({

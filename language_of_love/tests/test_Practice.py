@@ -2,7 +2,7 @@ import unittest
 from session_variables import SessionVariables
 import slots
 from intents import Intents
-from alexa_talk_translator import Translator
+from translators.alexa_talk_translator import Translator
 from areas.practice import Practice
 from practice_phrase import PracticePhrases
 

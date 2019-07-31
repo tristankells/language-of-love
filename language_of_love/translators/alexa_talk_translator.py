@@ -22,13 +22,13 @@ class Translator:
         error = "Error logged"
 
     class Practice:
-        begin = "Practice started. Lets go through some key spanish phrases that you will need to progress through the dates"
+        start = Audio.practice_start
 
-        what_is_your_name = "¿Cuál es tu nombre? In english, what is your name. Try saying it yourself"
+        what_is_your_name = Audio.Q_e_lecturer_what_name + Audio.Q_s_lecturer_what_name
 
-        where_are_you_from = "de donde eres? In english, where are you from. Try saying it yourself"
+        do_you_like_to_travel = Audio.Q_s_lecturer_like_travel + Audio.Q_s_lecturer_like_travel
 
-        what_is_your_job = "en qué trabajas? In english, what is your job or what do you do for a living. Try saying it yourself"
+        what_is_your_job = Audio.Q_s_lecturer_what_profession + Audio.Q_s_lecturer_what_profession
 
         new_or_repeat = "You want to hear that again or practice a new phrase?"
 

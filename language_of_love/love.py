@@ -1,6 +1,6 @@
 from response import Response
 from slots import AreaEnum
-from alexa_talk_translator import Translator
+from translators.alexa_talk_translator import Translator
 import random
 
 class LanguageOfLove:
@@ -65,7 +65,7 @@ class LanguageOfLove:
             Handler when the player launches the start practice intent
             """
 
-            LanguageOfLove.speech_text.append(Translator.Practice.begin)
+            LanguageOfLove.speech_text.append(Translator.Practice.start)
             LanguageOfLove.speech_text.append(get_rand_practice_phrase())
 
             return Response(LanguageOfLove.speech_text)
@@ -78,7 +78,7 @@ def get_rand_practice_phrase():
     x = random.randint(1, 3)
     dict = {
         1: Translator.Practice.what_is_your_name,
-        2: Translator.Practice.where_are_you_from,
+        2: Translator.Practice.do_you_like_to_travel,
         3: Translator.Practice.what_is_your_job,
     }
     return dict[x]

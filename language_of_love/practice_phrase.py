@@ -1,4 +1,4 @@
-from alexa_talk_translator import Translator
+from translators.alexa_talk_translator import Translator
 
 
 class PracticePhrases():
@@ -10,7 +10,7 @@ class PracticePhrases():
     def get_speech_text(phrase_key):
         phrases_dict = {
             PracticePhrases.WHAT_IS_YOUR_NAME: Translator.Practice.what_is_your_name,
-            PracticePhrases.WHERE_ARE_YOU_FROM: Translator.Practice.where_are_you_from,
+            PracticePhrases.WHERE_ARE_YOU_FROM: Translator.Practice.do_you_like_to_travel,
             PracticePhrases.WHAT_IS_YOUR_JOB: Translator.Practice.what_is_your_job
         }
 

@@ -1,5 +1,5 @@
 from intents import Intents
-from alexa_talk_translator import Translator
+from translators.alexa_talk_translator import Translator
 from response import Response
 from slots import AreaEnum
 import random

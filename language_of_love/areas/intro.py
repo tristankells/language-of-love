@@ -1,5 +1,5 @@
 from slots import AreaEnum
-from alexa_talk_translator import Translator
+from translators.alexa_talk_translator import Translator
 from response import Response
 from intents import Intents
 from response_handler import response_handler

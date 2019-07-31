@@ -3,7 +3,7 @@ from areas.tutorial import Tutorial
 from session_variables import SessionVariables
 import slots
 from intents import Intents
-from alexa_talk_translator import Translator
+from translators.alexa_talk_translator import Translator
 
 
 class TestTutorial(unittest.TestCase):
