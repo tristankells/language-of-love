@@ -13,9 +13,8 @@ from ask_sdk_model import Response
 from ask_sdk_model.ui import SimpleCard
 from session_variables import SessionVariables
 from slots import AreaEnum
-from tutorial import Tutorial
-from practice import Practice
-from menu import Menu
+from areas.tutorial import Tutorial
+from areas.menu import Menu
 
 from love import LanguageOfLove
 from date_intents import conversations
