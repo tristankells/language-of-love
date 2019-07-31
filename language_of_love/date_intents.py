@@ -1,13 +1,15 @@
 import json
 
 IntentList = [["QuestionWhereYouFromIntent", "AnswerWhereYouFromIntent"],
-              ["QuestionJobIntent", "AnswerMyJobIntent"]]
+              ["QuestionJobIntent", "AnswerMyJobIntent"],
+              ["QuestionAnimalIntent", "AnswerAnimalIntent"]
+              ]
 
-IntentDict = {
-    "QuestionWhereYouFromIntent": {"QuestionWhereYouFromIntent": "I'm from Columbia",
-                                   "AnswerWhereYouFromIntent": "I love that place"},
-    "QuestionJobIntent": {"QuestionJobIntent": "I am a doctor, what do you do?",
-                          "AnswerMyJobIntent": "Great"}}
+ResponseDict = {"QuestionWhereYouFromIntent": "I'm from Columbia",
+                "AnswerWhereYouFromIntent": "I love that place",
+                "QuestionJobIntent": "I am a doctor, what do you do?",
+                "AnswerMyJobIntent": "Great",
+                }
 
 def conversations():
-    return json.dumps(IntentList), json.dumps(IntentDict)
+    return json.dumps(IntentList), json.dumps(ResponseDict)

@@ -145,46 +145,60 @@ def tutorial_handler(handler_input):
 @sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date)
 def can_handle(handler_input):
     # type: (HandlerInput) -> bool
-    global z
-    z = 0
-    global y
-    y = 0
 
-    global session_attr  # Load up conversation and point in conversation
     session_attr = handler_input.attributes_manager.session_attributes
-
-    if session_attr[CONVERSATION] != 'None':  # If in a conversation, find which one
-        for x in range(0, len(IntentList)):
-            if session_attr[CONVERSATION] == IntentList[x][0]:  # If we found which convo, then stop and take it
-                break
-            z = x  # Save intent index
-
-    elif session_attr[CONVERSATION] == 'None':  # If not in a conversation, find what conversation has been started
+    if session_attr[CONVERSATION] == 'None':
         for x in range(0, len(IntentList)):
             if is_intent_name(IntentList[x][0])(handler_input):
+                session_attr[CONVERSATION] = x
+                session_attr[PLACE] = 0
                 break
-        z = x
-    y = int(session_attr[PLACE])  # Get index of what we're expecting from the conversation
+        session_attr[CONVERSATION] = z  # set conversation
+
+    elif session_attr[CONVERSATION] != 'None':
+        z = session_attr[CONVERSATION]
+        if is_intent_name(IntentList[z][1])(handler_input):
+            session_attr[PLACE] = 1
+    z = int(session_attr[CONVERSATION])
+    y = int(session_attr[PLACE])
+    handler_input.attributes_manager.session_attributes = session_attr
     return is_intent_name(IntentList[z][y])(handler_input)
 
 def handle(self, handler_input):
     # type: (HandlerInput) -> Response
-    speech_text = IntentDict[IntentList[z][0]][IntentList[z][y]]
-    session_attr[CONVERSATION] = IntentList[z][y]
-    session_attr[PLACE] = int(session_attr['place']) + 1
-    if int(session_attr[PLACE]) > 1:
+    handler_input.attributes_manager.session_attributes = session_attr
+    z = int(session_attr[CONVERSATION])
+    y = int(session_attr[PLACE])
+    speech_text = ResponseDict[IntentList[z][y]]
+
+    if y == 1:
         session_attr[PLACE] = 0
         session_attr[CONVERSATION] = 'None'
     handler_input.attributes_manager.session_attributes = session_attr
-    # speech_text = session_attr['conversation']
-    # speech_text = 'test'
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
         False)
     return handler_input.response_builder.response
 
-# endregion
 
+class CatchAllExceptionHandler(AbstractExceptionHandler):
+    """Catch all exception handler, log exception and
+    respond with custom message.
+    """
+
+    def can_handle(self, handler_input, exception):
+        # type: (HandlerInput, Exception) -> bool
+        return True
+
+    def handle(self, handler_input, exception):
+        # type: (HandlerInput, Exception) -> Response
+        logger.error(exception, exc_info=True)
+
+        speech = "Sorry, there was some problem. Please try again!!"
+        handler_input.response_builder.speak(speech).ask(speech)
+
+        return handler_input.response_builder.response
+# endregion
 
 # # # Date request_handlers # # # 
 # region
