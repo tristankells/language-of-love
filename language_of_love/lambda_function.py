@@ -10,6 +10,7 @@ from ask_sdk.standard import StandardSkillBuilder
 from ask_sdk_core.utils import is_request_type, is_intent_name, get_intent_name
 from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
+from ask_sdk_model.ui import SimpleCard
 from session_variables import SessionVariables
 from slots import AreaEnum
 from tutorial import Tutorial
@@ -17,6 +18,7 @@ from practice import Practice
 from menu import Menu
 
 from love import LanguageOfLove
+from date_intents import conversations
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
@@ -24,6 +26,8 @@ sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+IntentList, IntentDict = conversations()
+IntentList, IntentDict = json.loads(IntentList), json.loads(IntentDict)
 
 @sb.request_handler(can_handle_func=is_request_type("LaunchRequest"))
 def launch_request_handler(handler_input):
@@ -138,10 +142,47 @@ def tutorial_handler(handler_input):
 
 
 # Date intent handlers
-@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date.value)
-def tutorial_handler(handler_input):
-    return None
+@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date)
+def can_handle(self, handler_input):
+    # type: (HandlerInput) -> bool
 
+    global session_attr  # Load up conversation and point in conversation
+    session_attr = handler_input.attributes_manager.session_attributes
+
+    if session_attr[CONVERSATION] != 'None':  # If in a conversation, find which one
+        for x in range(0, len(IntentList)):
+            if session_attr[CONVERSATION] == IntentList[x][0]:  # If we found which convo, then stop and take it
+                break
+            global z
+            z = x  # Save intent index
+
+    elif session_attr[CONVERSATION] == 'None':  # If not in a conversation, find what conversation has been started
+        for x in range(0, len(IntentList)):
+            if is_intent_name(IntentList[x][0])(handler_input):
+                break
+        global z
+        z
+        z = x
+    global y
+    y = int(session_attr[PLACE])  # Get index of what we're expecting from the conversation
+    return is_intent_name(IntentList[z][y])(handler_input)
+
+
+def handle(self, handler_input):
+    # type: (HandlerInput) -> Response
+    speech_text = IntentDict[IntentList[z][0]][IntentList[z][y]]
+    session_attr['conversation'] = IntentList[z][y]
+    session_attr['place'] = int(session_attr['place']) + 1
+    if int(session_attr['place']) > 1:
+        session_attr['place'] = 0
+        session_attr['conversation'] = 'None'
+    handler_input.attributes_manager.session_attributes = session_attr
+    # speech_text = session_attr['conversation']
+    # speech_text = 'test'
+    handler_input.response_builder.speak(speech_text).set_card(
+        SimpleCard("Hello World", speech_text)).set_should_end_session(
+        False)
+    return handler_input.response_builder.response
 
 # endregion
 
