@@ -164,8 +164,6 @@ def handle(handler_input):
 # endregion
 
 @sb.request_handler(can_handle_func=lambda input: not can_handle_date(input))
-
-:
 speech_text = "I don't know what you're saying"
 handler_input.response_builder.speak(speech_text).set_card(
     SimpleCard("Hello World", speech_text)).set_should_end_session(
