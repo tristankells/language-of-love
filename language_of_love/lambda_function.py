@@ -154,7 +154,7 @@ def can_handle(handler_input):
                 session_attr.conversation = x
                 session_attr.place = 0
                 break
-        session_attr.conversation = z  # set conversation
+        session_attr.conversation = x  # set conversation
 
     elif session_attr.conversation != 'None':
         z = session_attr.conversation
