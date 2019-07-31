@@ -124,14 +124,14 @@ def tutorial_handler(handler_input):
 
 # Practice intent handlers
 @sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.practice)
-def tutorial_handler(handler_input):
+def practice_handler(handler_input):
     """
     Practice handlers
     """
     intent_name = get_intent_name(handler_input)
     session_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
 
-    response = Tutorial.request_handler(intent_name, session_variables)
+    response = Practice(intent_name, session_variables)
 
     if response.session_variables is not None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get()
