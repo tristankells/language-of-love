@@ -1,5 +1,5 @@
 class Audio():
-    tutorial_start = "<audio src='https://s3.amazonaws.com/language-of-love/lecturer-practice-start.mp3'/>"
+    practice_start = "<audio src='https://s3.amazonaws.com/language-of-love/lecturer-practice-start.mp3'/>"
     Q_e_lecturer_like_chocolate = "<audio src='https://s3.amazonaws.com/language-of-love/english-lecturer-do-u-like-chocolate.mp3'/>"
     Q_e_lecturer_like_coffee = "<audio src='https://s3.amazonaws.com/language-of-love/english-lecturer-do-u-like-coffee.mp3'/>"
     Q_e_lecturer_like_flower = "<audio src='https://s3.amazonaws.com/language-of-love/english-lecturer-do-u-like-flowers.mp3'/>"
