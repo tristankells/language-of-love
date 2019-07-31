@@ -19,6 +19,6 @@ class Audio():
     point = "<audio src='https://s3.amazonaws.com/language-of-love/point.mp3'/>"
     cricket_sound = "<audio src='https://s3.amazonaws.com/language-of-love/cricket_sound.mp3'/>"
     welcome = "<audio src ='https://s3.amazonaws.com/language-of-love/tristan-welcome.mp3'/>"
-    welcome_2 = "<audio src = 'https://s3.amazonaws.com/language-of-love/tristan-welcome-2.mp3'/>
+    welcome_2 = "<audio src = 'https://s3.amazonaws.com/language-of-love/tristan-welcome-2.mp3'/>"
     fantastico = "<audio src='https://s3.amazonaws.com/language-of-love/tristan-fantastico.mp3'/>"
     mucho_gusto = "<audio src='https://s3.amazonaws.com/language-of-love/tristan-mucho_gusto.mp3'/>"
