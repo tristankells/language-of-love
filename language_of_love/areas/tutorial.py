@@ -5,7 +5,6 @@ from intents import Intents
 
 class Tutorial:
 
-
     @staticmethod
     def my_name_is(session_variables):
         """
