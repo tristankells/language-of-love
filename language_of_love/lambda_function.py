@@ -160,12 +160,10 @@ def can_handle(self, handler_input):
             if is_intent_name(IntentList[x][0])(handler_input):
                 break
         global z
-        z
         z = x
     global y
     y = int(session_attr[PLACE])  # Get index of what we're expecting from the conversation
     return is_intent_name(IntentList[z][y])(handler_input)
-
 
 def handle(self, handler_input):
     # type: (HandlerInput) -> Response
