@@ -13,6 +13,8 @@ from ask_sdk_model import Response
 from session_variables import SessionVariables
 from slots import AreaEnum
 from tutorial import Tutorial
+from practice import Practice
+from menu import Menu
 
 from love import LanguageOfLove
 
@@ -78,8 +80,26 @@ def player_area(handler_input):
     return AreaEnum(session_variables[SessionVariables.AREA])
 
 
-# Tutorial intent handlers
+@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.menu)
+def menu_handler(handler_input):
+    """
+    Menu handlers
+    """
+    intent_name = get_intent_name(handler_input)
+    session_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
 
+    response = Menu(intent_name, session_variables)
+
+    if response.session_variables is not None:
+        handler_input.attributes_manager.session_attributes = response.session_variables.get()
+    else:
+        handler_input.attributes_manager.session_attributes = session_variables.get()
+    handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
+
+    return handler_input.response_builder.response
+
+
+# Tutorial intent handlers
 @sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.tutorial)
 def tutorial_handler(handler_input):
     """

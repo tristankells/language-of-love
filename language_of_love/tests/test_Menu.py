@@ -12,7 +12,7 @@ class TestMenu(unittest.TestCase):
         session_variables = SessionVariables({
             SessionVariables.AREA: slots.AreaEnum.menu
         })
-        response = Menu.request_handler(Intents.START_PRACTICE, session_variables)
+        response = Menu(Intents.START_PRACTICE, session_variables)
 
         # Check the player is in the practice area now
         self.assertTrue(response.session_variables.area is slots.AreaEnum.practice)
@@ -23,7 +23,7 @@ class TestMenu(unittest.TestCase):
         session_variables = SessionVariables({
             SessionVariables.AREA: slots.AreaEnum.menu
         })
-        response = Menu.request_handler(Intents.START_SPEED_DATE, session_variables)
+        response = Menu(Intents.START_SPEED_DATE, session_variables)
 
         # Check the player is in the speed date area now
         self.assertTrue(response.session_variables.area is slots.AreaEnum.speed_date)
@@ -34,13 +34,12 @@ class TestMenu(unittest.TestCase):
         session_variables = SessionVariables({
             SessionVariables.AREA: slots.AreaEnum.menu
         })
-        response = Menu.request_handler(Intents.ANIMAL_IS, session_variables)
+        response = Menu(Intents.ANIMAL_IS, session_variables)
 
         # Check the player is in the speed date area now
         self.assertTrue(response.session_variables.area is slots.AreaEnum.menu)
         # Check the correct speech text has been received
         self.assertTrue(response.speech_text is Translator.Error.bad_option)
-
 
 if __name__ == '__main__':
     unittest.main()
