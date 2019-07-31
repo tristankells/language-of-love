@@ -166,10 +166,9 @@ def can_handle(handler_input):
     print(IntentList[z][y])
     return is_intent_name(IntentList[z][y])(handler_input)
 
-
 def handle(self, handler_input):
     # type: (HandlerInput) -> Response
-    session_attr = handler_input.attributes_manager.session_attributes
+    session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     z = int(session_attr.conversation)
     y = int(session_attr.place)
     speech_text = ResponseDict[IntentList[z][y]]
