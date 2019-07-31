@@ -4,7 +4,6 @@ from alexa_talk_translator import Translator
 from session_variables import SessionVariables
 from slots import AreaEnum
 
-
 class TestLanguageOfLove(unittest.TestCase):
     """
     Test class for language of love class

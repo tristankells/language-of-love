@@ -7,6 +7,8 @@ class SessionVariables:
     """
     Contains all the variables stored in the Alexa input handler 
     """
+    CONVERSATION = "conversation"
+    PLACE = "place"
     FIRST_TIME = "first_time"
     NAME = "name"
     AREA = "area"
@@ -14,6 +16,8 @@ class SessionVariables:
     CURRENT_PRACTICE_PHRASE = "current_practice_phrase"
     PRACTICE_REPEAT_OR_NEW = "practice_repeat_or_new"
 
+    conversation = None
+    place = None
     first_time = None
     name = None
     area = None
@@ -32,6 +36,8 @@ class SessionVariables:
         self.tutorial_repeat_or_new = state_variables[
             self.PRACTICE_REPEAT_OR_NEW] if self.PRACTICE_REPEAT_OR_NEW in state_variables else False
 
+        self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else True
+        self.place = state_variables[self.PLACE] if self.place in state_variables else True
     @staticmethod
     def get_initial():
         session_variables = {
@@ -40,7 +46,9 @@ class SessionVariables:
             SessionVariables.AREA: AreaEnum.tutorial,
             SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both,
             SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.EMPTY,
-            SessionVariables.PRACTICE_REPEAT_OR_NEW: False
+            SessionVariables.PRACTICE_REPEAT_OR_NEW: False,
+            SessionVariables.CONVERSATION: 'None',
+            SessionVariables.PLACE: 0
         }
         return session_variables
 
@@ -52,4 +60,6 @@ class SessionVariables:
             SessionVariables.GENDER_PREFERENCE: self.gender_preference,
             SessionVariables.CURRENT_PRACTICE_PHRASE: self.current_tutorial_phrase,
             SessionVariables.PRACTICE_REPEAT_OR_NEW: self.tutorial_repeat_or_new,
+            SessionVariables.CONVERSATION: 'None',
+            SessionVariables.PLACE: 0
         }
