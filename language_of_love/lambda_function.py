@@ -28,8 +28,8 @@ sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-IntentList, IntentDict = conversations()
-IntentList, IntentDict = json.loads(IntentList), json.loads(IntentDict)
+IntentList, ResponseDict = conversations()
+IntentList, ResponseDict = json.loads(IntentList), json.loads(ResponseDict)
 
 @sb.request_handler(can_handle_func=is_request_type("LaunchRequest"))
 def launch_request_handler(handler_input):
