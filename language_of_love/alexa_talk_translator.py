@@ -7,7 +7,7 @@ class Translator:
     """
     launch = Audio.welcome + Audio.fantastico + Audio.mucho_gusto
 
-    launch_first_time = Audio.welcome + Audio.fantastico
+    launch_first_time = Audio.welcome + Audio.welcome_2
 
     class Tutorial:
         answer_to_your_name = (
