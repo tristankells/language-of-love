@@ -20,6 +20,7 @@ from areas.practice import Practice
 import json
 from love import LanguageOfLove
 from date_intents import conversations
+from date_handler import can_handle_date
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
@@ -143,30 +144,7 @@ def practice_handler(handler_input):
 
 
 # Date intent handlers
-@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date)
-def can_handle(handler_input):
-    # type: (HandlerInput) -> bool
-
-    session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
-    if session_attr.conversation == 'None':
-        for x in range(0, len(IntentList)):
-            if is_intent_name(IntentList[x][0])(handler_input):
-                session_attr.conversation = x
-                session_attr.place = 0
-                break
-        session_attr.conversation = x  # set conversation
-
-    elif session_attr.conversation != 'None':
-        z = session_attr.conversation
-        if is_intent_name(IntentList[z][1])(handler_input):
-            session_attr.place = 1
-    z = int(session_attr.conversation)
-    y = int(session_attr.place)
-    handler_input.attributes_manager.session_attributes = session_attr.get()
-    print(IntentList[z][y])
-    return is_intent_name(IntentList[z][y])(handler_input)
-
-
+@sb.request_handler(can_handle_func=lambda input: can_handle_date(input))
 def handle(handler_input):
     # type: (HandlerInput) -> Response
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
