@@ -38,6 +38,7 @@ class SessionVariables:
 
         self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else True
         self.place = state_variables[self.PLACE] if self.place in state_variables else True
+
     @staticmethod
     def get_initial():
         session_variables = {

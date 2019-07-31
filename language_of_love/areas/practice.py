@@ -17,7 +17,7 @@ def Practice(intent_name, session_variables):
 
         phrase_dictionary = {
             1: PracticePhrases.WHAT_IS_YOUR_NAME,
-            2: PracticePhrases.WHERE_ARE_YOU_FROM,
+            2: PracticePhrases.DO_YOU_LIKE_TO_TRAVEL,
             3: PracticePhrases.WHAT_IS_YOUR_JOB
         }
 

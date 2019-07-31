@@ -3,6 +3,7 @@ from alexa_talk_translator import Translator
 from response import Response
 from response_handler import response_handler
 from slots import AreaEnum
+from practice_phrase import PracticePhrases
 
 
 def Menu(intent_name, session_variables):
@@ -14,7 +15,9 @@ def Menu(intent_name, session_variables):
     """
     def start_practice(session_variables):
         session_variables.area = AreaEnum.practice
-        return Response(Translator.Practice.begin, session_variables=session_variables)
+        return Response(
+            Translator.Practice.begin + PracticePhrases.get_speech_text(session_variables.current_practice_phrase),
+            session_variables=session_variables)
 
     def start_speed_date(session_variables):
         session_variables.area = AreaEnum.speed_date

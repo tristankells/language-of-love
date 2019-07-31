@@ -10,7 +10,7 @@ class Tutorial:
         """
         Handlers when the player responds with there name
         """
-        speech_text = Translator.Tutorial.answer_to_your_name
+        speech_text = Translator.Intro.answer_to_your_name
 
         return Response(speech_text, session_variables=session_variables)
 
@@ -21,7 +21,7 @@ class Tutorial:
         """
         # TODO: No longer needed after the tutorial / intro.py rework
         session_variables.area = AreaEnum.menu
-        speech_text = Translator.Tutorial.answer_to_question_where_are_you_from
+        speech_text = Translator.Intro.answer_to_question_where_are_you_from
 
         return Response(speech_text, session_variables=session_variables)
 
@@ -31,7 +31,7 @@ class Tutorial:
         Handler when the player ask's their date where they are from
         """
 
-        speech_text = Translator.Tutorial.error
+        speech_text = Translator.Intro.error
 
         return Response(speech_text, session_variables=session_variables)
 

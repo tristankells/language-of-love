@@ -13,7 +13,7 @@ class TestTutorial(unittest.TestCase):
             SessionVariables.AREA: slots.AreaEnum.introduction
         })
         response = Tutorial.request_handler(Intents.ANSWER_NAME, session_variables)
-        self.assertTrue(response.speech_text is Translator.Tutorial.answer_to_your_name)
+        self.assertTrue(response.speech_text is Translator.Intro.answer_to_your_name)
 
     # Tutorial -> WhereAreYouFromIntent
     def test_where_are_you_from_returns_the_correct_speech_text(self):
@@ -21,7 +21,7 @@ class TestTutorial(unittest.TestCase):
             SessionVariables.AREA: slots.AreaEnum.introduction
         })
         response = Tutorial.request_handler(Intents.QUESTION_WHERE_YOU_FROM, session_variables)
-        self.assertTrue(response.speech_text is Translator.Tutorial.answer_to_question_where_are_you_from)
+        self.assertTrue(response.speech_text is Translator.Intro.answer_to_question_where_are_you_from)
 
     def test_where_are_you_from_ends_tutorial(self):
         session_variables = SessionVariables({
@@ -36,7 +36,7 @@ class TestTutorial(unittest.TestCase):
             SessionVariables.AREA: slots.AreaEnum.introduction
         })
         response = Tutorial.request_handler(Intents.ANIMAL_IS, session_variables)
-        self.assertTrue(response.speech_text is Translator.Tutorial.error)
+        self.assertTrue(response.speech_text is Translator.Intro.error)
 
 
 if __name__ == '__main__':

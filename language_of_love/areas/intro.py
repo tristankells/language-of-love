@@ -10,7 +10,7 @@ def Introduction(intent_name, session_variables):
         """
         Handlers when the player responds with there name
         """
-        speech_text = Translator.Tutorial.answer_to_your_name
+        speech_text = Translator.Intro.answer_to_your_name
 
         # Break the intro loop and enter menu loop
         session_variables.area = AreaEnum.menu
@@ -21,7 +21,7 @@ def Introduction(intent_name, session_variables):
         Handler when the player ask's their date where they are from
         """
 
-        speech_text = Translator.Tutorial.error
+        speech_text = Translator.Intro.error
 
         return Response(speech_text, session_variables=session_variables)
 
