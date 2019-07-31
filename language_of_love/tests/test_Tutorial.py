@@ -1,5 +1,5 @@
 import unittest
-from tutorial import Tutorial
+from areas.tutorial import Tutorial
 from session_variables import SessionVariables
 import slots
 from intents import Intents

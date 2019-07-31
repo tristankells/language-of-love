@@ -12,9 +12,8 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from session_variables import SessionVariables
 from slots import AreaEnum
-from tutorial import Tutorial
-from practice import Practice
-from menu import Menu
+from areas.tutorial import Tutorial
+from areas.menu import Menu
 
 from love import LanguageOfLove
 

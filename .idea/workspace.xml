@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/practice_phrase.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/practice_phrase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/lambda_function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/practice.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Tutorial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/tutorial.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +28,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1OfW3Mz6hsrPNvxqq0MVHY9bI2G" />
@@ -36,11 +43,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\trist\Desktop\language-of-love\language_of_love\areas" />
       <recent name="C:\language-of-love\language_of_love" />
       <recent name="C:\language-of-love\language_of_love\areas" />
       <recent name="C:\Users\trist\Desktop\language-of-love\language_of_love" />
       <recent name="C:\Users\trist\Desktop\language-of-love\language_of_love_0.01" />
-      <recent name="C:\Users\trist\Desktop\language-of-love" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -56,20 +63,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python tests.Unittests in tests">
-    <configuration name="Unittests for test_SessionVariables.TestSessionVariables" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="LanguageOfLove" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_SessionVariables.TestSessionVariables&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for test_SessionVariables.TestSessionVariables.test_all_variables_return_values_when_none_passed" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,6 +74,20 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_SessionVariables.TestSessionVariables.test_all_variables_return_values_when_none_passed&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_SessionVariables.TestSessionVariables.test_get_function_does_not_return_None_values" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="LanguageOfLove" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_SessionVariables.TestSessionVariables.test_get_function_does_not_return_None_values&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -109,20 +116,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_SessionVariables.TestSessionVariables.test_get_function_returns_same_as_passed_values&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for tests.test_languageOfLove.TestLanguageOfLove" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="LanguageOfLove" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_languageOfLove.TestLanguageOfLove&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -172,9 +165,9 @@
       <list>
         <item itemvalue="Python tests.Unittests in tests" />
         <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables.test_get_function_returns_same_as_passed_values" />
+        <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables.test_get_function_does_not_return_None_values" />
         <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables.test_get_function_does_not_return_nulls" />
         <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables.test_all_variables_return_values_when_none_passed" />
-        <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables" />
       </list>
     </recent_temporary>
   </component>
@@ -188,13 +181,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Big old rejig, file structure, references, testing, changes from to circleci to travis, plus lots of PEP">
-      <created>1564049857302</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1564049857302</updated>
     </task>
     <task id="LOCAL-00004" summary="Added missing files to repo">
       <created>1564050202789</created>
@@ -532,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564562308817</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Fixed the null session varaibles values">
+      <created>1564570850423</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1564570850424</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update travis.yml" />
     <MESSAGE value="Updated test" />
     <MESSAGE value="Updated test to check for travis failures" />
     <MESSAGE value="Added deployment script" />
@@ -574,7 +566,8 @@
     <MESSAGE value="Added audio package" />
     <MESSAGE value="Added luanch audio" />
     <MESSAGE value="Updated default session variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated default session variables" />
+    <MESSAGE value="Fixed the null session varaibles values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the null session varaibles values" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

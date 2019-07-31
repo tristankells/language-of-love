@@ -1,5 +1,5 @@
 import unittest
-from menu import Menu
+from areas.menu import Menu
 from session_variables import SessionVariables
 import slots
 from intents import Intents
