@@ -1,6 +1,7 @@
 from intents import Intents
 from alexa_talk_translator import Translator
 from response import Response
+from response_handler import response_handler
 from slots import AreaEnum
 
 
@@ -28,7 +29,5 @@ def Menu(intent_name, session_variables):
         Intents.START_PRACTICE: start_practice,
         Intents.START_SPEED_DATE: start_speed_date
     }
-    if intent_name in intent_dictionary:
-        return intent_dictionary[intent_name](session_variables)
-    else:
-        return error(session_variables)
+
+    return response_handler(intent_name, intent_dictionary, session_variables, error)

@@ -7,7 +7,7 @@ class AreaEnum(Enum):
     or speed date
     """
     menu = 0
-    tutorial = 1
+    introduction = 1
     practice = 2
     speed_date = 3
 
