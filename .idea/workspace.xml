@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/practice_phrase.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/practice_phrase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +55,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_Menu.TestMenu">
-    <configuration name="Unittests for test_Menu.TestMenu" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests in tests">
+    <configuration name="Unittests for test_SessionVariables.TestSessionVariables" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -63,11 +66,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Menu.TestMenu&quot;" />
+      <option name="_new_target" value="&quot;test_SessionVariables.TestSessionVariables&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_Practice.TestPractice" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_SessionVariables.TestSessionVariables.test_all_variables_return_values_when_none_passed" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -77,11 +80,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Practice.TestPractice&quot;" />
+      <option name="_new_target" value="&quot;test_SessionVariables.TestSessionVariables.test_all_variables_return_values_when_none_passed&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_a_different_message" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_SessionVariables.TestSessionVariables.test_get_function_does_not_return_nulls" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -91,11 +94,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_a_different_message&quot;" />
+      <option name="_new_target" value="&quot;test_SessionVariables.TestSessionVariables.test_get_function_does_not_return_nulls&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_the_same_message" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_SessionVariables.TestSessionVariables.test_get_function_returns_same_as_passed_values" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -105,21 +108,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_the_same_message&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_Practice.TestPractice.test_practice_player_leaves_loop_if_they_cancel_practice" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="LanguageOfLove" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Practice.TestPractice.test_practice_player_leaves_loop_if_they_cancel_practice&quot;" />
+      <option name="_new_target" value="&quot;test_SessionVariables.TestSessionVariables.test_get_function_returns_same_as_passed_values&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -165,13 +154,27 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in tests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="LanguageOfLove" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/language_of_love/tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test_Menu.TestMenu" />
-        <item itemvalue="Python tests.Unittests for test_Practice.TestPractice" />
-        <item itemvalue="Python tests.Unittests for test_Practice.TestPractice.test_practice_player_leaves_loop_if_they_cancel_practice" />
-        <item itemvalue="Python tests.Unittests for test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_a_different_message" />
-        <item itemvalue="Python tests.Unittests for test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_the_same_message" />
+        <item itemvalue="Python tests.Unittests in tests" />
+        <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables.test_get_function_returns_same_as_passed_values" />
+        <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables.test_get_function_does_not_return_nulls" />
+        <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables.test_all_variables_return_values_when_none_passed" />
+        <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables" />
       </list>
     </recent_temporary>
   </component>
@@ -185,13 +188,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Big old rejig, file structure, references, testing, changes from to circleci to travis, plus lots of PEP">
-      <created>1564049820370</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1564049820370</updated>
     </task>
     <task id="LOCAL-00003" summary="Big old rejig, file structure, references, testing, changes from to circleci to travis, plus lots of PEP">
       <created>1564049857302</created>
@@ -529,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564557389508</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Updated default session variables">
+      <created>1564562308817</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1564562308817</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -546,7 +549,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added missing files to repo" />
     <MESSAGE value="Update travis.yml" />
     <MESSAGE value="Updated test" />
     <MESSAGE value="Updated test to check for travis failures" />
@@ -571,7 +573,8 @@
     <MESSAGE value="Reworking the lambda function menu" />
     <MESSAGE value="Added audio package" />
     <MESSAGE value="Added luanch audio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added luanch audio" />
+    <MESSAGE value="Updated default session variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated default session variables" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

@@ -1,5 +1,6 @@
 from slots import AreaEnum
 from slots import GenderPreferenceEnum
+from practice_phrase import PracticePhrases
 
 
 class SessionVariables:
@@ -27,7 +28,7 @@ class SessionVariables:
         self.gender_preference = GenderPreferenceEnum(state_variables[
                                                           self.GENDER_PREFERENCE]) if self.GENDER_PREFERENCE in state_variables else GenderPreferenceEnum.both
         self.current_tutorial_phrase = state_variables[
-            self.CURRENT_TUTORIAL_PHRASE] if self.CURRENT_TUTORIAL_PHRASE in state_variables else None
+            self.CURRENT_TUTORIAL_PHRASE] if self.CURRENT_TUTORIAL_PHRASE in state_variables else PracticePhrases.EMPTY
         self.tutorial_repeat_or_new = state_variables[
             self.TUTORIAL_REPEAT_OR_NEW] if self.TUTORIAL_REPEAT_OR_NEW in state_variables else False
 
@@ -38,18 +39,17 @@ class SessionVariables:
             SessionVariables.NAME: "default",
             SessionVariables.AREA: AreaEnum.tutorial,
             SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both,
-            SessionVariables.CURRENT_TUTORIAL_PHRASE: None,
+            SessionVariables.CURRENT_TUTORIAL_PHRASE: PracticePhrases.EMPTY,
             SessionVariables.TUTORIAL_REPEAT_OR_NEW: False
         }
         return session_variables
 
-    @staticmethod
-    def get():
+    def get(self):
         return {
-            SessionVariables.FIRST_TIME: SessionVariables.first_time,
-            SessionVariables.NAME: SessionVariables.name,
-            SessionVariables.AREA: SessionVariables.area,
-            SessionVariables.GENDER_PREFERENCE: SessionVariables.gender_preference,
-            SessionVariables.CURRENT_TUTORIAL_PHRASE: SessionVariables.current_tutorial_phrase,
-            SessionVariables.TUTORIAL_REPEAT_OR_NEW: SessionVariables.tutorial_repeat_or_new,
+            SessionVariables.FIRST_TIME: self.first_time,
+            SessionVariables.NAME: self.name,
+            SessionVariables.AREA: self.area,
+            SessionVariables.GENDER_PREFERENCE: self.gender_preference,
+            SessionVariables.CURRENT_TUTORIAL_PHRASE: self.current_tutorial_phrase,
+            SessionVariables.TUTORIAL_REPEAT_OR_NEW: self.tutorial_repeat_or_new,
         }

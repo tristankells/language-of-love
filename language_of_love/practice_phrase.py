@@ -5,6 +5,7 @@ class PracticePhrases():
     WHAT_IS_YOUR_NAME = "what_is_your_name"
     WHERE_ARE_YOU_FROM = "where_are_you_from"
     WHAT_IS_YOUR_JOB = "what_is_your_job"
+    EMPTY = "empty"
 
     def get_speech_text(phrase_key):
         phrases_dict = {
