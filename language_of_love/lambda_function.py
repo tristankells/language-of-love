@@ -150,12 +150,15 @@ def handle_date(handler_input):
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     z = int(session_attr.conversation)
     y = int(session_attr.place)
-    print("function z,y = " + str(z) + " " + str(y))
-    speech_text = ResponseDict[IntentList[z][y]]
-
     if y == 1:
+        y = 0
         session_attr.place = 0
         session_attr.conversation = 'None'
+    if y == 0:
+        y = 1
+        session_attr.place = 1
+    print("function z,y = " + str(z) + " " + str(y))
+    speech_text = ResponseDict[IntentList[z][y]]
     handler_input.attributes_manager.session_attributes = session_attr.get()
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
