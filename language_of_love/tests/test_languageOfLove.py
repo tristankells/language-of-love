@@ -16,7 +16,7 @@ class TestLanguageOfLove(unittest.TestCase):
 
     def test_my_name_is__in_tutorial(self):
         session_variables = SessionVariables({
-            SessionVariables.AREA: AreaEnum.tutorial.value
+            SessionVariables.AREA: AreaEnum.introduction.value
         })
 
         response = LanguageOfLove.Answers.my_name_is(session_variables)

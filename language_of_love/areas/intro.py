@@ -2,10 +2,10 @@ from slots import AreaEnum
 from alexa_talk_translator import Translator
 from response import Response
 from intents import Intents
+from response_handler import response_handler
 
-class Tutorial:
 
-    @staticmethod
+def Introduction(intent_name, session_variables):
     def my_name_is(session_variables):
         """
         Handlers when the player responds with there name
@@ -14,7 +14,6 @@ class Tutorial:
 
         return Response(speech_text, session_variables=session_variables)
 
-    @staticmethod
     def where_are_you_from(session_variables):
         """
         Handler when the player ask's their date where they are from
@@ -25,8 +24,7 @@ class Tutorial:
 
         return Response(speech_text, session_variables=session_variables)
 
-    @staticmethod
-    def error(session_variables):
+    def fallback(session_variables):
         """
         Handler when the player ask's their date where they are from
         """
@@ -35,21 +33,9 @@ class Tutorial:
 
         return Response(speech_text, session_variables=session_variables)
 
-    @staticmethod
-    def request_handler(intent_name, session_variables):
-        """
-        Maps the intent of to a the appropriate tutorial response
-        :param intent_name: The name of the intent. 'AnswerNameIntent' or 'QuestionWhereYouFromIntent' for example
-        :param session_variables: The SessionVariables object passed from the lambda function
-        :return: a Response
-        """
-        intent_dictionary = {
-            Intents.ANSWER_NAME: Tutorial.my_name_is,
-            Intents.QUESTION_WHERE_YOU_FROM: Tutorial.where_are_you_from
-        }
+    intent_dictionary = {
+        Intents.ANSWER_NAME: my_name_is,
+        Intents.QUESTION_WHERE_YOU_FROM: where_are_you_from
+    }
 
-        if intent_name in intent_dictionary:
-            return intent_dictionary[intent_name](session_variables)
-
-        else:
-            return Tutorial.error(session_variables)
+    return response_handler(intent_name, intent_dictionary, session_variables, fallback)
