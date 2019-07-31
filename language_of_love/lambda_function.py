@@ -16,6 +16,7 @@ from slots import AreaEnum
 from areas.tutorial import Tutorial
 from areas.menu import Menu
 
+import json
 from love import LanguageOfLove
 from date_intents import conversations
 
@@ -145,9 +146,9 @@ def tutorial_handler(handler_input):
 def can_handle(self, handler_input):
     # type: (HandlerInput) -> bool
     global z
-    z = 2
+    z = 0
     global y
-    y = 2
+    y = 0
 
     global session_attr  # Load up conversation and point in conversation
     session_attr = handler_input.attributes_manager.session_attributes
