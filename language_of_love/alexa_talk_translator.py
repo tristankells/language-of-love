@@ -1,9 +1,11 @@
+from audio import Audio
+
 class Translator:
     """
     Translator with full game dialog, but spoken by Alexa. Useful for player 
     testing before recording lines
     """
-    launch = "Language of Love Launched. Welcome back, what do you want to do?"
+    launch = Audio.tutorial
 
     launch_first_time = (
         "Language of Love Launched. Because this is your first time, lets play the tutorial. Let's practice some basic Spanish Greetings. What's your name? como te llamas?")

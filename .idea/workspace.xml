@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/language_of_love/audio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/intents.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/intents.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/alexa_talk_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/alexa_talk_translator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -525,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564553540137</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Added audio package">
+      <created>1564556657911</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1564556657911</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -542,7 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="New github repo" />
     <MESSAGE value="Big old rejig, file structure, references, testing, changes from to circleci to travis, plus lots of PEP" />
     <MESSAGE value="Added missing files to repo" />
     <MESSAGE value="Update travis.yml" />
@@ -567,7 +571,8 @@
     <MESSAGE value="Added menu class" />
     <MESSAGE value="Added practice class" />
     <MESSAGE value="Reworking the lambda function menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworking the lambda function menu" />
+    <MESSAGE value="Added audio package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added audio package" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
