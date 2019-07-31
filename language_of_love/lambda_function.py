@@ -162,7 +162,7 @@ def can_handle(handler_input):
             session_attr.place = 1
     z = int(session_attr.conversation)
     y = int(session_attr.place)
-    handler_input.attributes_manager.session_attributes = response.session_attr.get()
+    handler_input.attributes_manager.session_attributes = session_attr.get()
     print(IntentList[z][y])
     return is_intent_name(IntentList[z][y])(handler_input)
 
@@ -170,13 +170,13 @@ def handle(self, handler_input):
     # type: (HandlerInput) -> Response
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     z = int(session_attr.conversation)
-    y = int(session_attr.place)
+    y = int(session_attr.place) + 1
     speech_text = ResponseDict[IntentList[z][y]]
 
     if y == 1:
         session_attr.place = 0
         session_attr.conversation = 'None'
-    handler_input.attributes_manager.session_attributes = response.session_attr.get()
+    handler_input.attributes_manager.session_attributes = session_attr.get()
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
         False)
