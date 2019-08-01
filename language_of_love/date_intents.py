@@ -8,7 +8,7 @@ IntentList = [["QuestionWhereYouFromIntent", "AnswerWhereYouFromIntent"],
 
 ResponseDict = {"QuestionWhereYouFromIntent": Audio.Q_tessa_i_am_from_Wellington + Audio.Q_tessa_where_are_you_from,
                 "AnswerWhereYouFromIntent": "I love that place",
-                "QuestionJobIntent": "I am a doctor, what do you do?",
+                "QuestionJobIntent": Audio.Q_tessa_I_am_lawyer + Audio.Q_tessa_What_is_your_job,
                 "AnswerMyJobIntent": "Great",
                 }
 
