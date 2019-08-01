@@ -32,7 +32,7 @@ class SessionVariables:
         self.gender_preference = GenderPreferenceEnum(state_variables[
                                                           self.GENDER_PREFERENCE]) if self.GENDER_PREFERENCE in state_variables else GenderPreferenceEnum.both
         self.current_tutorial_phrase = state_variables[
-            self.CURRENT_PRACTICE_PHRASE] if self.CURRENT_PRACTICE_PHRASE in state_variables else PracticePhrases.EMPTY
+            self.CURRENT_PRACTICE_PHRASE] if self.CURRENT_PRACTICE_PHRASE in state_variables else PracticePhrases.WHAT_IS_YOUR_NAME
         self.tutorial_repeat_or_new = state_variables[
             self.PRACTICE_REPEAT_OR_NEW] if self.PRACTICE_REPEAT_OR_NEW in state_variables else False
 
@@ -45,7 +45,7 @@ class SessionVariables:
             SessionVariables.NAME: "default",
             SessionVariables.AREA: AreaEnum.introduction,
             SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both,
-            SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.EMPTY,
+            SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.WHAT_IS_YOUR_NAME,
             SessionVariables.PRACTICE_REPEAT_OR_NEW: False,
             SessionVariables.CONVERSATION: 'None',
             SessionVariables.PLACE: 0
