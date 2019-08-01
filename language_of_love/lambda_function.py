@@ -157,6 +157,8 @@ def handle_date(handler_input):
         y = 0
         session_attr.place = 0
         session_attr.conversation = 'None'
+    if y == 0:
+        y = 1
     handler_input.attributes_manager.session_attributes = session_attr.get()
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
