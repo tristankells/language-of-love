@@ -43,7 +43,7 @@ class SessionVariables:
         session_variables = {
             SessionVariables.FIRST_TIME: True,
             SessionVariables.NAME: "default",
-            SessionVariables.AREA: AreaEnum.introduction,
+            SessionVariables.AREA: AreaEnum.speed_date,
             SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both,
             SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.WHAT_IS_YOUR_NAME,
             SessionVariables.PRACTICE_REPEAT_OR_NEW: False,
