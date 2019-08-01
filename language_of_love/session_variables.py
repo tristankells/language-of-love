@@ -37,7 +37,7 @@ class SessionVariables:
             self.PRACTICE_REPEAT_OR_NEW] if self.PRACTICE_REPEAT_OR_NEW in state_variables else False
 
         self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else True
-        self.place = state_variables[self.PLACE] if self.place in state_variables else 0
+        self.place = state_variables[self.PLACE]
     @staticmethod
     def get_initial():
         session_variables = {

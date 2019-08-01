@@ -1,6 +1,7 @@
 import json
+from audio import Audio
 
-IntentList = [["QuestionWhereYouFromIntent", "AnswerWhereYouFromIntent"],
+IntentList = [["QuestionWhereYouFromIntent", Audio.Q_tessa_i_am_from_Wellington],
               ["QuestionJobIntent", "AnswerMyJobIntent"],
               ["QuestionAnimalsIntent", "AnswerAnimalIntent"]
               ]
