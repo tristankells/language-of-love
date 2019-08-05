@@ -34,6 +34,8 @@ class Translator():
 
         what_is_your_job = Audio.Q_s_lecturer_what_profession + Audio.Q_e_lecturer_what_profession + new_or_repeat
 
+        end = "Practice over. Good luck out there hope you find love"
+
         fallback = "Sorry didn't understand that " + new_or_repeat
 
     class SpeedDate:
