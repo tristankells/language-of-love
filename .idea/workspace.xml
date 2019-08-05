@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/areas/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/areas/practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/intents.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/intents.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/language_of_love/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/lambda_function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/love.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/love.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/practice_phrase.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/practice_phrases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/response_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,13 +189,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Trying to get deployment to work">
-      <created>1564186119008</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1564186119008</updated>
     </task>
     <task id="LOCAL-00021" summary="Removed some files stopping deployment ad changed reference type">
       <created>1564190934421</created>
@@ -524,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564998491580</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Changed lambda calls to practice and introdcution areas">
+      <created>1564998978687</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1564998978687</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -555,7 +564,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed files references" />
     <MESSAGE value="Changed refernce again, changed the name of the file, testing travis" />
     <MESSAGE value="Removed test translator file" />
     <MESSAGE value="Added default values for SessionVariables to support testing. Added a tutorial reply for answering with your name." />
@@ -580,7 +588,8 @@
     <MESSAGE value="Big refactor on the area classes. Removing failing unit tests for now" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;language_of_love/alexa_talk_translator.py&#10;#&#9;language_of_love/areas/intro.py&#10;#&#9;language_of_love/areas/menu.py&#10;#&#9;language_of_love/areas/practice.py&#10;#&#9;language_of_love/areas/tutorial.py&#10;#&#9;language_of_love/love.py&#10;#&#9;language_of_love/practice_phrase.py&#10;#&#9;language_of_love/session_variables.py&#10;#&#9;language_of_love/tests/test_Menu.py&#10;#&#9;language_of_love/tests/test_Practice.py&#10;#&#9;language_of_love/tests/test_Tutorial.py&#10;#&#9;language_of_love/translators/alexa_talk_translator.py&#10;#&#9;language_of_love/translators/production_translator.py&#10;#&#9;language_of_love/translators/test_translator.py" />
     <MESSAGE value="Moved broken tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved broken tests" />
+    <MESSAGE value="Changed lambda calls to practice and introdcution areas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed lambda calls to practice and introdcution areas" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

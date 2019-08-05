@@ -11,3 +11,4 @@ class Intents:
     CANCEL = "AMAZON.CancelIntent"
     REPEAT = "RepeatPracticePhraseIntent"
     NEW_PHRASE = "NewPracticePhraseIntent"
+    HELP = "AMAZON.Help"

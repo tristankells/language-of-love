@@ -20,7 +20,11 @@ class Menu(Area):
         self.session_variables.area = AreaEnum.speed_date
         self.speech_text = self.translator.SpeedDate.begin
 
+    def help(self):
+        self.speech_text = Area.translator.Menu.fallback
+
     Area.intent_dictionary = {
         Intents.START_PRACTICE: start_practice,
-        Intents.START_SPEED_DATE: start_speed_date
+        Intents.START_SPEED_DATE: start_speed_date,
+        Intents.HELP: help
     }

@@ -4,7 +4,7 @@ import slots
 from intents import Intents
 from translators.test_translator import TestTranslator
 from areas.practice import Practice
-from practice_phrase import PracticePhrases
+from practice_phrases import PracticePhrases
 
 
 class TestPractice(unittest.TestCase):

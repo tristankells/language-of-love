@@ -91,6 +91,7 @@ def menu_handler(handler_input):
     """
     Menu handlers
     """
+    # type: (HandlerInput) -> Response
     intent_name = get_intent_name(handler_input)
     session_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
 
@@ -111,6 +112,7 @@ def tutorial_handler(handler_input):
     """
     Tutorial handlers
     """
+    # type: (HandlerInput) -> Response
     intent_name = get_intent_name(handler_input)
     session_variables = handler_input.attributes_manager.session_attributes
 
@@ -130,6 +132,8 @@ def practice_handler(handler_input):
     """
     Practice handlers
     """
+    # type: (HandlerInput) -> Response
+
     intent_name = get_intent_name(handler_input)
     session_variables = handler_input.attributes_manager.session_attributes
 
