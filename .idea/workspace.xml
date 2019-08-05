@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="Comme">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/areas/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/translators/production_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/translators/production_translator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/translators/test_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/translators/test_translator.py" afterDir="false" />
-    </list>
+    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,13 +177,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Changed references">
-      <created>1564296883339</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1564296883339</updated>
     </task>
     <task id="LOCAL-00034" summary="Changed references">
       <created>1564297143654</created>
@@ -526,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565005493579</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Comme">
+      <created>1565006635216</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1565006635216</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -557,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made tutorial class, added new tests" />
     <MESSAGE value="Added menu class" />
     <MESSAGE value="Added practice class" />
     <MESSAGE value="Reworking the lambda function menu" />
@@ -582,7 +576,8 @@
     <MESSAGE value="Swapped to production translator, added some more audio" />
     <MESSAGE value="Fixed broken test" />
     <MESSAGE value="Fixed some misplaced audio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed some misplaced audio" />
+    <MESSAGE value="Comme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comme" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
