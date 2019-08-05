@@ -112,9 +112,9 @@ def tutorial_handler(handler_input):
     Tutorial handlers
     """
     intent_name = get_intent_name(handler_input)
-    session_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
+    session_variables = handler_input.attributes_manager.session_attributes
 
-    response = Introduction(intent_name, session_variables)
+    response = Introduction(intent_name, session_variables).get_response()
 
     if response.session_variables is not None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get()
@@ -131,9 +131,9 @@ def practice_handler(handler_input):
     Practice handlers
     """
     intent_name = get_intent_name(handler_input)
-    session_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
+    session_variables = handler_input.attributes_manager.session_attributes
 
-    response = Practice(intent_name, session_variables)
+    response = Practice(intent_name, session_variables).get_response()
 
     if response.session_variables is not None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get()
@@ -174,58 +174,6 @@ def handle_date_problems(handler_input):
         False)
     return handler_input.response_builder.response
 
-# # # Date request_handlers # # # 
-# region
-@sb.request_handler(can_handle_func=is_intent_name("StartSpeedDateIntent"))
-def start_speed_date_handler(handler_input):
-    """
-    Handler for starting speed dating
-    """
-    # type: (HandlerInput) -> Response
-
-    language_of_love.handleStartDate()
-
-    handler_input.response_builder.speak(language_of_love.Response).ask("Ask")
-
-    return handler_input.response_builder.response
-
-
-# endregion
-
-# # # Practice request_handlers # # # 
-# region
-@sb.request_handler(can_handle_func=is_intent_name("StartPracticeIntent"))
-def start_practice_handler(handler_input):
-    """
-    Handler for starting practice
-    """
-    # type: (HandlerInput) -> Response
-
-    language_of_love.handleStartPractice()
-
-    handler_input.response_builder.speak(language_of_love.Response).ask("Ask")
-
-    return handler_input.response_builder.response
-
-
-# endregion
-
-
-#
-#  MOVE INTENT
-#                                 
-
-@sb.request_handler(can_handle_func=lambda input:
-is_intent_name("MoveIntent")(input))
-def movement_handler(handler_input):
-    """Handler for processing guess with target."""
-    # type: (HandlerInput) -> Response
-
-    direction = str(handler_input.request_envelope.request.intent.slots["movement"].value)  # value of movement slot
-
-    game_variables = handler_input.attributes_manager.session_attributes  # session variables
-
-    return handler_input.response_builder.response
 
 
 @sb.request_handler(
