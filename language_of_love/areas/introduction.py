@@ -4,7 +4,7 @@ from areas.area import Area
 
 
 class Introduction(Area):
-    Area.speech_text = Area.translator.Introduction.fallback
+    speech_text = Area.translator.Introduction.fallback
 
     def my_name_is(self):
         """
@@ -13,6 +13,6 @@ class Introduction(Area):
         self.speech_text = self.translator.Introduction.answer_to_your_name
         self.session_variables.area = AreaEnum.menu
 
-    Area.intent_dictionary = {
+    intent_dictionary = {
         Intents.ANSWER_NAME: my_name_is
     }

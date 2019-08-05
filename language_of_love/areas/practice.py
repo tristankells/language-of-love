@@ -10,7 +10,7 @@ class Practice(Area):
     """
     While in the practice area of the game, maps the intents to appropriate response
     """
-    Area.speech_text = Area.translator.Practice.fallback
+    speech_text = Area.translator.Practice.fallback
 
     @staticmethod
     def get_new_phrase(current_phrase_key):
@@ -59,7 +59,7 @@ class Practice(Area):
         self.session_variables.area = AreaEnum.menu
         self.speech_text = self.translator.Practice.end + " " + self.translator.Menu.options
 
-    Area.intent_dictionary = {
+    intent_dictionary = {
         Intents.NEW_PHRASE: new_phrase,
         Intents.REPEAT: repeat_phrase,
         Intents.CANCEL: end_tutorial

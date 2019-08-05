@@ -10,7 +10,7 @@ class Menu(Area):
     :param session_variables: The SessionVariables object passed from the lambda function
     :return: a Response
     """
-    Area.speech_text = Area.translator.Menu.fallback
+    speech_text = Area.translator.Menu.fallback
 
     def start_practice(self):
         self.session_variables.area = AreaEnum.practice
@@ -23,7 +23,7 @@ class Menu(Area):
     def help(self):
         self.speech_text = Area.translator.Menu.fallback
 
-    Area.intent_dictionary = {
+    intent_dictionary = {
         Intents.START_PRACTICE: start_practice,
         Intents.START_SPEED_DATE: start_speed_date,
         Intents.HELP: help

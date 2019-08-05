@@ -95,7 +95,7 @@ def menu_handler(handler_input):
     intent_name = get_intent_name(handler_input)
     session_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
 
-    response = Menu(intent_name, session_variables)
+    response = Menu(intent_name, session_variables).get_response()
 
     if response.session_variables is not None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get()
