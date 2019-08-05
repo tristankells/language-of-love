@@ -51,39 +51,18 @@ def launch_request_handler(handler_input):
 
     return handler_input.response_builder.response
 
-
-# # # GENERAL request_handlers # # #
-# region
-@sb.request_handler(can_handle_func=is_intent_name("AMAZON.HelpIntent"))
-def help_intent_handler(handler_input):
-    """Handler for Help Intent."""
-    # type: (HandlerInput) -> Response
-
-    state_variables = handler_input.attributes_manager.persistent_attributes
-
-    language_of_love.setup(state_variables)
-
-    language_of_love.handleHelpInput()
-
-    handler_input.response_builder.speak(language_of_love.Response)
-
-    handler_input.attributes_manager.session_attributes = language_of_love.getStateVariables()
-
-    return handler_input.response_builder.response
-
-
-
-
-
 def player_area(handler_input):
     """
     Takes the handler_input and returns an AreaEnum representing what area the play is in
     :param handler_input:
     :return: a AreaEnum representing the players current area
     """
-    session_variables = handler_input.attributes_manager.session_attributes
-
-    return AreaEnum(session_variables[SessionVariables.AREA])
+    if SessionVariables.AREA in handler_input.attributes_manager.session_attributes:
+        session_variables = handler_input.attributes_manager.session_attributes
+        area = session_variables[SessionVariables.AREA]
+    else:
+        area = 0
+    return AreaEnum(area)
 
 
 @sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.menu)
@@ -101,7 +80,7 @@ def menu_handler(handler_input):
         handler_input.attributes_manager.session_attributes = response.session_variables.get()
     else:
         handler_input.attributes_manager.session_attributes = session_variables.get()
-    handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
+    handler_input.response_builder.speak(response.speech_text).ask("Say again")
 
     return handler_input.response_builder.response
 
@@ -121,7 +100,7 @@ def tutorial_handler(handler_input):
     if response.session_variables is not None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get()
 
-    handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
+    handler_input.response_builder.speak(response.speech_text).ask("Say again")
 
     return handler_input.response_builder.response
 
@@ -142,7 +121,7 @@ def practice_handler(handler_input):
     if response.session_variables is not None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get()
 
-    handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
+    handler_input.response_builder.speak(response.speech_text).ask("Say again")
 
     return handler_input.response_builder.response
 
@@ -294,7 +273,7 @@ def unhandled_intent_handler(handler_input):
     """Handler for all other unhandled requests."""
     # type: (HandlerInput) -> Response
     speech = "Say yes to continue or no to end the game!!"
-    handler_input.response_builder.speak(speech).ask(speech)
+    handler_input.response_builder.speak(speech).ask("Say again")
     return handler_input.response_builder.response
 
 
@@ -306,7 +285,7 @@ def all_exception_handler(handler_input, exception):
     # type: (HandlerInput, Exception) -> Response
     logger.error(exception, exc_info=True)
     speech = "Sorry, I can't understand that. Please say again!!"
-    handler_input.response_builder.speak(speech).ask(speech)
+    handler_input.response_builder.speak(speech).ask("Say again")
     return handler_input.response_builder.response
 
 
