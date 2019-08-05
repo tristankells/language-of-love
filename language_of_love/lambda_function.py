@@ -190,7 +190,7 @@ def cancel_and_stop_intent_handler(handler_input):
     speech_text = "Thanks for playing!!"
 
     handler_input.response_builder.speak(
-        speech_text).set_should_end_session(True)
+        speech_text).ask("Please say again").set_should_end_session(True)
     return handler_input.response_builder.response
 
 
