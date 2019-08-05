@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/language_of_love/translators/test_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/translators/test_translator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/areas/practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/practice_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/practice_phrases.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,13 +180,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Changing references again to fix broken pipeline test">
-      <created>1564197064056</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1564197064056</updated>
     </task>
     <task id="LOCAL-00027" summary="Updated the deploy script">
       <created>1564197860084</created>
@@ -523,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565001644637</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Changed the order of english spanish in practice phrases">
+      <created>1565001956057</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1565001956057</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +555,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated the deploy script" />
     <MESSAGE value="Added launch tests" />
     <MESSAGE value="Updated the AnswerNameIntent" />
     <MESSAGE value="Added test setup class" />
@@ -579,7 +579,8 @@
     <MESSAGE value="Fixed session variables bug" />
     <MESSAGE value="Adding starting practice phrase as what is your name" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Changed the order of english spanish in practice phrases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the order of english spanish in practice phrases" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

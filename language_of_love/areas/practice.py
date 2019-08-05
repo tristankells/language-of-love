@@ -1,5 +1,4 @@
 from intents import Intents
-from response import Response
 from slots import AreaEnum
 import random
 from practice_phrases import PracticePhrases
