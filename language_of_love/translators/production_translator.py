@@ -39,7 +39,7 @@ class Translator():
         fallback = "Sorry didn't understand that " + new_or_repeat
 
     class SpeedDate:
-        begin = "Speed date begun. Have fun and good luck"
+        begin = "<voice name='Kendra'>Speed date begun. Try asking your date a question</voice>"
 
     class Error:
         bad_option = "Not an option right now."

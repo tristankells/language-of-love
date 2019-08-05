@@ -39,7 +39,7 @@ class TestTranslator():
         fallback = "Sorry didn't understand that, would you like a new phrase or to repeat a phrase?"
 
     class SpeedDate:
-        begin = "Your speed date has begun, ask a question"
+        begin = "Dates are not quiet up and running yet, come back soon"
 
     class Error:
         bad_option = "Not an option right now."

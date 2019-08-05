@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
+    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="Comme">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/areas/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/language_of_love/translators/production_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/translators/production_translator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/translators/test_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/translators/test_translator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,13 +182,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Added test setup class">
-      <created>1564295641794</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1564295641794</updated>
     </task>
     <task id="LOCAL-00033" summary="Changed references">
       <created>1564296883339</created>
@@ -523,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565005135893</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Fixed some misplaced audio">
+      <created>1565005493579</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1565005493579</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Testing" />
     <MESSAGE value="Made tutorial class, added new tests" />
     <MESSAGE value="Added menu class" />
     <MESSAGE value="Added practice class" />
@@ -579,7 +581,8 @@
     <MESSAGE value="Added leave as a new skill intent" />
     <MESSAGE value="Swapped to production translator, added some more audio" />
     <MESSAGE value="Fixed broken test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed broken test" />
+    <MESSAGE value="Fixed some misplaced audio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some misplaced audio" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
