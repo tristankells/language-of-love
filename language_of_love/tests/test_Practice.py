@@ -33,11 +33,11 @@ class TestPractice(unittest.TestCase):
         response = Practice(Intents.NEW_PHRASE, session_variables).get_response()
 
         # Confirm player still in tutorial
-        self.assertEqual(response.session_variables.area, slots.AreaEnum.practice)
+        self.assertEqual(slots.AreaEnum.practice, response.session_variables.area)
         # Confirm player out of repeat loop
-        self.assertEqual(response.session_variables.tutorial_repeat_or_new, False)
+        self.assertEqual(False, response.session_variables.tutorial_repeat_or_new, )
         # Confirm player gets a different message
-        self.assertNotEqual(response.speech_text, PracticePhrases.get_speech_text(PracticePhrases.WHAT_IS_YOUR_NAME))
+        self.assertNotEqual(PracticePhrases.get_speech_text(PracticePhrases.WHAT_IS_YOUR_NAME), response.speech_text, )
 
     def test_practice_player_leaves_loop_if_they_cancel_practice(self):
         session_variables = {

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/language_of_love/areas/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,21 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in tests">
-    <configuration name="Unittests for test_Introduction.TestIntroduction" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="LanguageOfLove" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/broken_tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Introduction.TestIntroduction&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests for test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_a_different_message">
     <configuration name="Unittests for test_Menu.TestMenu.test_bad_intent_give_correct_response" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -100,6 +84,20 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_a_different_message" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="LanguageOfLove" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_a_different_message&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests in C:/Users/trist/Desktop/language-of-love/language_of_love/tests/test_languageOfLove.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,7 +113,7 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in test_Introduction.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in test_Practice.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -125,7 +123,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/language_of_love/broken_tests/test_Introduction.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/language_of_love/tests/test_Practice.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -145,19 +143,19 @@
     </configuration>
     <list>
       <item itemvalue="Python tests.Unittests in C:/Users/trist/Desktop/language-of-love/language_of_love/tests/test_languageOfLove.py" />
-      <item itemvalue="Python tests.Unittests in test_Introduction.py" />
-      <item itemvalue="Python tests.Unittests for test_Introduction.TestIntroduction" />
       <item itemvalue="Python tests.Unittests for test_Menu.TestMenu.test_begin_speed_date_give_correct_response" />
       <item itemvalue="Python tests.Unittests for test_Menu.TestMenu.test_bad_intent_give_correct_response" />
       <item itemvalue="Python tests.Unittests in tests" />
+      <item itemvalue="Python tests.Unittests in test_Practice.py" />
+      <item itemvalue="Python tests.Unittests for test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_a_different_message" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test_Practice.TestPractice.test_practice_if_player_ask_to_repeat_they_get_a_different_message" />
+        <item itemvalue="Python tests.Unittests in test_Practice.py" />
         <item itemvalue="Python tests.Unittests in tests" />
         <item itemvalue="Python tests.Unittests for test_Menu.TestMenu.test_bad_intent_give_correct_response" />
         <item itemvalue="Python tests.Unittests for test_Menu.TestMenu.test_begin_speed_date_give_correct_response" />
-        <item itemvalue="Python tests.Unittests in test_Introduction.py" />
-        <item itemvalue="Python tests.Unittests for test_Introduction.TestIntroduction" />
       </list>
     </recent_temporary>
   </component>
@@ -181,13 +179,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Removed test translator file">
-      <created>1564193674659</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1564193674659</updated>
     </task>
     <task id="LOCAL-00025" summary="Added default values for SessionVariables to support testing. Added a tutorial reply for answering with your name.">
       <created>1564195188793</created>
@@ -525,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565000753300</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Adding starting practice phrase as what is your name">
+      <created>1565001200983</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1565001200983</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -556,7 +554,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added default values for SessionVariables to support testing. Added a tutorial reply for answering with your name." />
     <MESSAGE value="Changing references again to fix broken pipeline test" />
     <MESSAGE value="Updated the deploy script" />
     <MESSAGE value="Added launch tests" />
@@ -581,7 +578,8 @@
     <MESSAGE value="Changed lambda calls to practice and introdcution areas" />
     <MESSAGE value="Changed starting area back to introduction" />
     <MESSAGE value="Fixed session variables bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed session variables bug" />
+    <MESSAGE value="Adding starting practice phrase as what is your name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding starting practice phrase as what is your name" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

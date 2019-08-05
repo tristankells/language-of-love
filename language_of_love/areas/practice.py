@@ -39,18 +39,18 @@ class Practice(Area):
         """
         Handle when the player asks for a new phrase in the "repeat or new" practice loop
         """
-        current_phrase_key = self.session_variables.current_tutorial_phrase
+        current_phrase_key = self.session_variables.current_practice_phrase
         new_phrase_key = self.get_new_phrase(current_phrase_key)
         self.speech_text = PracticePhrases.get_speech_text(new_phrase_key)
 
-        self.session_variables.current_tutorial_phrase = new_phrase_key
+        self.session_variables.current_practice_phrase = new_phrase_key
         self.session_variables.tutorial_repeat_or_new = False
 
     def repeat_phrase(self):
         """
         Handle when the player asks for phrase to be repeated in the "repeat or new" practice loop
         """
-        phrase_key = self.session_variables.current_tutorial_phrase
+        phrase_key = self.session_variables.current_practice_phrase
         self.speech_text = PracticePhrases.get_speech_text(phrase_key)
         self.session_variables.tutorial_repeat_or_new = False
 
