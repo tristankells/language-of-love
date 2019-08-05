@@ -16,7 +16,7 @@ class TestSessionVariables(unittest.TestCase):
         self.assertIsNotNone(session_variables.first_time, msg="First should never be null")
         self.assertIsNotNone(session_variables.tutorial_repeat_or_new,
                              msg="Tutorial repeat or null should never be null")
-        self.assertIsNotNone(session_variables.current_tutorial_phrase, msg="Tutorial phrases should never be null")
+        self.assertIsNotNone(session_variables.current_practice_phrase, msg="Tutorial phrases should never be null")
         self.assertIsNotNone(session_variables.gender_preference, msg="Gender preferences should never be null")
 
     def test_get_function_does_not_return_None_values(self):

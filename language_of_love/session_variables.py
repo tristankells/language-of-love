@@ -22,7 +22,7 @@ class SessionVariables:
     name = None
     area = None
     gender_preference = None
-    current_tutorial_phrase = None
+    current_practice_phrase = None
     tutorial_repeat_or_new = None
 
     def __init__(self, state_variables):
@@ -31,7 +31,7 @@ class SessionVariables:
         self.area = AreaEnum(state_variables[self.AREA]) if self.AREA in state_variables else AreaEnum.speed_date
         self.gender_preference = GenderPreferenceEnum(state_variables[
                                                           self.GENDER_PREFERENCE]) if self.GENDER_PREFERENCE in state_variables else GenderPreferenceEnum.both
-        self.current_tutorial_phrase = state_variables[
+        self.current_practice_phrase = state_variables[
             self.CURRENT_PRACTICE_PHRASE] if self.CURRENT_PRACTICE_PHRASE in state_variables else PracticePhrases.EMPTY
         self.tutorial_repeat_or_new = state_variables[
             self.PRACTICE_REPEAT_OR_NEW] if self.PRACTICE_REPEAT_OR_NEW in state_variables else False
@@ -58,7 +58,7 @@ class SessionVariables:
             SessionVariables.NAME: self.name,
             SessionVariables.AREA: self.area,
             SessionVariables.GENDER_PREFERENCE: self.gender_preference,
-            SessionVariables.CURRENT_PRACTICE_PHRASE: self.current_tutorial_phrase,
+            SessionVariables.CURRENT_PRACTICE_PHRASE: self.current_practice_phrase,
             SessionVariables.PRACTICE_REPEAT_OR_NEW: self.tutorial_repeat_or_new,
             SessionVariables.CONVERSATION: 'None',
             SessionVariables.PLACE: 0

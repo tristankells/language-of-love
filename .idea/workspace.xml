@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="" />
+    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/language_of_love/areas/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_SessionVariables.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,13 +181,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Changed refernce again, changed the name of the file, testing travis">
-      <created>1564192428018</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1564192428018</updated>
     </task>
     <task id="LOCAL-00024" summary="Removed test translator file">
       <created>1564193674659</created>
@@ -521,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565000423011</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Fixed session variables bug">
+      <created>1565000753300</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1565000753300</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +556,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed test translator file" />
     <MESSAGE value="Added default values for SessionVariables to support testing. Added a tutorial reply for answering with your name." />
     <MESSAGE value="Changing references again to fix broken pipeline test" />
     <MESSAGE value="Updated the deploy script" />
@@ -577,7 +580,8 @@
     <MESSAGE value="Moved broken tests" />
     <MESSAGE value="Changed lambda calls to practice and introdcution areas" />
     <MESSAGE value="Changed starting area back to introduction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed starting area back to introduction" />
+    <MESSAGE value="Fixed session variables bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed session variables bug" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
