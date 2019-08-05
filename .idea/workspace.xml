@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-    </list>
+    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +53,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_Menu.py">
-    <configuration name="Unittests for test_Introduction.TestIntroduction" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests in tests">
+    <configuration name="Unittests for broken_tests.test_Introduction.TestIntroduction" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,11 +64,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Introduction.TestIntroduction&quot;" />
+      <option name="_new_target" value="&quot;broken_tests.test_Introduction.TestIntroduction&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_Menu.TestMenu" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for broken_tests.test_Menu.TestMenu" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,7 +78,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Menu.TestMenu&quot;" />
+      <option name="_new_target" value="&quot;broken_tests.test_Menu.TestMenu&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -110,7 +107,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/language_of_love/tests/test_Introduction.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/language_of_love/broken_tests/test_Introduction.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -124,7 +121,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/language_of_love/tests/test_Menu.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/language_of_love/broken_tests/test_Menu.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -145,18 +142,18 @@
     <list>
       <item itemvalue="Python tests.Unittests in C:/Users/trist/Desktop/language-of-love/language_of_love/tests/test_languageOfLove.py" />
       <item itemvalue="Python tests.Unittests in tests" />
-      <item itemvalue="Python tests.Unittests for test_Introduction.TestIntroduction" />
-      <item itemvalue="Python tests.Unittests for test_Menu.TestMenu" />
+      <item itemvalue="Python tests.Unittests for broken_tests.test_Introduction.TestIntroduction" />
+      <item itemvalue="Python tests.Unittests for broken_tests.test_Menu.TestMenu" />
       <item itemvalue="Python tests.Unittests in test_Introduction.py" />
       <item itemvalue="Python tests.Unittests in test_Menu.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in tests" />
         <item itemvalue="Python tests.Unittests in test_Menu.py" />
         <item itemvalue="Python tests.Unittests in test_Introduction.py" />
-        <item itemvalue="Python tests.Unittests in tests" />
-        <item itemvalue="Python tests.Unittests for test_Introduction.TestIntroduction" />
-        <item itemvalue="Python tests.Unittests for test_Menu.TestMenu" />
+        <item itemvalue="Python tests.Unittests for broken_tests.test_Introduction.TestIntroduction" />
+        <item itemvalue="Python tests.Unittests for broken_tests.test_Menu.TestMenu" />
       </list>
     </recent_temporary>
   </component>
@@ -180,13 +177,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Trying to get deployment to work">
-      <created>1564183774976</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1564183774976</updated>
     </task>
     <task id="LOCAL-00019" summary="Trying to get deployment to work">
       <created>1564184311958</created>
@@ -524,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564998124691</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;language_of_love/alexa_talk_translator.py&#10;#&#9;language_of_love/areas/intro.py&#10;#&#9;language_of_love/areas/menu.py&#10;#&#9;language_of_love/areas/practice.py&#10;#&#9;language_of_love/areas/tutorial.py&#10;#&#9;language_of_love/love.py&#10;#&#9;language_of_love/practice_phrase.py&#10;#&#9;language_of_love/session_variables.py&#10;#&#9;language_of_love/tests/test_Menu.py&#10;#&#9;language_of_love/tests/test_Practice.py&#10;#&#9;language_of_love/tests/test_Tutorial.py&#10;#&#9;language_of_love/translators/alexa_talk_translator.py&#10;#&#9;language_of_love/translators/production_translator.py&#10;#&#9;language_of_love/translators/test_translator.py">
+      <created>1564998202944</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1564998202944</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
