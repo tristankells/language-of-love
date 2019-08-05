@@ -14,7 +14,7 @@ class Translator():
         fallback = "General fallback"
 
     class Introduction:
-        answer_to_your_name = Audio.welcome_2
+        answer_to_your_name = Audio.welcome_2 + Audio.pracrice_or_date
 
         fallback = "To finish the tutorial, please say your name"
 
@@ -26,7 +26,7 @@ class Translator():
     class Practice:
         begin = Audio.practice_start
 
-        new_or_repeat = Audio.pracrice_or_date
+        new_or_repeat = "Would you like to hear that phrase again, or try a new one?"
 
         what_is_your_name = Audio.Q_s_lecturer_what_name + Audio.Q_e_lecturer_what_name + new_or_repeat
 
