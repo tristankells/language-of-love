@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/audio.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/audio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/areas/practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/intents.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/intents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,13 +182,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Updated the deploy script">
-      <created>1564200693951</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1564200693951</updated>
     </task>
     <task id="LOCAL-00029" summary="Updated the deploy script">
       <created>1564203168008</created>
@@ -524,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565002242111</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Updated practice phrases function to include new practice phrase structure">
+      <created>1565003379529</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1565003379529</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

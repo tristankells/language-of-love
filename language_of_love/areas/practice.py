@@ -61,5 +61,6 @@ class Practice(Area):
     intent_dictionary = {
         Intents.NEW_PHRASE: new_phrase,
         Intents.REPEAT: repeat_phrase,
-        Intents.CANCEL: end_tutorial
+        Intents.CANCEL: end_tutorial,
+        Intents.LEAVE: end_tutorial
     }

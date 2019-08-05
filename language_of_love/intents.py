@@ -12,3 +12,4 @@ class Intents:
     REPEAT = "RepeatPracticePhraseIntent"
     NEW_PHRASE = "NewPracticePhraseIntent"
     HELP = "AMAZON.Help"
+    LEAVE = "LeaveAreaIntent"
