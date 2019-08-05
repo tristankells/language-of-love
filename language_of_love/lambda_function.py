@@ -93,7 +93,7 @@ def menu_handler(handler_input):
     """
     # type: (HandlerInput) -> Response
     intent_name = get_intent_name(handler_input)
-    session_variables = SessionVariables(handler_input.attributes_manager.session_attributes)
+    session_variables = handler_input.attributes_manager.session_attributes
 
     response = Menu(intent_name, session_variables).get_response()
 
