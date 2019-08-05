@@ -27,6 +27,7 @@ IntentList, ResponseDict = json.loads(IntentList), json.loads(ResponseDict)
 
 from session_variables import SessionVariables
 
+
 def can_handle_date(handler_input):
     # type: (HandlerInput) -> bool
 
