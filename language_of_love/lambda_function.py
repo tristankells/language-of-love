@@ -20,6 +20,7 @@ from areas.practice import Practice
 import json
 from love import LanguageOfLove
 from date_intents import conversations
+from date_handler import can_handle_date
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
@@ -27,8 +28,8 @@ sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-IntentList, IntentDict = conversations()
-IntentList, IntentDict = json.loads(IntentList), json.loads(IntentDict)
+IntentList, ResponseDict = conversations()
+IntentList, ResponseDict = json.loads(IntentList), json.loads(ResponseDict)
 
 @sb.request_handler(can_handle_func=is_request_type("LaunchRequest"))
 def launch_request_handler(handler_input):
@@ -143,28 +144,35 @@ def practice_handler(handler_input):
 
 
 # Date intent handlers
-@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date)
-def can_handle(handler_input):
-    # type: (HandlerInput) -> bool
+@sb.request_handler(can_handle_func=lambda input: can_handle_date(input))
+def handle_date(handler_input):
+    # type: (HandlerInput) -> Response
+    session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
+    z = int(session_attr.conversation)
+    y = int(session_attr.place)
+    print("function z,y = " + str(z) + " " + str(y))
+    speech_text = ResponseDict[IntentList[z][y]]
 
-    session_attr = handler_input.attributes_manager.session_attributes
-    if session_attr[CONVERSATION] == 'None':
-        for x in range(0, len(IntentList)):
-            if is_intent_name(IntentList[x][0])(handler_input):
-                session_attr[CONVERSATION] = x
-                session_attr[PLACE] = 0
-                break
-        session_attr[CONVERSATION] = z  # set conversation
-
-    elif session_attr[CONVERSATION] != 'None':
-        z = session_attr[CONVERSATION]
-        if is_intent_name(IntentList[z][1])(handler_input):
-            session_attr[PLACE] = 1
-    z = int(session_attr[CONVERSATION])
-    y = int(session_attr[PLACE])
-    handler_input.attributes_manager.session_attributes = session_attr
-    return is_intent_name(IntentList[z][y])(handler_input)
+    if y == 1:
+        y = 0
+        session_attr.place = 0
+        session_attr.conversation = 'None'
+    if y == 0:
+        y = 1
+    handler_input.attributes_manager.session_attributes = session_attr.get()
+    handler_input.response_builder.speak(speech_text).set_card(
+        SimpleCard("Hello World", speech_text)).set_should_end_session(
+        False)
+    return handler_input.response_builder.response
 # endregion
+
+@sb.request_handler(can_handle_func=lambda input: not can_handle_date(input))
+def handle_date_problems(handler_input):
+    speech_text = "I don't know what you're saying"
+    handler_input.response_builder.speak(speech_text).set_card(
+        SimpleCard("Hello World", speech_text)).set_should_end_session(
+        False)
+    return handler_input.response_builder.response
 
 # # # Date request_handlers # # # 
 # region
