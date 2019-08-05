@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/language_of_love/areas/area.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/language_of_love/areas/introduction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/language_of_love/translators/translator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/areas/intro.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/intro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/alexa_talk_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/translators/production_translator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/areas/intro.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/language_of_love/areas/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/areas/practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/areas/tutorial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/lambda_function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/love.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/love.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/practice_phrase.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/practice_phrase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/response_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/response_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/test_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/translators/test_translator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/tests/test_Tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/tests/test_Introduction.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,15 +50,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\trist\Desktop\language-of-love\language_of_love\enum" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\trist\Desktop\language-of-love\language_of_love\areas" />
+      <recent name="C:\Users\trist\Desktop\language-of-love\language_of_love\translator" />
       <recent name="C:\language-of-love\language_of_love" />
       <recent name="C:\language-of-love\language_of_love\areas" />
       <recent name="C:\Users\trist\Desktop\language-of-love\language_of_love" />
-      <recent name="C:\Users\trist\Desktop\language-of-love\language_of_love_0.01" />
-      <recent name="C:\Users\trist\Desktop\language-of-love" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\trist\Desktop\language-of-love\language_of_love\enum" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -58,7 +73,35 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_Menu.py">
+  <component name="RunManager" selected="Python tests.Unittests in tests">
+    <configuration name="Unittests for test_Introduction.TestIntroduction" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="LanguageOfLove" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_Introduction.TestIntroduction&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_Introduction.TestIntroduction.test_my_name_is_returns_the_correct_speech_text" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="LanguageOfLove" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_Introduction.TestIntroduction.test_my_name_is_returns_the_correct_speech_text&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests for test_Menu.TestMenu" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,7 +116,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_Practice.TestPractice" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_SessionVariables.TestSessionVariables" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -83,53 +126,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Practice.TestPractice&quot;" />
+      <option name="_new_target" value="&quot;test_SessionVariables.TestSessionVariables&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_Tutorial.TestTutorial.test_my_name_is_returns_the_correct_speech_text" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="LanguageOfLove" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Tutorial.TestTutorial.test_my_name_is_returns_the_correct_speech_text&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for tests.test_languageOfLove.TestLanguageOfLove" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="LanguageOfLove" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_languageOfLove.TestLanguageOfLove&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests in test_Menu.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="LanguageOfLove" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language_of_love/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/language_of_love/tests/test_Menu.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests in test_languageOfLove.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
+    <configuration name="Unittests in C:/Users/trist/Desktop/language-of-love/language_of_love/tests/test_languageOfLove.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
       <module name="LanguageOfLove" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -159,21 +160,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests for test_Menu.TestMenu" />
-      <item itemvalue="Python tests.Unittests for test_Practice.TestPractice" />
-      <item itemvalue="Python tests.Unittests for test_Tutorial.TestTutorial.test_my_name_is_returns_the_correct_speech_text" />
-      <item itemvalue="Python tests.Unittests for tests.test_languageOfLove.TestLanguageOfLove" />
-      <item itemvalue="Python tests.Unittests in test_Menu.py" />
-      <item itemvalue="Python tests.Unittests in test_languageOfLove.py" />
+      <item itemvalue="Python tests.Unittests in C:/Users/trist/Desktop/language-of-love/language_of_love/tests/test_languageOfLove.py" />
       <item itemvalue="Python tests.Unittests in tests" />
+      <item itemvalue="Python tests.Unittests for test_Introduction.TestIntroduction.test_my_name_is_returns_the_correct_speech_text" />
+      <item itemvalue="Python tests.Unittests for test_Introduction.TestIntroduction" />
+      <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables" />
+      <item itemvalue="Python tests.Unittests for test_Menu.TestMenu" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests in test_Menu.py" />
         <item itemvalue="Python tests.Unittests in tests" />
-        <item itemvalue="Python tests.Unittests for test_Tutorial.TestTutorial.test_my_name_is_returns_the_correct_speech_text" />
-        <item itemvalue="Python tests.Unittests for test_Practice.TestPractice" />
         <item itemvalue="Python tests.Unittests for test_Menu.TestMenu" />
+        <item itemvalue="Python tests.Unittests for test_Introduction.TestIntroduction" />
+        <item itemvalue="Python tests.Unittests for test_SessionVariables.TestSessionVariables" />
+        <item itemvalue="Python tests.Unittests for test_Introduction.TestIntroduction.test_my_name_is_returns_the_correct_speech_text" />
       </list>
     </recent_temporary>
   </component>
@@ -197,20 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Added deployment script">
-      <created>1564118171704</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1564118171704</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Added deployment script">
-      <created>1564118330600</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1564118330600</updated>
     </task>
     <task id="LOCAL-00015" summary="Removed gitignore for now">
       <created>1564118552597</created>
@@ -541,7 +527,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564587211596</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Refactored menu and practice class">
+      <created>1564588610104</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1564588610104</updated>
+    </task>
+    <task id="LOCAL-00063" summary="added the get name phrases to the start practice menu item">
+      <created>1564593866944</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1564593866944</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,8 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated test to check for travis failures" />
-    <MESSAGE value="Added deployment script" />
     <MESSAGE value="Removed gitignore for now" />
     <MESSAGE value="Trying to get deployment to work" />
     <MESSAGE value="Removed some files stopping deployment ad changed reference type" />
@@ -597,7 +595,9 @@
     <MESSAGE value="Fixed breaking tests" />
     <MESSAGE value="Changed default area back to practice" />
     <MESSAGE value="Replaced tutorial class with intro class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced tutorial class with intro class" />
+    <MESSAGE value="Refactored menu and practice class" />
+    <MESSAGE value="added the get name phrases to the start practice menu item" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the get name phrases to the start practice menu item" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -607,6 +607,16 @@
           <url>file://$PROJECT_DIR$/language_of_love/date_handler.py</url>
           <line>152</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/language_of_love/tests/test_Introduction.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/language_of_love/tests/test_Introduction.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

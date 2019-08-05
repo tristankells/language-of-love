@@ -1,4 +1,4 @@
-from alexa_talk_translator import Translator
+from translators.production_translator import Translator
 
 
 class PracticePhrases():

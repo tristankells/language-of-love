@@ -9,12 +9,12 @@ class Translator:
     #
     launch_first_time = Audio.welcome + Audio.welcome_2
 
-    class Intro:
+    class Introduction:
         answer_to_your_name = Audio.welcome_2
 
         answer_to_question_where_are_you_from = """ I am from Columbia. Soy de Columbia. Great job, I think you got the hang of it. Remember, you might be asked many questions in a real date, and will be expected to show interest in your date. Practice will be important if you want to find love. """
 
-        error = "To finish the tutorial, say what I told you"
+        fallback = "To finish the tutorial, say what I told you"
 
     class Testing:
         not_implemented = "Not implemented yet. Come back soon"

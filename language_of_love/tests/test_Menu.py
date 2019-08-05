@@ -3,43 +3,43 @@ from areas.menu import Menu
 from session_variables import SessionVariables
 import slots
 from intents import Intents
-from alexa_talk_translator import Translator
+from translators.test_translator import TestTranslator
 
 
 class TestMenu(unittest.TestCase):
 
     def test_begin_practice_give_correct_response(self):
-        session_variables = SessionVariables({
+        session_variables = {
             SessionVariables.AREA: slots.AreaEnum.menu
-        })
-        response = Menu(Intents.START_PRACTICE, session_variables)
+        }
+        response = Menu(Intents.START_PRACTICE, session_variables).get_response()
 
         # Check the player is in the practice area now
-        self.assertTrue(response.session_variables.area is slots.AreaEnum.practice)
+        self.assertEqual(slots.AreaEnum.practice, response.session_variables.area)
         # Check the correct speech text has been received
-        self.assertEqual(response.speech_text, Translator.Practice.begin)
+        self.assertEqual(TestTranslator.Practice.begin, response.speech_text, )
 
     def test_begin_speed_date_give_correct_response(self):
-        session_variables = SessionVariables({
+        session_variables = {
             SessionVariables.AREA: slots.AreaEnum.menu
-        })
-        response = Menu(Intents.START_SPEED_DATE, session_variables)
+        }
+        response = Menu(Intents.START_SPEED_DATE, session_variables).get_response()
 
         # Check the player is in the speed date area now
-        self.assertTrue(response.session_variables.area is slots.AreaEnum.speed_date)
+        self.assertEqual(slots.AreaEnum.speed_date, response.session_variables.area)
         # Check the correct speech text has been received
-        self.assertTrue(response.speech_text is Translator.SpeedDate.begin)
+        self.assertEqual(TestTranslator.SpeedDate.begin, response.speech_text)
 
     def test_bad_intent_give_correct_response(self):
-        session_variables = SessionVariables({
+        session_variables = {
             SessionVariables.AREA: slots.AreaEnum.menu
-        })
-        response = Menu(Intents.ANIMAL_IS, session_variables)
+        }
+        response = Menu(Intents.ANIMAL_IS, session_variables).get_response()
 
         # Check the player is in the speed date area now
-        self.assertTrue(response.session_variables.area is slots.AreaEnum.menu)
+        self.assertEqual(slots.AreaEnum.menu, response.session_variables.area)
         # Check the correct speech text has been received
-        self.assertTrue(response.speech_text is Translator.Error.bad_option)
+        self.assertEqual(TestTranslator.Menu.fallback, response.speech_text)
 
 if __name__ == '__main__':
     unittest.main()

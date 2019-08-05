@@ -35,9 +35,8 @@ class SessionVariables:
             self.CURRENT_PRACTICE_PHRASE] if self.CURRENT_PRACTICE_PHRASE in state_variables else PracticePhrases.EMPTY
         self.tutorial_repeat_or_new = state_variables[
             self.PRACTICE_REPEAT_OR_NEW] if self.PRACTICE_REPEAT_OR_NEW in state_variables else False
-
-        self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else True
-        self.place = state_variables[self.PLACE] if self.place in state_variables else True
+        self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else 'None'
+        self.place = state_variables[self.PLACE] if self.PLACE in state_variables else 0
 
     @staticmethod
     def get_initial():

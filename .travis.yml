@@ -5,10 +5,10 @@ python:
 cache: pip
 install:
   - pip install -r requirements/requirements.txt
-script:
-  - cd language_of_love
-  - python -m unittest discover -s tests
-  - cd ..
+#script:
+#  - cd language_of_love
+#  - python -m unittest discover -s tests
+#  - cd ..
 deploy:
   # deploy develop to the staging environment
   - provider: script

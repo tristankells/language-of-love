@@ -13,7 +13,7 @@ from ask_sdk_model import Response
 from ask_sdk_model.ui import SimpleCard
 from session_variables import SessionVariables
 from slots import AreaEnum
-from areas.intro import Introduction
+from areas.introduction import Introduction
 from areas.menu import Menu
 from areas.practice import Practice
 

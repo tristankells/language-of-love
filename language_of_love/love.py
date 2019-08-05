@@ -1,6 +1,6 @@
 from response import Response
 from slots import AreaEnum
-from alexa_talk_translator import Translator
+from translators.production_translator import Translator
 import random
 
 class LanguageOfLove:
@@ -36,7 +36,7 @@ class LanguageOfLove:
             """
             LanguageOfLove.speech_text = None
             if session_variables.area == AreaEnum.introduction:
-                LanguageOfLove.speech_text = Translator.Intro.answer_to_your_name
+                LanguageOfLove.speech_text = Translator.Introduction.answer_to_your_name
 
             return Response(LanguageOfLove.speech_text, session_variables=session_variables)
 
@@ -50,7 +50,7 @@ class LanguageOfLove:
             Handler when the player ask's their date where they are from
             """
             if session_variables.area == AreaEnum.introduction:
-                LanguageOfLove.speech_text = Translator.Intro.answer_to_question_where_are_you_from
+                LanguageOfLove.speech_text = Translator.Introduction.answer_to_question_where_are_you_from
 
             return Response(LanguageOfLove.speech_text)
 
