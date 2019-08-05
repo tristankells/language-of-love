@@ -1,4 +1,4 @@
-from translators.test_translator import TestTranslator
+from translators.production_translator import Translator
 from response import Response
 from session_variables import SessionVariables
 
@@ -8,7 +8,7 @@ class Area():
     player_intent = None  # Store the intent, "StartPracticeIntent" for example, triggered by the player
     session_variables = None  # Store the lambda session attributes
     reprompt = None
-    translator = TestTranslator()
+    translator = Translator()
     speech_text = translator.General.fallback  # Store the Alexa speech reply for the player. Store the default fallback reply if none of the area intents are triggered
 
     def __init__(self, player_intent, session_variables):

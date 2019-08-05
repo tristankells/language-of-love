@@ -1,20 +1,22 @@
 from audio import Audio
 
-class Translator:
+
+class Translator():
     """
-    Translator with full game dialog, but spoken by Alexa. Useful for player 
+    Translator with full game dialog, but spoken by Alexa. Useful for player
     testing before recording lines
     """
     launch = Audio.welcome
-    #
+
     launch_first_time = Audio.welcome + Audio.welcome_2
+
+    class General:
+        fallback = "General fallback"
 
     class Introduction:
         answer_to_your_name = Audio.welcome_2
 
-        answer_to_question_where_are_you_from = """ I am from Columbia. Soy de Columbia. Great job, I think you got the hang of it. Remember, you might be asked many questions in a real date, and will be expected to show interest in your date. Practice will be important if you want to find love. """
-
-        fallback = "To finish the tutorial, say what I told you"
+        fallback = "To finish the tutorial, please say your name"
 
     class Testing:
         not_implemented = "Not implemented yet. Come back soon"
@@ -24,15 +26,15 @@ class Translator:
     class Practice:
         begin = Audio.practice_start
 
-        what_is_your_name = Audio.Q_e_lecturer_what_name + Audio.Q_s_lecturer_what_name
+        new_or_repeat = Audio.pracrice_or_date
 
-        do_you_like_to_travel = Audio.Q_e_lecturer_like_travel
+        what_is_your_name = Audio.Q_s_lecturer_what_name + Audio.Q_e_lecturer_what_name + new_or_repeat
 
-        what_is_your_job = Audio.Q_e_lecturer_what_profession
+        do_you_like_to_travel = Audio.Q_s_lecturer_like_travel + Audio.Q_e_lecturer_like_travel + new_or_repeat
 
-        new_or_repeat = "You want to hear that again or practice a new phrase?"
+        what_is_your_job = Audio.Q_s_lecturer_what_profession + Audio.Q_e_lecturer_what_profession + new_or_repeat
 
-        end = "Practice over. Good luck out there hope you find love"
+        fallback = "Sorry didn't understand that " + new_or_repeat
 
     class SpeedDate:
         begin = "Speed date begun. Have fun and good luck"
@@ -42,3 +44,8 @@ class Translator:
 
     class Reprompt:
         menu = "You decided what you want to do yet?"
+
+    class Menu:
+        options = "Would you like to speed date, or practice some more"
+
+        fallback = "Do you want to practice, or start speed dating"
