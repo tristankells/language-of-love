@@ -26,13 +26,13 @@ class TestTranslator():
     class Practice:
         begin = Audio.practice_start
 
-        what_is_your_name = Audio.Q_e_lecturer_what_name + Audio.Q_s_lecturer_what_name
-
-        do_you_like_to_travel = Audio.Q_e_lecturer_like_travel
-
-        what_is_your_job = Audio.Q_e_lecturer_what_profession
-
         new_or_repeat = "You want to hear that again or practice a new phrase?"
+
+        what_is_your_name = Audio.Q_s_lecturer_what_name + Audio.Q_e_lecturer_what_name + new_or_repeat
+
+        do_you_like_to_travel = Audio.Q_s_lecturer_like_travel + Audio.Q_e_lecturer_like_travel + new_or_repeat
+
+        what_is_your_job = Audio.Q_s_lecturer_what_profession + Audio.Q_e_lecturer_what_profession + new_or_repeat
 
         end = "Practice over. Good luck out there hope you find love"
 
