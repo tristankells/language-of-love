@@ -40,7 +40,7 @@ class SessionVariables:
 
     @staticmethod
     def get_initial():
-        session_variables = {
+        return {
             SessionVariables.FIRST_TIME: True,
             SessionVariables.NAME: "default",
             SessionVariables.AREA: AreaEnum.introduction,
@@ -50,7 +50,6 @@ class SessionVariables:
             SessionVariables.CONVERSATION: 1000,
             SessionVariables.PLACE: 0
         }
-        return session_variables
 
     def get(self):
         return {
