@@ -60,6 +60,6 @@ class SessionVariables:
             SessionVariables.GENDER_PREFERENCE: self.gender_preference,
             SessionVariables.CURRENT_PRACTICE_PHRASE: self.current_practice_phrase,
             SessionVariables.PRACTICE_REPEAT_OR_NEW: self.tutorial_repeat_or_new,
-            SessionVariables.CONVERSATION: 1000,
-            SessionVariables.PLACE: 0
+            SessionVariables.CONVERSATION: self.conversation,
+            SessionVariables.PLACE: self.place
         }
