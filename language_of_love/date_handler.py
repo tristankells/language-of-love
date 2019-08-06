@@ -32,7 +32,7 @@ def can_handle_date(handler_input):
     # type: (HandlerInput) -> bool
 
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
-    if int(session_attr.conversation) is 1000:
+    if int(session_attr.conversation) == 1000:
         print("in if statement")
         for x in range(0, len(IntentList)):
             print("in x loop")
