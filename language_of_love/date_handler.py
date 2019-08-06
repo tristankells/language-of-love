@@ -32,9 +32,12 @@ def can_handle_date(handler_input):
     # type: (HandlerInput) -> bool
 
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
-    if int(session_attr.conversation) == 1000:
+    if int(session_attr.conversation) is 1000:
+        print("in if statement")
         for x in range(0, len(IntentList)):
+            print("in x loop")
             if is_intent_name(IntentList[x][0])(handler_input):
+                print("in 'is intent name'")
                 session_attr.conversation = x
                 print(str(x) + " - x just before break")
                 break
