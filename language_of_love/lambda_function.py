@@ -139,7 +139,7 @@ def handle_date(handler_input):
     if y == 1:
         y = 0
         session_attr.place = 0
-        session_attr.conversation = 'None'
+        session_attr.conversation = 1000
     if y == 0:
         y = 1
     handler_input.attributes_manager.session_attributes = session_attr.get()

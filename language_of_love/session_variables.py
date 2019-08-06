@@ -35,7 +35,7 @@ class SessionVariables:
             self.CURRENT_PRACTICE_PHRASE] if self.CURRENT_PRACTICE_PHRASE in state_variables else PracticePhrases.EMPTY
         self.tutorial_repeat_or_new = state_variables[
             self.PRACTICE_REPEAT_OR_NEW] if self.PRACTICE_REPEAT_OR_NEW in state_variables else False
-        self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else 'None'
+        self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else 1000
         self.place = state_variables[self.PLACE] if self.PLACE in state_variables else 0
 
     @staticmethod
@@ -47,7 +47,7 @@ class SessionVariables:
             SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both,
             SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.EMPTY,
             SessionVariables.PRACTICE_REPEAT_OR_NEW: False,
-            SessionVariables.CONVERSATION: 'None',
+            SessionVariables.CONVERSATION: 1000,
             SessionVariables.PLACE: 0
         }
         return session_variables

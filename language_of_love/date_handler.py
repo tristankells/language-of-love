@@ -41,7 +41,7 @@ def can_handle_date(handler_input):
         session_attr.place = 0
         session_attr.conversation = x  # set conversation
         print(str(x) + " - x just after break")
-    elif session_attr.conversation != 'None':
+    elif session_attr.conversation != 1000:
         z = session_attr.conversation
         if is_intent_name(IntentList[z][1])(handler_input):
             session_attr.place = 1
