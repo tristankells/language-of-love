@@ -32,7 +32,7 @@ def can_handle_date(handler_input):
     # type: (HandlerInput) -> bool
 
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
-    if session_attr.conversation == 'None':
+    if session_attr.conversation == 1000:
         for x in range(0, len(IntentList)):
             if is_intent_name(IntentList[x][0])(handler_input):
                 session_attr.conversation = x
