@@ -151,12 +151,11 @@ def handle_date(handler_input):
 
 @sb.request_handler(can_handle_func=lambda input: not can_handle_date(input))
 def handle_date_problems(handler_input):
-    speech_text = "I don't know what you're saying"
+    speech_text = "The fuck are you saying"
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
         False)
     return handler_input.response_builder.response
-
 
 
 @sb.request_handler(

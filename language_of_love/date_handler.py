@@ -41,6 +41,7 @@ def can_handle_date(handler_input):
                 session_attr.conversation = x
                 print(str(x) + " - x just before break")
                 break
+                session_attr.conversation = 1000
         session_attr.place = 0
         session_attr.conversation = x  # set conversation
         print(str(x) + " - x just after break")
