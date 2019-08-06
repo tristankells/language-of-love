@@ -1,6 +1,5 @@
 from enum import Enum
 
-
 class AreaEnum(Enum):
     """
     Represents the area the player is currently playing in; tutorial, practice 

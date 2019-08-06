@@ -10,6 +10,8 @@ ResponseDict = {"QuestionWhereYouFromIntent": Audio.Q_tessa_i_am_from_Wellington
                 "AnswerWhereYouFromIntent": "I love that place",
                 "QuestionJobIntent": Audio.Q_tessa_I_am_lawyer + Audio.Q_tessa_What_is_your_job,
                 "AnswerMyJobIntent": "Great",
+                "QuestionAnimalsIntent": "My favourite animal is a giraffe, what's yours?",
+                "AnswerAnimalIntent": "Cool animal"
                 }
 
 def conversations():
