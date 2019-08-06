@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="">
+    <list default="true" id="86db840c-0c0c-41e2-9dcb-3dfd628c6d23" name="Default Changelist" comment="Added speed date intro">
+      <change afterPath="$PROJECT_DIR$/language_of_love/tests/test_DateHandler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/areas/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/areas/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language_of_love/translators/production_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/translators/production_translator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language_of_love/session_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/language_of_love/session_variables.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,13 +181,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563883413880</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Changed references">
-      <created>1564298911713</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1564298911713</updated>
     </task>
     <task id="LOCAL-00039" summary="Changed references">
       <created>1564308974094</created>
@@ -525,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565010055030</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Added speed date intro">
+      <created>1565082061984</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1565082061984</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -556,7 +556,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added audio package" />
     <MESSAGE value="Added luanch audio" />
     <MESSAGE value="Fixed breaking tests" />
     <MESSAGE value="Changed default area back to practice" />
@@ -581,7 +580,8 @@
     <MESSAGE value="Added dating coming soon messsage" />
     <MESSAGE value="Trying to get the different voice in the game" />
     <MESSAGE value="Added stop intent to cancel stop intent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added stop intent to cancel stop intent" />
+    <MESSAGE value="Added speed date intro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added speed date intro" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
