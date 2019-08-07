@@ -1,6 +1,7 @@
 from slots import AreaEnum
 from slots import GenderPreferenceEnum
 from practice_phrases import PracticePhrases
+from player import Player
 
 
 class SessionVariables:
@@ -15,6 +16,7 @@ class SessionVariables:
     GENDER_PREFERENCE = "gender_preference"
     CURRENT_PRACTICE_PHRASE = "current_practice_phrase"
     PRACTICE_REPEAT_OR_NEW = "practice_repeat_or_new"
+    PLAYER_VARIABLES = "player_variables"
 
     conversation = None
     place = None
@@ -24,6 +26,7 @@ class SessionVariables:
     gender_preference = None
     current_practice_phrase = None
     tutorial_repeat_or_new = None
+    player_variables = None
 
     def __init__(self, state_variables):
         self.first_time = state_variables[self.FIRST_TIME] if self.FIRST_TIME in state_variables else True
@@ -37,6 +40,11 @@ class SessionVariables:
             self.PRACTICE_REPEAT_OR_NEW] if self.PRACTICE_REPEAT_OR_NEW in state_variables else False
         self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else 1000
         self.place = state_variables[self.PLACE] if self.PLACE in state_variables else 0
+
+        self.player_variables = state_variables[
+            self.PLAYER_VARIABLES] if self.PLAYER_VARIABLES in state_variables else {
+            Player()
+        }
 
     @staticmethod
     def get_initial():
