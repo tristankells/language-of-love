@@ -41,10 +41,6 @@ class SessionVariables:
         self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else 1000
         self.place = state_variables[self.PLACE] if self.PLACE in state_variables else 0
 
-        self.player_variables = state_variables[
-            self.PLAYER_VARIABLES] if self.PLAYER_VARIABLES in state_variables else {
-            Player()
-        }
 
     @staticmethod
     def get_initial():
