@@ -1,7 +1,7 @@
-from enums.intents import Intents
-from enums.slots import AreaEnum
+from collections.intents import Intents
+from collections.slots import AreaEnum
 from areas.area import Area
-from enums.practice_phrases import PracticePhrases
+from collections.practice_phrases import PracticePhrases
 
 
 class Menu(Area):

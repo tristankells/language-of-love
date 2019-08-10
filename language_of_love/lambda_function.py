@@ -12,10 +12,11 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from ask_sdk_model.ui import SimpleCard
 from session_variables import SessionVariables
-from enums.slots import AreaEnum
+from collections.slots import AreaEnum
 from areas.introduction import Introduction
 from areas.menu import Menu
 from areas.practice import Practice
+from collections.audio import Audio
 
 import json
 from love import LanguageOfLove
@@ -139,8 +140,13 @@ def handle_date(handler_input):
     if y == 1:
         y = 0
         session_attr.place = 0
+
+        # Gain point and put the winning point sound in front of the current speech text
         session_attr.date_score += 1
+        speech_text = Audio.point + speech_text
+
         session_attr.conversation = 1000
+
     if y == 0:
         y = 1
     handler_input.attributes_manager.session_attributes = session_attr.get_json()
@@ -155,6 +161,11 @@ def handle_date(handler_input):
 def handle_date_problems(handler_input):
     speech_text = "No Entiendo"
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
+
+    # Lose point and put the losing point sound in front of the current speech text
+    session_attr.date_score -= 1
+    speech_text = Audio.point + speech_text
+
     session_attr.conversation = 1000
     session_attr.place = 0
     handler_input.attributes_manager.session_attributes = session_attr.get_json()

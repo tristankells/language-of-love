@@ -1,6 +1,6 @@
 import json
-from enums.audio import Audio
-from enums.intents import Intents
+from collections.audio import Audio
+from collections.intents import Intents
 
 IntentList = [[Intents.QUESTION_WHERE_YOU_FROM, Intents.ANSWER_WHERE_YOU_FROM],
               [Intents.QUESTION_JOB, Intents.ANSWER_MY_JOB],

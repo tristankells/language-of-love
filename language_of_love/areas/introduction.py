@@ -1,5 +1,5 @@
-from enums.slots import AreaEnum
-from enums.intents import Intents
+from collections.slots import AreaEnum
+from collections.intents import Intents
 from areas.area import Area
 
 

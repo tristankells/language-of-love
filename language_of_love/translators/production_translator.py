@@ -1,4 +1,4 @@
-from enums.audio import Audio
+from collections.audio import Audio
 
 
 class Translator():
