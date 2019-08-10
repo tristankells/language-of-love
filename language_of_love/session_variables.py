@@ -49,9 +49,9 @@ class SessionVariables:
 
         self.place = state_variables[self.PLACE] if self.PLACE in state_variables else 0
 
-        self.place = state_variables[self.DATE_SCORE] if self.DATE_SCORE in state_variables else 0
+        self.date_score = state_variables[self.DATE_SCORE] if self.DATE_SCORE in state_variables else 0
 
-        self.place = state_variables[self.TOTAL_SCORE] if self.TOTAL_SCORE in state_variables else 0
+        self.total_score = state_variables[self.TOTAL_SCORE] if self.TOTAL_SCORE in state_variables else 0
 
 
     @staticmethod
