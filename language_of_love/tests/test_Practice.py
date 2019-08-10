@@ -15,7 +15,7 @@ class TestPractice(unittest.TestCase):
             SessionVariables.PRACTICE_REPEAT_OR_NEW: True,
             SessionVariables.AREA: slots.AreaEnum.practice
         }
-        response = Practice(Intents.REPEAT, session_variables).get_response()
+        response = Practice(Intents.REPEAT_PRACTICE_PHRASE, session_variables).get_response()
 
         # Confirm player still in tutorial
         self.assertEqual(response.session_variables.area, slots.AreaEnum.practice)
@@ -30,7 +30,7 @@ class TestPractice(unittest.TestCase):
             SessionVariables.PRACTICE_REPEAT_OR_NEW: True,
             SessionVariables.AREA: slots.AreaEnum.practice
         }
-        response = Practice(Intents.NEW_PHRASE, session_variables).get_response()
+        response = Practice(Intents.NEW_PRACTICE_PHRASE, session_variables).get_response()
 
         # Confirm player still in tutorial
         self.assertEqual(slots.AreaEnum.practice, response.session_variables.area)

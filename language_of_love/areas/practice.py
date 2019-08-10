@@ -59,8 +59,8 @@ class Practice(Area):
         self.speech_text = self.translator.Practice.end + " " + self.translator.Menu.options
 
     intent_dictionary = {
-        Intents.NEW_PHRASE: new_phrase,
-        Intents.REPEAT: repeat_phrase,
+        Intents.NEW_PRACTICE_PHRASE: new_phrase,
+        Intents.REPEAT_PRACTICE_PHRASE: repeat_phrase,
         Intents.CANCEL: end_tutorial,
-        Intents.LEAVE: end_tutorial
+        Intents.LEAVE_AREA: end_tutorial
     }
