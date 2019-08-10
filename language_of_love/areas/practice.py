@@ -1,7 +1,7 @@
-from intents import Intents
-from slots import AreaEnum
+from enums.intents import Intents
+from enums.slots import AreaEnum
 import random
-from practice_phrases import PracticePhrases
+from enums.practice_phrases import PracticePhrases
 from areas.area import Area
 
 

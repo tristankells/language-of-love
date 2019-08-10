@@ -1,8 +1,8 @@
 import unittest
 from areas.introduction import Introduction
 from session_variables import SessionVariables
-import slots
-from intents import Intents
+from enums import slots
+from enums.intents import Intents
 from translators.test_translator import TestTranslator
 
 

@@ -1,7 +1,6 @@
-from slots import AreaEnum
-from slots import GenderPreferenceEnum
-from practice_phrases import PracticePhrases
-from player import Player
+from enums.slots import AreaEnum
+from enums.slots import GenderPreferenceEnum
+from enums.practice_phrases import PracticePhrases
 
 
 class SessionVariables:
@@ -40,6 +39,9 @@ class SessionVariables:
             self.PRACTICE_REPEAT_OR_NEW] if self.PRACTICE_REPEAT_OR_NEW in state_variables else False
         self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else 1000
         self.place = state_variables[self.PLACE] if self.PLACE in state_variables else 0
+        self.place = state_variables[self.PLACE] if self.PLACE in state_variables else 0
+
+
 
 
     @staticmethod
@@ -51,7 +53,7 @@ class SessionVariables:
             SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both,
             SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.EMPTY,
             SessionVariables.PRACTICE_REPEAT_OR_NEW: False,
-            SessionVariables.CONVERSATION: 1000,
+            SessionVariables.CONVERSATION: 0,
             SessionVariables.PLACE: 0
         }
 

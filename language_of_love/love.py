@@ -1,7 +1,6 @@
 from response import Response
-from slots import AreaEnum
 from translators.production_translator import Translator
-import random
+
 
 class LanguageOfLove:
     """

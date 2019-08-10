@@ -12,7 +12,7 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from ask_sdk_model.ui import SimpleCard
 from session_variables import SessionVariables
-from slots import AreaEnum
+from enums.slots import AreaEnum
 from areas.introduction import Introduction
 from areas.menu import Menu
 from areas.practice import Practice
