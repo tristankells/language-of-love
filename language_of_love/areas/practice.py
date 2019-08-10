@@ -1,7 +1,7 @@
-from collections.intents import Intents
-from collections.slots import AreaEnum
+from custom_collections.intents import Intents
+from custom_collections.slots import AreaEnum
 import random
-from collections.practice_phrases import PracticePhrases
+from custom_collections.practice_phrases import PracticePhrases
 from areas.area import Area
 
 

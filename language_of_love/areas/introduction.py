@@ -1,5 +1,5 @@
-from collections.slots import AreaEnum
-from collections.intents import Intents
+from custom_collections.slots import AreaEnum
+from custom_collections.intents import Intents
 from areas.area import Area
 
 

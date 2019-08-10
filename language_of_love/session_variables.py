@@ -1,6 +1,6 @@
-from collections.slots import AreaEnum
-from collections.slots import GenderPreferenceEnum
-from collections.practice_phrases import PracticePhrases
+from custom_collections.slots import AreaEnum
+from custom_collections.slots import GenderPreferenceEnum
+from custom_collections.practice_phrases import PracticePhrases
 
 
 class SessionVariables:

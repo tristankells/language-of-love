@@ -12,11 +12,11 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from ask_sdk_model.ui import SimpleCard
 from session_variables import SessionVariables
-from collections.slots import AreaEnum
+from custom_collections.slots import AreaEnum
 from areas.introduction import Introduction
 from areas.menu import Menu
 from areas.practice import Practice
-from collections.audio import Audio
+from custom_collections.audio import Audio
 
 import json
 from love import LanguageOfLove

@@ -1,4 +1,4 @@
-from collections.audio import Audio
+from custom_collections.audio import Audio
 
 
 class Translator():

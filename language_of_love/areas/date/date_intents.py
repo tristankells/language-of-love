@@ -1,6 +1,6 @@
 import json
-from collections.audio import Audio
-from collections.intents import Intents
+from custom_collections.audio import Audio
+from custom_collections.intents import Intents
 
 IntentList = [[Intents.QUESTION_WHERE_YOU_FROM, Intents.ANSWER_WHERE_YOU_FROM],
               [Intents.QUESTION_JOB, Intents.ANSWER_MY_JOB],

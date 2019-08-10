@@ -1,7 +1,7 @@
 import unittest
 from session_variables import SessionVariables
-from collections import slots
-from collections.practice_phrases import PracticePhrases
+from custom_collections import slots
+from custom_collections.practice_phrases import PracticePhrases
 
 
 class TestSessionVariables(unittest.TestCase):

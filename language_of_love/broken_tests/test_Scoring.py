@@ -1,8 +1,8 @@
 import unittest
 from areas.menu import Menu
 from session_variables import SessionVariables
-from collections import slots
-from collections.intents import Intents
+from custom_collections import slots
+from custom_collections.intents import Intents
 from translators.test_translator import TestTranslator
 
 

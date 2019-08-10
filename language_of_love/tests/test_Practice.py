@@ -1,10 +1,10 @@
 import unittest
 from session_variables import SessionVariables
-from collections import slots
-from collections.intents import Intents
+from custom_collections import slots
+from custom_collections.intents import Intents
 from translators.test_translator import TestTranslator
 from areas.practice import Practice
-from collections.practice_phrases import PracticePhrases
+from custom_collections.practice_phrases import PracticePhrases
 
 
 class TestPractice(unittest.TestCase):
