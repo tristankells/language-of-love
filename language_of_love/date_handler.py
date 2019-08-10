@@ -33,22 +33,11 @@ def can_handle_date(handler_input):
 
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     if int(session_attr.conversation) == 1000:
-        print("in if statement")
-        for x in range(0, len(IntentList)):
-            print("in x loop")
-            if is_intent_name(IntentList[x][0])(handler_input):
-                print("in 'is intent name'")
-                session_attr.conversation = x
-                print(str(x) + " - x just before break")
-                break
-                session_attr.conversation = 1000
-        session_attr.place = 0
-        session_attr.conversation = x  # set conversation
-        print(str(x) + " - x just after break")
+        session_attr = get_variables_not_in_conversastion(handler_input, session_attr)
+
     elif int(session_attr.conversation) != 1000:
-        z = session_attr.conversation
-        if is_intent_name(IntentList[z][1])(handler_input):
-            session_attr.place = 1
+        session_attr = get_variables_in_conversastion(handler_input, session_attr)
+
     z = int(session_attr.conversation)
     y = int(session_attr.place)
     print("handler z,y = " + str(z) + " " + str(y))
@@ -56,3 +45,26 @@ def can_handle_date(handler_input):
     print("handler z,y = " + str(z) + " " + str(y))
     print(IntentList[z][y])
     return is_intent_name(IntentList[z][y])(handler_input)
+
+
+def get_variables_not_in_conversastion(handler_input, session_attr):
+    print("in if statement")
+    for x in range(0, len(IntentList)):
+        print("in x loop")
+        if is_intent_name(IntentList[x][0])(handler_input):
+            print("in 'is intent name'")
+            session_attr.conversation = x
+            print(str(x) + " - x just before break")
+            break
+            session_attr.conversation = 1000
+    session_attr.place = 0
+    session_attr.conversation = x  # set conversation
+    print(str(x) + " - x just after break")
+    return session_attr
+
+
+def get_variables_in_conversastion(handler_input, session_attr):
+    z = session_attr.conversation
+    if is_intent_name(IntentList[z][1])(handler_input):
+        session_attr.place = 1
+    return session_attr
