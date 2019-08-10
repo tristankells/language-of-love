@@ -1,5 +1,5 @@
 import json
-from audio import Audio
+from enums.audio import Audio
 from enums.intents import Intents
 
 IntentList = [[Intents.QUESTION_WHERE_YOU_FROM, Intents.ANSWER_WHERE_YOU_FROM],

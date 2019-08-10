@@ -19,8 +19,8 @@ from areas.practice import Practice
 
 import json
 from love import LanguageOfLove
-from date_intents import conversations
-from date_handler import can_handle_date
+from areas.date.date_intents import conversations
+from areas.date.date_handler import can_handle_date
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
@@ -41,7 +41,7 @@ def launch_request_handler(handler_input):
     state_variables = handler_input.attributes_manager.persistent_attributes
 
     if not state_variables:
-        state_variables = SessionVariables.get_initial()
+        state_variables = SessionVariables.get_initial_json()
 
     handler_input.attributes_manager.session_attributes = state_variables
 
@@ -77,9 +77,9 @@ def menu_handler(handler_input):
     response = Menu(intent_name, session_variables).get_response()
 
     if response.session_variables is not None:
-        handler_input.attributes_manager.session_attributes = response.session_variables.get()
+        handler_input.attributes_manager.session_attributes = response.session_variables.get_json()
     else:
-        handler_input.attributes_manager.session_attributes = session_variables.get()
+        handler_input.attributes_manager.session_attributes = session_variables.get_json()
     handler_input.response_builder.speak(response.speech_text).ask("Say again")
 
     return handler_input.response_builder.response
@@ -98,7 +98,7 @@ def tutorial_handler(handler_input):
     response = Introduction(intent_name, session_variables).get_response()
 
     if response.session_variables is not None:
-        handler_input.attributes_manager.session_attributes = response.session_variables.get()
+        handler_input.attributes_manager.session_attributes = response.session_variables.get_json()
 
     handler_input.response_builder.speak(response.speech_text).ask("Say again")
 
@@ -119,7 +119,7 @@ def practice_handler(handler_input):
     response = Practice(intent_name, session_variables).get_response()
 
     if response.session_variables is not None:
-        handler_input.attributes_manager.session_attributes = response.session_variables.get()
+        handler_input.attributes_manager.session_attributes = response.session_variables.get_json()
 
     handler_input.response_builder.speak(response.speech_text).ask("Say again")
 
@@ -142,12 +142,13 @@ def handle_date(handler_input):
         session_attr.conversation = 1000
     if y == 0:
         y = 1
-    handler_input.attributes_manager.session_attributes = session_attr.get()
+    handler_input.attributes_manager.session_attributes = session_attr.get_json()
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
         False)
     return handler_input.response_builder.response
 # endregion
+
 
 @sb.request_handler(can_handle_func=lambda input: not can_handle_date(input))
 def handle_date_problems(handler_input):
@@ -155,7 +156,7 @@ def handle_date_problems(handler_input):
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     session_attr.conversation = 1000
     session_attr.place = 0
-    handler_input.attributes_manager.session_attributes = session_attr.get()
+    handler_input.attributes_manager.session_attributes = session_attr.get_json()
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
         False)

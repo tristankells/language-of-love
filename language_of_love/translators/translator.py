@@ -1,6 +1,4 @@
-from abc import ABC
-
-from audio import Audio
+from enums.audio import Audio
 
 
 class Translator:

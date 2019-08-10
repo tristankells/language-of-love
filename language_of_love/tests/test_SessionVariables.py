@@ -24,7 +24,7 @@ class TestSessionVariables(unittest.TestCase):
 
         })
 
-        session_variables = session_variables.get()
+        session_variables = session_variables.get_json()
         self.assertIsNotNone(session_variables[SessionVariables.AREA], msg="Area should never be null")
         self.assertIsNotNone(session_variables[SessionVariables.NAME], msg="Name should never be null")
         self.assertIsNotNone(session_variables[SessionVariables.FIRST_TIME], msg="First should never be null")
@@ -47,7 +47,7 @@ class TestSessionVariables(unittest.TestCase):
 
         session_variables = SessionVariables(original_variables)
 
-        get_session_variables = session_variables.get()
+        get_session_variables = session_variables.get_json()
         self.assertEqual(original_variables[SessionVariables.AREA], get_session_variables[SessionVariables.AREA])
         self.assertEqual(original_variables[SessionVariables.NAME], get_session_variables[SessionVariables.NAME])
         self.assertEqual(original_variables[SessionVariables.FIRST_TIME],

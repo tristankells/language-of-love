@@ -11,6 +11,9 @@ class TestMenu(unittest.TestCase):
     def test_player_score_goes_up(self):
         session_variables = {
             SessionVariables.AREA: slots.AreaEnum.speed_date,
+            SessionVariables.DATE_SCORE: 0,
+            SessionVariables.TOTAL_SCORE: 0,
+            SessionVariables.CONVERSATION: 0,
 
         }
         response = Menu(Intents.START_PRACTICE, session_variables).get_response()
