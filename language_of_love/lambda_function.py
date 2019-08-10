@@ -164,7 +164,7 @@ def handle_date_problems(handler_input):
 
     # Lose point and put the losing point sound in front of the current speech text
     session_attr.date_score -= 1
-    speech_text = Audio.point + speech_text
+    speech_text = Audio.cricket_sound + speech_text
 
     session_attr.conversation = 1000
     session_attr.place = 0
