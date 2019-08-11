@@ -36,3 +36,7 @@ class Intents:
     STOP = 'AMAZON.StopIntent'
 
     NAVIGATE_HOME = 'AMAZON.NavigateHomeIntent'
+
+    ANSWER_FAVOURITE_COLOUR = 'AnswerFavouriteColour'
+
+    QUESTION_FAVOURITE_COLOUR = 'QuestionFavouriteColourIntent'

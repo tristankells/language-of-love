@@ -142,6 +142,7 @@ def handle_date(handler_input):
         session_attr.place = 0
 
         # Gain point and put the winning point sound in front of the current speech text
+        session_attr.date_round += 1
         session_attr.date_score += 1
         speech_text = Audio.point + speech_text
 
@@ -149,6 +150,10 @@ def handle_date(handler_input):
 
     if y == 0:
         y = 1
+
+    # If date over, add finishing date dialog
+    if (session_attr.date_round >= 4):
+        speech_text = + "You finsished the date, your score is " + session_attr.date_score + ""
     handler_input.attributes_manager.session_attributes = session_attr.get_dict()
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
@@ -159,12 +164,30 @@ def handle_date(handler_input):
 
 @sb.request_handler(can_handle_func=lambda input: not can_handle_date(input))
 def handle_date_problems(handler_input):
-    speech_text = "No Entiendo"
+
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
 
     # Lose point and put the losing point sound in front of the current speech text
+    session_attr.date_bad_response_count += 1
     session_attr.date_score -= 1
+    session_attr.date_round += 1
+
+    if (session_attr.date_bad_response_count is 1):
+        speech_text = Audio.Carmen_error_message_1
+    elif (session_attr.date_bad_response_count is 2):
+        speech_text = Audio.Carmen_error_message_2
+    elif (session_attr.date_bad_response_count is 3):
+        speech_text = Audio.Carmen_error_message_3
+        session_attr.area = AreaEnum.menu
+    else:
+        speech_text = "No Entiedo"
+
+
     speech_text = Audio.cricket_sound + speech_text
+
+    # If date over, add finishing date dialog
+    if (session_attr.date_round >= 4):
+        speech_text += "You finished the date, your score is " + session_attr.date_score + ". Not too bad, you might get another date if you lucky"
 
     session_attr.conversation = 1000
     session_attr.place = 0
