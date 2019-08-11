@@ -7,7 +7,6 @@ import random
 import logging
 
 from ask_sdk.standard import StandardSkillBuilder
-from ask_sdk_dynamodb.adapter import DynamoDbAdapter
 from ask_sdk_core.utils import is_request_type, is_intent_name, get_intent_name
 from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
@@ -26,7 +25,6 @@ from areas.date.date_handler import can_handle_date
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
-db = DynamoDbAdapter(table_name="Language-Of-Love", create_table=True)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -46,8 +44,6 @@ def launch_request_handler(handler_input):
     if not state_variables:
         state_variables = SessionVariables.get_initial_json()
 
-    db.save_attributes(handler_input, state_variables)
-
     handler_input.attributes_manager.session_attributes = state_variables
 
     response = LanguageOfLove.launch(SessionVariables(state_variables))
@@ -55,7 +51,6 @@ def launch_request_handler(handler_input):
     handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
 
     return handler_input.response_builder.response
-
 
 def player_area(handler_input):
     """
