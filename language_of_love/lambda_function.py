@@ -26,7 +26,7 @@ from areas.date.date_handler import can_handle_date
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
-db = DynamoDbAdapter(table_name="Language-Of-Love", auto_create_table=True)
+db = DynamoDbAdapter(table_name="Language-Of-Love", create_table=True)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
