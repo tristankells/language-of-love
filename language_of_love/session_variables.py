@@ -38,7 +38,6 @@ class SessionVariables:
 
         self.gender_preference = GenderPreferenceEnum(state_variables[
                                                           self.GENDER_PREFERENCE]) if self.GENDER_PREFERENCE in state_variables else GenderPreferenceEnum.both
-
         self.current_practice_phrase = state_variables[
             self.CURRENT_PRACTICE_PHRASE] if self.CURRENT_PRACTICE_PHRASE in state_variables else PracticePhrases.EMPTY
 
