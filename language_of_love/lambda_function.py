@@ -44,6 +44,8 @@ def launch_request_handler(handler_input):
     if not state_variables:
         state_variables = SessionVariables.get_initial_json()
 
+    handler_input.attributes_manager.save_attributes(state_variables)
+
     handler_input.attributes_manager.session_attributes = state_variables
 
     response = LanguageOfLove.launch(SessionVariables(state_variables))
@@ -51,6 +53,7 @@ def launch_request_handler(handler_input):
     handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
 
     return handler_input.response_builder.response
+
 
 def player_area(handler_input):
     """
