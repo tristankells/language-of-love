@@ -134,7 +134,6 @@ def handle_date(handler_input):
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     z = int(session_attr.conversation)
     y = int(session_attr.place)
-    print("function z,y = " + str(z) + " " + str(y))
     speech_text = ResponseDict[IntentList[z][y]]
 
     if y == 1:

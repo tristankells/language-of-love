@@ -45,7 +45,7 @@ def get_variables_not_in_conversation(handler_input, session_attr):
     for x in range(0, len(IntentList)):
         if is_intent_name(IntentList[x][0])(handler_input):
             session_attr.conversation = x
-            print(str(x) + " - x just before break")
+
             break
             session_attr.conversation = 1000
     session_attr.place = 0
