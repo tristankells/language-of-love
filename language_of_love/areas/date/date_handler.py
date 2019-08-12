@@ -11,7 +11,6 @@ import logging
 from ask_sdk_core.skill_builder import SkillBuilder
 from ask_sdk_core.utils import is_intent_name
 from ask_sdk_core.handler_input import HandlerInput
-from ask_sdk_core.utils import is_request_type, is_intent_name, get_intent_name
 
 sb = SkillBuilder()
 
@@ -27,42 +26,35 @@ from session_variables import SessionVariables
 def can_handle_date(handler_input):
     # type: (HandlerInput) -> bool
 
-    intent_name = get_intent_name(handler_input)
-
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     if int(session_attr.conversation) == 1000:
-        session_attr = get_variables_not_in_conversation(intent_name, session_attr)
+        session_attr = get_variables_not_in_conversation(handler_input, session_attr)
 
     elif int(session_attr.conversation) != 1000:
-        session_attr = get_variables_in_conversation(intent_name, session_attr)
+        session_attr = get_variables_in_conversation(handler_input, session_attr)
 
     z = int(session_attr.conversation)
     y = int(session_attr.place)
-    print("handler z,y = " + str(z) + " " + str(y))
+
     handler_input.attributes_manager.session_attributes = session_attr.get_dict()
-    print("handler z,y = " + str(z) + " " + str(y))
-    print(IntentList[z][y])
+
     return is_intent_name(IntentList[z][y])(handler_input)
 
 
-def get_variables_not_in_conversation(intent_name, session_attr):
-    print("in if statement")
+def get_variables_not_in_conversation(handler_input, session_attr):
     for x in range(0, len(IntentList)):
-        print("in x loop")
-        if IntentList[x][0] is intent_name:
-            print("in 'is intent name'")
+        if is_intent_name(IntentList[x][0])(handler_input):
             session_attr.conversation = x
             print(str(x) + " - x just before break")
             break
             session_attr.conversation = 1000
     session_attr.place = 0
     session_attr.conversation = x  # set conversation
-    print(str(x) + " - x just after break")
     return session_attr
 
 
-def get_variables_in_conversation(intent_name, session_attr):
+def get_variables_in_conversation(handler_input, session_attr):
     z = session_attr.conversation
-    if IntentList[z][1] is intent_name:
+    if is_intent_name(IntentList[z][1])(handler_input):
         session_attr.place = 1
     return session_attr

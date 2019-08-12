@@ -172,6 +172,8 @@ def handle_date_problems(handler_input):
     session_attr.date_score -= 1
     session_attr.date_round += 1
 
+    # Added different bad response audio depending on how many bad responses the player has given so far. If it is
+    # their third bad response, takes player back to menu
     if (session_attr.date_bad_response_count is 1):
         speech_text = Audio.Carmen_error_message_1
     elif (session_attr.date_bad_response_count is 2):
