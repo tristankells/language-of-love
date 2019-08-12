@@ -20,6 +20,7 @@ class SessionVariables:
     TOTAL_SCORE = "total_score"
     DATE_BAD_RESPONSE_COUNT = "date_bad_response_count"
     DATE_ROUND = 'date_round'
+    NUMBER_OF_DATES = "number_of_dates"
 
     # Variables
     conversation = None
@@ -34,6 +35,7 @@ class SessionVariables:
     total_score = None
     date_bad_response_count = None
     date_round = None
+    number_of_dates = None
 
     def __init__(self, state_variables):
         """
@@ -67,6 +69,8 @@ class SessionVariables:
 
         self.date_round = state_variables[self.DATE_ROUND] if self.DATE_ROUND in state_variables else 0
 
+        self.number_of_dates = state_variables[self.NUMBER_OF_DATES] if self.NUMBER_OF_DATES in state_variables else 0
+
 
     @staticmethod
     def get_initial_dict():
@@ -85,7 +89,8 @@ class SessionVariables:
             SessionVariables.DATE_SCORE: 0,
             SessionVariables.TOTAL_SCORE: 0,
             SessionVariables.DATE_BAD_RESPONSE_COUNT: 0,
-            SessionVariables.DATE_ROUND: 0
+            SessionVariables.DATE_ROUND: 0,
+            SessionVariables.NUMBER_OF_DATES: 0,
         }
 
     def get_dict(self):
@@ -101,5 +106,6 @@ class SessionVariables:
             SessionVariables.DATE_SCORE: self.date_score,
             SessionVariables.TOTAL_SCORE: self.total_score,
             SessionVariables.DATE_BAD_RESPONSE_COUNT: self.date_bad_response_count,
-            SessionVariables.DATE_ROUND: self.date_round
+            SessionVariables.DATE_ROUND: self.date_round,
+            SessionVariables.NUMBER_OF_DATES: self.number_of_dates
         }
