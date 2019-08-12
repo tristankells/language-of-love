@@ -41,6 +41,8 @@ class Translator():
     class SpeedDate:
         begin = '<voice name="Nicole">Your speed date is about to begin. Begin by by asking your date a question. Get ready to reply</voice>'
 
+        fallback = '<voice name="Nicole"> I do not understand. No entiendo </voice>'
+
     class Error:
         bad_option = "Not an option right now."
 
