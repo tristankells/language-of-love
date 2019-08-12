@@ -11,6 +11,7 @@ import logging
 from ask_sdk_core.skill_builder import SkillBuilder
 from ask_sdk_core.utils import is_intent_name
 from ask_sdk_core.handler_input import HandlerInput
+from ask_sdk_core.utils import is_request_type, is_intent_name, get_intent_name
 
 sb = SkillBuilder()
 
@@ -26,12 +27,14 @@ from session_variables import SessionVariables
 def can_handle_date(handler_input):
     # type: (HandlerInput) -> bool
 
+    intent_name = get_intent_name(handler_input)
+
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     if int(session_attr.conversation) == 1000:
-        session_attr = get_variables_not_in_conversation(handler_input, session_attr)
+        session_attr = get_variables_not_in_conversation(intent_name, session_attr)
 
     elif int(session_attr.conversation) != 1000:
-        session_attr = get_variables_in_conversation(handler_input, session_attr)
+        session_attr = get_variables_in_conversation(intent_name, session_attr)
 
     z = int(session_attr.conversation)
     y = int(session_attr.place)
@@ -42,11 +45,11 @@ def can_handle_date(handler_input):
     return is_intent_name(IntentList[z][y])(handler_input)
 
 
-def get_variables_not_in_conversation(handler_input, session_attr):
+def get_variables_not_in_conversation(intent_name, session_attr):
     print("in if statement")
     for x in range(0, len(IntentList)):
         print("in x loop")
-        if is_intent_name(IntentList[x][0])(handler_input):
+        if IntentList[x][0] is intent_name:
             print("in 'is intent name'")
             session_attr.conversation = x
             print(str(x) + " - x just before break")
@@ -58,8 +61,8 @@ def get_variables_not_in_conversation(handler_input, session_attr):
     return session_attr
 
 
-def get_variables_in_conversation(handler_input, session_attr):
+def get_variables_in_conversation(intent_name, session_attr):
     z = session_attr.conversation
-    if is_intent_name(IntentList[z][1])(handler_input):
+    if IntentList[z][1] is intent_name:
         session_attr.place = 1
     return session_attr
