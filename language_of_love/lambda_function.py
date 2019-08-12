@@ -151,7 +151,7 @@ def handle_date(handler_input):
         y = 1
 
     # If date over, add finishing date dialog
-    if (session_attr.date_round == 3):
+    if (session_attr.date_round is 3):
         speech_text += " You finished the date, your score is " + session_attr.date_score + " "
 
     handler_input.attributes_manager.session_attributes = session_attr.get_dict()
@@ -187,7 +187,7 @@ def handle_date_problems(handler_input):
     speech_text = Audio.cricket_sound + speech_text
 
     # If date over, add finishing date dialog
-    if (session_attr.date_round == 3):
+    if (session_attr.date_round is 3):
         speech_text += " You finished the date, your score is " + session_attr.date_score + ". Not too bad, you might get another date if you lucky. The second date is about to begin, ask your date a question "
 
     session_attr.conversation = 1000
