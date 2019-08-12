@@ -153,11 +153,11 @@ def handle_date(handler_input):
 
     # If date over, add finishing date dialog
     if (session_attr.date_round == 3):
-        speech_text += "You finsished the date, your score is " + session_attr.date_score + ""
+        speech_text += " You finished the date, your score is " + session_attr.date_score + " "
+
     handler_input.attributes_manager.session_attributes = session_attr.get_dict()
-    handler_input.response_builder.speak(speech_text).set_card(
-        SimpleCard("Hello World", speech_text)).set_should_end_session(
-        False)
+
+    handler_input.response_builder.speak(speech_text).ask("Say again")
     return handler_input.response_builder.response
 # endregion
 
@@ -186,8 +186,8 @@ def handle_date_problems(handler_input):
     speech_text = Audio.cricket_sound + speech_text
 
     # If date over, add finishing date dialog
-    if (session_attr.date_round >= 4):
-        speech_text += "You finished the date, your score is " + session_attr.date_score + ". Not too bad, you might get another date if you lucky"
+    if (session_attr.date_round == 3):
+        speech_text += " You finished the date, your score is " + session_attr.date_score + ". Not too bad, you might get another date if you lucky "
 
     session_attr.conversation = 1000
     session_attr.place = 0
