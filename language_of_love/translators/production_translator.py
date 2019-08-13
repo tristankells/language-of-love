@@ -6,7 +6,7 @@ class Translator():
     Translator with full game dialog, but spoken by Alexa. Useful for player
     testing before recording lines
     """
-    launch = Audio.welcome
+    launch = Audio.Carmen_intro_1
 
     launch_first_time = Audio.welcome + Audio.welcome_2
 
@@ -14,7 +14,7 @@ class Translator():
         fallback = "General fallback"
 
     class Introduction:
-        answer_to_your_name = Audio.welcome_2 + Audio.pracrice_or_date
+        answer_to_your_name = Audio.Carmen_intro_2 + Audio.pracrice_or_date
 
         fallback = "To finish the tutorial, please say your name"
 

@@ -182,7 +182,6 @@ def handle_date_problems(handler_input):
 
     # Lose point and put the losing point sound in front of the current speech text
     session_attr.date_bad_response_count += 1
-    session_attr.date_score -= 1
     session_attr.date_round += 1
 
     # Added different bad response audio depending on how many bad responses the player has given so far. If it is
@@ -217,7 +216,7 @@ def handle_date_problems(handler_input):
 
 def finish_date(handler_input, session_attr, speech_text):
     speech_text += " You finished the date, your score is " + str(
-        session_attr.date_score) + ". Not too bad, you might get another date if you lucky. The second date is about to begin, ask your date a question "
+        session_attr.date_score) + ". Not too bad, you might get another date if your lucky. The second date is about to begin, ask your date a question "
 
     # After date is over, set number of date rounds, bad response count and date score to zero, ready for a new date to begin
     session_attr.date_round = session_attr.date_bad_response_count = session_attr.date_score = 0
