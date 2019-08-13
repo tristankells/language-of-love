@@ -17,6 +17,7 @@ from areas.introduction import Introduction
 from areas.menu import Menu
 from areas.practice import Practice
 from custom_collections.audio import Audio
+from custom_collections.intents import Intents
 
 import json
 from love import LanguageOfLove
@@ -126,6 +127,19 @@ def practice_handler(handler_input):
 
     return handler_input.response_builder.response
 
+
+@sb.request_handler(
+    can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date and is_intent_name(Intents.HELP)(input))
+def speed_date_help_handler(handler_input):
+    session_variables = handler_input.attributes_manager.session_attributes
+    handler_input.attributes_manager.session_attributes = session_variables
+
+    handler_input.response_builder.speak("While on a date, you need to ask questions and reply when you are asked. "
+                                         " Doing so correctly will increase your score. If you finish the "
+                                         "date, asking and answering enough questions, and your score is high enough, "
+                                         "you may score a second date").ask("Say again")
+
+    return handler_input.response_builder.response
 
 # Date intent handlers
 @sb.request_handler(can_handle_func=lambda input: can_handle_date(input))
