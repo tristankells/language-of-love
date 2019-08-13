@@ -166,8 +166,7 @@ def handle_date(handler_input):
 
     # If date over, add finishing date dialog
     if (session_attr.date_round is 3):
-        speech_text += " You finished the date, your score is " + str(
-            session_attr.date_score) + ". Not too bad, you might get another date if you lucky. The second date is about to begin, ask your date a question "
+        finish_date(handler_input, session_attr, speech_text)
 
     handler_input.attributes_manager.session_attributes = session_attr.get_dict()
 
@@ -195,6 +194,7 @@ def handle_date_problems(handler_input):
     elif (session_attr.date_bad_response_count is 3):
         speech_text = Audio.Carmen_error_message_3
         session_attr.area = AreaEnum.menu
+        session_attr.date_round -= 1
     else:
         speech_text = " No Entiedo "
 
@@ -203,8 +203,7 @@ def handle_date_problems(handler_input):
 
     # If date over, add finishing date dialog
     if (session_attr.date_round is 3):
-        speech_text += " You finished the date, your score is " + str(
-            session_attr.date_score) + ". Not too bad, you might get another date if you lucky. The second date is about to begin, ask your date a question "
+        finish_date(handler_input, session_attr, speech_text)
 
     session_attr.conversation = 1000
     session_attr.place = 0
@@ -214,6 +213,22 @@ def handle_date_problems(handler_input):
         False)
     return handler_input.response_builder.response
 
+
+def finish_date(handler_input, session_attr, speech_text):
+    speech_text += " You finished the date, your score is " + str(
+        session_attr.date_score) + ". Not too bad, you might get another date if you lucky. The second date is about to begin, ask your date a question "
+
+    # After date is over, set number of date rounds, bad response count and date score to zero, ready for a new date to begin
+    session_attr.date_round = session_attr.date_bad_response_count = session_attr.date_score = 0
+
+    # Increase the number of dates by one, so we can decide how many total dates they have been on and changes things accordingly
+    session_attr.number_of_dates += 1
+
+    handler_input.attributes_manager.session_attributes = session_attr.get_dict()
+    handler_input.response_builder.speak(speech_text).set_card(
+        SimpleCard("Hello World", speech_text)).set_should_end_session(
+        False)
+    return handler_input.response_builder.response
 
 @sb.request_handler(
     can_handle_func=lambda input:
