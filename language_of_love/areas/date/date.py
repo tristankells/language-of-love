@@ -7,11 +7,13 @@ class Date(Area):
 
     def question_where:
 
+
     def answer_where:
 
+    def wrong_answer:
+
     intent_dictionary = {
-        Intents.QUESTION_WHERE_YOU_FROM: QUESTION_WHERE_YOU_FROM,
-        Intents.ANSWER_WHERE_YOU_FROM: repeat_phrase,
-        Intents.CANCEL: end_tutorial,
-        Intents.LEAVE_AREA: end_tutorial
+        Intents.QUESTION_WHERE_YOU_FROM: question_where,
+        Intents.ANSWER_WHERE_YOU_FROM: answer_where,
+
     }
