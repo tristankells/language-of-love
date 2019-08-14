@@ -67,6 +67,20 @@ def player_area(handler_input):
     return AreaEnum(area)
 
 
+@sb.request_handler(
+    can_handle_func=lambda input:
+    is_intent_name("AMAZON.CancelIntent")(input) or
+    is_intent_name("AMAZON.StopIntent")(input))
+def cancel_and_stop_intent_handler(handler_input):
+    """Single handler for Cancel and Stop Intent."""
+    # type: (HandlerInput) -> Response
+    speech_text = "Thanks for playing!!"
+
+    handler_input.response_builder.speak(
+        speech_text).ask("Please say again").set_should_end_session(True)
+    return handler_input.response_builder.response
+
+
 @sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.menu)
 def menu_handler(handler_input):
     """
@@ -228,19 +242,6 @@ def finish_date(handler_input, session_attr, speech_text):
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
         False)
-    return handler_input.response_builder.response
-
-@sb.request_handler(
-    can_handle_func=lambda input:
-    is_intent_name("AMAZON.CancelIntent")(input) or
-    is_intent_name("AMAZON.StopIntent")(input))
-def cancel_and_stop_intent_handler(handler_input):
-    """Single handler for Cancel and Stop Intent."""
-    # type: (HandlerInput) -> Response
-    speech_text = "Thanks for playing!!"
-
-    handler_input.response_builder.speak(
-        speech_text).ask("Please say again").set_should_end_session(True)
     return handler_input.response_builder.response
 
 
