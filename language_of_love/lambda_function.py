@@ -21,7 +21,7 @@ from custom_collections.intents import Intents
 
 import json
 from love import LanguageOfLove
-from areas.date.date_intents import conversations
+from areas.date.date_intents.date_picker import date_picker
 from areas.date.date_handler import can_handle_date
 
 SKILL_NAME = 'Language Of Love'
@@ -29,9 +29,6 @@ sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-
-IntentList, ResponseDict = conversations()
-IntentList, ResponseDict = json.loads(IntentList), json.loads(ResponseDict)
 
 @sb.request_handler(can_handle_func=is_request_type("LaunchRequest"))
 def launch_request_handler(handler_input):
@@ -162,7 +159,12 @@ def handle_date(handler_input):
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     z = int(session_attr.conversation)
     y = int(session_attr.place)
-    speech_text = ResponseDict[IntentList[z][y]]
+
+    # Use date picker to get the correct date audio depending on who you dating
+    intent_list, response_dict = date_picker(session_attr.date)
+    intent_list, response_dict = json.loads(intent_list), json.loads(response_dict)
+
+    speech_text = response_dict[intent_list[z][y]]
 
     if y == 1:
         y = 0

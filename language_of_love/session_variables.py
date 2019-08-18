@@ -1,5 +1,6 @@
 from custom_collections.slots import AreaEnum
 from custom_collections.slots import GenderPreferenceEnum
+from custom_collections.slots import Date
 from custom_collections.practice_phrases import PracticePhrases
 
 
@@ -21,6 +22,7 @@ class SessionVariables:
     DATE_BAD_RESPONSE_COUNT = "date_bad_response_count"
     DATE_ROUND = 'date_round'
     NUMBER_OF_DATES = "number_of_dates"
+    DATE = "date"
 
     # Variables
     conversation = None
@@ -36,6 +38,7 @@ class SessionVariables:
     date_bad_response_count = None
     date_round = None
     number_of_dates = None
+    date = None
 
     def __init__(self, state_variables):
         """
@@ -71,6 +74,8 @@ class SessionVariables:
 
         self.number_of_dates = state_variables[self.NUMBER_OF_DATES] if self.NUMBER_OF_DATES in state_variables else 0
 
+        self.date = Date(state_variables[self.DATE]) if self.DATE in state_variables else Date.tessa
+
 
     @staticmethod
     def get_initial_dict():
@@ -91,6 +96,7 @@ class SessionVariables:
             SessionVariables.DATE_BAD_RESPONSE_COUNT: 0,
             SessionVariables.DATE_ROUND: 0,
             SessionVariables.NUMBER_OF_DATES: 0,
+            SessionVariables.DATE: Date.tessa
         }
 
     def get_dict(self):
@@ -107,5 +113,6 @@ class SessionVariables:
             SessionVariables.TOTAL_SCORE: self.total_score,
             SessionVariables.DATE_BAD_RESPONSE_COUNT: self.date_bad_response_count,
             SessionVariables.DATE_ROUND: self.date_round,
-            SessionVariables.NUMBER_OF_DATES: self.number_of_dates
+            SessionVariables.NUMBER_OF_DATES: self.number_of_dates,
+            SessionVariables.DATE: self.date
         }

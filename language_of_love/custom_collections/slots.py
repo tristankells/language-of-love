@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class AreaEnum(Enum):
     """
     Represents the area the player is currently playing in; tutorial, practice 
@@ -13,9 +14,19 @@ class AreaEnum(Enum):
 
 class GenderPreferenceEnum(Enum):
     """
-    Represents the preffered gender of the player's romantic interests in the 
+    Represents the preferred gender of the player's romantic interests in the
     skill: both, male or female
     """
     both = 1
     male = 2
     female = 3
+
+
+class Date(Enum):
+    """
+    Who the player is on a date with
+    """
+
+    tessa = 1
+    enrique = 2
+    conchita = 3

@@ -6,6 +6,12 @@ class Translator():
     Translator with full game dialog, but spoken by Alexa. Useful for player
     testing before recording lines
     """
+    CONCHITA_VOICE = '<voice name="Conchita"><lang xml:lang="es-ES">{}</lang></voice>'
+
+    ENRIQUE_VOICE = '<voice name="Enrique"><lang xml:lang="es-ES">{}</lang></voice>'
+
+    CONCHITA_VOICE.format("lecturer-practice-start")
+
     launch = Audio.Carmen_intro_1
 
     launch_first_time = Audio.welcome + Audio.welcome_2
@@ -38,10 +44,40 @@ class Translator():
 
         fallback = "Sorry didn't understand that " + new_or_repeat
 
-    class SpeedDate:
+    class Date:
         begin = '<voice name="Nicole">Your speed date is about to begin. Begin by asking your date a question. Get ready to reply</voice>'
 
         fallback = '<voice name="Nicole"> I do not understand. No entiendo </voice>'
+
+        class Conchita:
+            CONCHITA_VOICE = '<voice name="Conchita"><lang xml:lang="es-ES">{}</lang></voice>'
+
+            answer_where_you_from = CONCHITA_VOICE.format("Wow, i love that place")
+            question_where_you_from = CONCHITA_VOICE.format("I'm from Mexico. Where are you from?")
+
+            answer_job = CONCHITA_VOICE.format("Im a cook")
+            question_job = CONCHITA_VOICE.format("What do you do for a living")
+
+            question_animals = CONCHITA_VOICE.format("What's your favourite animal")
+            answer_animals = CONCHITA_VOICE.format("I love tigers")
+
+            question_favourite_colour = CONCHITA_VOICE.format("I love the colour red")
+            answer_favourite_colour = CONCHITA_VOICE.format("What's your favourite colour")
+
+        class Enrique:
+            ENRIQUE_VOICE = '<voice name="Enrique"><lang xml:lang="es-ES">{}</lang></voice>'
+
+            answer_where_you_from = ENRIQUE_VOICE.format("I'm from Mexico")
+            question_where_you_from = ENRIQUE_VOICE.format("Where are you from")
+
+            answer_job = ENRIQUE_VOICE.format("Im a cook")
+            question_job = ENRIQUE_VOICE.format("What do you do for a living")
+
+            question_animals = ENRIQUE_VOICE.format("What's your favourite animal")
+            answer_animals = ENRIQUE_VOICE.format("I love tigers")
+
+            question_favourite_colour = ENRIQUE_VOICE.format("I love the colour red")
+            answer_favourite_colour = ENRIQUE_VOICE.format("What's your favourite colour")
 
     class Error:
         bad_option = "Not an option right now."
