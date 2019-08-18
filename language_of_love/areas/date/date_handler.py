@@ -4,7 +4,6 @@ Your module description
 # -*- coding: utf-8 -*-
 # This is a simple Hello World Alexa Skill, built using
 # the implementation of handler classes approach in skill builder.
-from areas.date.date_intents.date_tessa import conversations
 import json
 import logging
 
