@@ -17,9 +17,6 @@ sb = SkillBuilder()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-IntentList, ResponseDict = conversations()
-IntentList, ResponseDict = json.loads(IntentList), json.loads(ResponseDict)
-
 from session_variables import SessionVariables
 
 
@@ -33,10 +30,10 @@ def can_handle_date(handler_input):
     intent_list, response_dict = json.loads(intent_list), json.loads(response_dict)
 
     if int(session_attr.conversation) == 1000:
-        session_attr = get_variables_not_in_conversation(handler_input, session_attr)
+        session_attr = get_variables_not_in_conversation(handler_input, session_attr, intent_list)
 
     elif int(session_attr.conversation) != 1000:
-        session_attr = get_variables_in_conversation(handler_input, session_attr)
+        session_attr = get_variables_in_conversation(handler_input, session_attr, intent_list)
 
     z = int(session_attr.conversation)
     y = int(session_attr.place)
@@ -46,8 +43,8 @@ def can_handle_date(handler_input):
     return is_intent_name(intent_list[z][y])(handler_input)
 
 
-def get_variables_not_in_conversation(handler_input, session_attr):
-    for x in range(0, len(IntentList)):
+def get_variables_not_in_conversation(handler_input, session_attr, intent_list):
+    for x in range(0, len(intent_list)):
         if is_intent_name(IntentList[x][0])(handler_input):
             session_attr.conversation = x
 
@@ -58,8 +55,8 @@ def get_variables_not_in_conversation(handler_input, session_attr):
     return session_attr
 
 
-def get_variables_in_conversation(handler_input, session_attr):
+def get_variables_in_conversation(handler_input, session_attr, intent_list):
     z = session_attr.conversation
-    if is_intent_name(IntentList[z][1])(handler_input):
+    if is_intent_name(intent_list[z][1])(handler_input):
         session_attr.place = 1
     return session_attr
