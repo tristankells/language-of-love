@@ -20,7 +20,7 @@ class Menu(Area):
 
     def start_speed_date(self):
         self.session_variables.area = AreaEnum.speed_date
-        self.speech_text = self.translator.SpeedDate.begin
+        self.speech_text = self.translator.Date.begin
 
     def help(self):
         self.speech_text = Area.translator.Menu.fallback
