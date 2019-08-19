@@ -1,13 +1,13 @@
-from custom_collections.slots import Date
+from custom_collections.slots import DateEnum
 from areas.date.date_intents.date_conchita import Conchita
 from areas.date.date_intents.date_tessa import Tessa
 from areas.date.date_intents.date_enrique import Enrique
 
 
 def date_picker(date):
-    if (date == Date.tessa):
+    if (date == DateEnum.tessa):
         return Tessa().conversations()
-    elif (date == Date.enrique):
+    elif (date == DateEnum.enrique):
         return Enrique().conversations()
-    elif (date == Date.conchita):
+    elif (date == DateEnum.conchita):
         return Conchita().conversations()

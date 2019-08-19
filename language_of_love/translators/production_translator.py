@@ -52,32 +52,34 @@ class Translator():
         class Conchita:
             CONCHITA_VOICE = '<voice name="Conchita"><lang xml:lang="es-ES">{}</lang></voice>'
 
-            answer_where_you_from = CONCHITA_VOICE.format("Wow, i love that place")
             question_where_you_from = CONCHITA_VOICE.format("I'm from Mexico. Where are you from?")
+            answer_where_you_from = CONCHITA_VOICE.format("Wow, i love that place")
 
-            answer_job = CONCHITA_VOICE.format("Im a cook")
-            question_job = CONCHITA_VOICE.format("What do you do for a living")
+            question_job = CONCHITA_VOICE.format("Im a cook. What do you do for a living")
+            answer_job = CONCHITA_VOICE.format("That must be interesting work")
 
-            question_animals = CONCHITA_VOICE.format("What's your favourite animal")
-            answer_animals = CONCHITA_VOICE.format("I love tigers")
+            question_animals = CONCHITA_VOICE.format("I love tigers. What's your favourite animal")
+            answer_animals = CONCHITA_VOICE.format("What a great animal")
 
-            question_favourite_colour = CONCHITA_VOICE.format("I love the colour red")
-            answer_favourite_colour = CONCHITA_VOICE.format("What's your favourite colour")
+            question_favourite_colour = CONCHITA_VOICE.format("I love the colour red. What's your favourite colour")
+            answer_favourite_colour = CONCHITA_VOICE.format("Nice colour")
+
+
 
         class Enrique:
             ENRIQUE_VOICE = '<voice name="Enrique"><lang xml:lang="es-ES">{}</lang></voice>'
 
-            answer_where_you_from = ENRIQUE_VOICE.format("I'm from Mexico")
-            question_where_you_from = ENRIQUE_VOICE.format("Where are you from")
+            question_where_you_from = ENRIQUE_VOICE.format("I'm from Mexico. Where are you from?")
+            answer_where_you_from = ENRIQUE_VOICE.format("Wow, i love that place")
 
-            answer_job = ENRIQUE_VOICE.format("Im a cook")
-            question_job = ENRIQUE_VOICE.format("What do you do for a living")
+            question_job = ENRIQUE_VOICE.format("Im a cook. What do you do for a living")
+            answer_job = ENRIQUE_VOICE.format("That must be interesting work")
 
-            question_animals = ENRIQUE_VOICE.format("What's your favourite animal")
-            answer_animals = ENRIQUE_VOICE.format("I love tigers")
+            question_animals = ENRIQUE_VOICE.format("I love tigers. What's your favourite animal")
+            answer_animals = ENRIQUE_VOICE.format("What a great animal")
 
-            question_favourite_colour = ENRIQUE_VOICE.format("I love the colour red")
-            answer_favourite_colour = ENRIQUE_VOICE.format("What's your favourite colour")
+            question_favourite_colour = ENRIQUE_VOICE.format("I love the colour red. What's your favourite colour")
+            answer_favourite_colour = ENRIQUE_VOICE.format("Nice colour")
 
     class Error:
         bad_option = "Not an option right now."

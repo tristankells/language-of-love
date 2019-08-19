@@ -1,6 +1,6 @@
 from custom_collections.slots import AreaEnum
 from custom_collections.slots import GenderPreferenceEnum
-from custom_collections.slots import Date
+from custom_collections.slots import DateEnum
 from custom_collections.practice_phrases import PracticePhrases
 
 
@@ -74,7 +74,7 @@ class SessionVariables:
 
         self.number_of_dates = state_variables[self.NUMBER_OF_DATES] if self.NUMBER_OF_DATES in state_variables else 0
 
-        self.date = Date(state_variables[self.DATE]) if self.DATE in state_variables else Date.tessa
+        self.date = DateEnum(state_variables[self.DATE]) if self.DATE in state_variables else DateEnum.tessa
 
 
     @staticmethod
@@ -96,7 +96,7 @@ class SessionVariables:
             SessionVariables.DATE_BAD_RESPONSE_COUNT: 0,
             SessionVariables.DATE_ROUND: 0,
             SessionVariables.NUMBER_OF_DATES: 0,
-            SessionVariables.DATE: Date.conchita
+            SessionVariables.DATE: DateEnum.conchita
         }
 
     def get_dict(self):

@@ -22,7 +22,7 @@ class GenderPreferenceEnum(Enum):
     female = 3
 
 
-class Date(Enum):
+class DateEnum(Enum):
     """
     Who the player is on a date with
     """
