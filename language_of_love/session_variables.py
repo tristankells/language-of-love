@@ -96,7 +96,7 @@ class SessionVariables:
             SessionVariables.DATE_BAD_RESPONSE_COUNT: 0,
             SessionVariables.DATE_ROUND: 0,
             SessionVariables.NUMBER_OF_DATES: 0,
-            SessionVariables.DATE: Date.tessa
+            SessionVariables.DATE: Date.conchita
         }
 
     def get_dict(self):

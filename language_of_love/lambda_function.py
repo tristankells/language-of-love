@@ -12,7 +12,7 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from ask_sdk_model.ui import SimpleCard
 from session_variables import SessionVariables
-from custom_collections.slots import AreaEnum
+from custom_collections.slots import AreaEnum, Date
 from areas.introduction import Introduction
 from areas.menu import Menu
 from areas.practice import Practice
@@ -237,7 +237,7 @@ def finish_date(handler_input, session_attr, speech_text):
     # After date is over, set number of date rounds, bad response count and date score to zero, ready for a new date to begin
     session_attr.date_round = session_attr.date_bad_response_count = session_attr.date_score = 0
 
-    # session_attr.date += 1
+    session_attr.date += Date(session_attr.date.value + 1)
 
     # Increase the number of dates by one, so we can decide how many total dates they have been on and changes things accordingly
     session_attr.number_of_dates += 1
