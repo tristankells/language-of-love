@@ -237,7 +237,14 @@ def finish_date(handler_input, session_attr, speech_text):
     # After date is over, set number of date rounds, bad response count and date score to zero, ready for a new date to begin
     session_attr.date_round = session_attr.date_bad_response_count = session_attr.date_score = 0
 
-    session_attr.date = DateEnum(session_attr.date.value.value + 1)
+    if session_attr.date is DateEnum.tessa:
+        session_attr.date = DateEnum.conchita
+
+    elif session_attr.date is DateEnum.conchita:
+        session_attr.date = DateEnum.enrique
+
+    elif session_attr.date is DateEnum.enrique:
+        session_attr.date = DateEnum.tessa
 
     # Increase the number of dates by one, so we can decide how many total dates they have been on and changes things accordingly
     session_attr.number_of_dates += 1
