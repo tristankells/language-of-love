@@ -58,9 +58,14 @@ class Practice(Area):
         self.session_variables.area = AreaEnum.menu
         self.speech_text = self.translator.Practice.end + " " + self.translator.Menu.options
 
+    def start_speed_date(self):
+        self.session_variables.area = AreaEnum.speed_date
+        self.speech_text = self.translator.Date.begin
+
     intent_dictionary = {
         Intents.NEW_PRACTICE_PHRASE: new_phrase,
         Intents.REPEAT_PRACTICE_PHRASE: repeat_phrase,
         Intents.CANCEL: end_tutorial,
-        Intents.LEAVE_AREA: end_tutorial
+        Intents.LEAVE_AREA: end_tutorial,
+        Intents.START_SPEED_DATE: start_speed_date
     }

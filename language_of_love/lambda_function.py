@@ -230,6 +230,19 @@ def handle_date_problems(handler_input):
     return handler_input.response_builder.response
 
 
+def get_next_date(date):
+    if date is DateEnum.tessa:
+        date = DateEnum.conchita
+
+    elif date is DateEnum.conchita:
+        date = DateEnum.enrique
+
+    elif date is DateEnum.enrique:
+        date = DateEnum.tessa
+
+    return date
+
+
 def finish_date(handler_input, session_attr, speech_text):
     speech_text += " You finished the date, your score is " + str(
         session_attr.date_score) + ". Not too bad, you might get another date if your lucky. The second date is about to begin, ask your date a question "
@@ -237,14 +250,8 @@ def finish_date(handler_input, session_attr, speech_text):
     # After date is over, set number of date rounds, bad response count and date score to zero, ready for a new date to begin
     session_attr.date_round = session_attr.date_bad_response_count = session_attr.date_score = 0
 
-    if session_attr.date is DateEnum.tessa:
-        session_attr.date = DateEnum.conchita
-
-    elif session_attr.date is DateEnum.conchita:
-        session_attr.date = DateEnum.enrique
-
-    elif session_attr.date is DateEnum.enrique:
-        session_attr.date = DateEnum.tessa
+    # Get next date
+    session_attr.date = get_next_date(session_attr.date)
 
     # Increase the number of dates by one, so we can decide how many total dates they have been on and changes things accordingly
     session_attr.number_of_dates += 1
