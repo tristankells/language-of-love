@@ -41,9 +41,7 @@ class Practice(Area):
         current_phrase_key = self.session_variables.current_practice_phrase
         new_phrase_key = self.get_new_phrase(current_phrase_key)
         self.speech_text = PracticePhrases.get_speech_text(new_phrase_key)
-
         self.session_variables.current_practice_phrase = new_phrase_key
-        self.session_variables.tutorial_repeat_or_new = False
 
     def repeat_phrase(self):
         """
@@ -51,10 +49,8 @@ class Practice(Area):
         """
         phrase_key = self.session_variables.current_practice_phrase
         self.speech_text = PracticePhrases.get_speech_text(phrase_key)
-        self.session_variables.tutorial_repeat_or_new = False
 
     def end_tutorial(self):
-        self.session_variables.tutorial_repeat_or_new = False
         self.session_variables.area = AreaEnum.menu
         self.speech_text = self.translator.Practice.end + " " + self.translator.Menu.options
 

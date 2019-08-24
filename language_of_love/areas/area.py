@@ -11,9 +11,11 @@ class Area():
     translator = Translator()
     speech_text = translator.General.fallback  # Store the Alexa speech reply for the player. Store the default fallback reply if none of the area intents are triggered
 
-    def __init__(self, player_intent, session_variables):
+    def __init__(self, player_intent, session_variables, translator=None):
         self.player_intent = player_intent
         self.session_variables = SessionVariables(session_variables)
+        if (translator is not None):
+            self.translator = translator
 
     def get_response(self):
         if self.player_intent in self.intent_dictionary:

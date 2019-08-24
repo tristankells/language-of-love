@@ -14,8 +14,6 @@ class TestSessionVariables(unittest.TestCase):
         self.assertIsNotNone(session_variables.area, msg="Area should never be null")
         self.assertIsNotNone(session_variables.name, msg="Name should never be null")
         self.assertIsNotNone(session_variables.first_time, msg="First should never be null")
-        self.assertIsNotNone(session_variables.tutorial_repeat_or_new,
-                             msg="Tutorial repeat or null should never be null")
         self.assertIsNotNone(session_variables.current_practice_phrase, msg="Tutorial phrases should never be null")
         self.assertIsNotNone(session_variables.gender_preference, msg="Gender preferences should never be null")
 
@@ -28,8 +26,6 @@ class TestSessionVariables(unittest.TestCase):
         self.assertIsNotNone(session_variables[SessionVariables.AREA], msg="Area should never be null")
         self.assertIsNotNone(session_variables[SessionVariables.NAME], msg="Name should never be null")
         self.assertIsNotNone(session_variables[SessionVariables.FIRST_TIME], msg="First should never be null")
-        self.assertIsNotNone(session_variables[SessionVariables.PRACTICE_REPEAT_OR_NEW],
-                             msg="Tutorial repeat or null should never be null")
         self.assertIsNotNone(session_variables[SessionVariables.CURRENT_PRACTICE_PHRASE],
                              msg="Tutorial phrases should never be null")
         self.assertIsNotNone(session_variables[SessionVariables.GENDER_PREFERENCE],
@@ -40,7 +36,6 @@ class TestSessionVariables(unittest.TestCase):
             SessionVariables.AREA: slots.AreaEnum.speed_date,
             SessionVariables.NAME: "Test Name",
             SessionVariables.FIRST_TIME: False,
-            SessionVariables.PRACTICE_REPEAT_OR_NEW: False,
             SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.WHAT_IS_YOUR_NAME,
             SessionVariables.GENDER_PREFERENCE: slots.GenderPreferenceEnum.both
         }
@@ -52,8 +47,6 @@ class TestSessionVariables(unittest.TestCase):
         self.assertEqual(original_variables[SessionVariables.NAME], get_session_variables[SessionVariables.NAME])
         self.assertEqual(original_variables[SessionVariables.FIRST_TIME],
                          get_session_variables[SessionVariables.FIRST_TIME])
-        self.assertEqual(original_variables[SessionVariables.PRACTICE_REPEAT_OR_NEW],
-                         get_session_variables[SessionVariables.PRACTICE_REPEAT_OR_NEW])
         self.assertEqual(original_variables[SessionVariables.CURRENT_PRACTICE_PHRASE],
                          get_session_variables[SessionVariables.CURRENT_PRACTICE_PHRASE])
         self.assertEqual(original_variables[SessionVariables.GENDER_PREFERENCE],
