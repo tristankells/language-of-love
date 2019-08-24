@@ -52,34 +52,89 @@ class Translator():
         class Conchita:
             CONCHITA_VOICE = '<voice name="Conchita"><lang xml:lang="es-ES">{}</lang></voice>'
 
-            question_where_you_from = CONCHITA_VOICE.format("I'm from Mexico. Where are you from?")
-            answer_where_you_from = CONCHITA_VOICE.format("Wow, i love that place")
+            question_name = CONCHITA_VOICE.format(
+                "Me llamo Conchita. ¿Cuál es su nombre?")  # "My name is Conchita. What is your name?"
+            answer_name = CONCHITA_VOICE.format("Placer conocerte")  # "Pleasure to meet you"
 
-            question_job = CONCHITA_VOICE.format("Im a cook. What do you do for a living")
-            answer_job = CONCHITA_VOICE.format("That must be interesting work")
+            question_where_you_from = CONCHITA_VOICE.format(
+                "Soy de México. ¿De donde eres?")  # CONCHITA_VOICE.format("I'm from Mexico. Where are you from?")
+            answer_where_you_from = CONCHITA_VOICE.format(
+                "Wow, amo ese lugar")  # CONCHITA_VOICE.format("Wow, i love that place")
 
-            question_animals = CONCHITA_VOICE.format("I love tigers. What's your favourite animal")
-            answer_animals = CONCHITA_VOICE.format("What a great animal")
+            question_job = CONCHITA_VOICE.format(
+                "Soy cocinera A qué se dedica")  # CONCHITA_VOICE.format("Im a cook. What do you do for a living")
+            answer_job = CONCHITA_VOICE.format(
+                "Debe ser un trabajo interesante.")  # CONCHITA_VOICE.format("That must be interesting work")
 
-            question_favourite_colour = CONCHITA_VOICE.format("I love the colour red. What's your favourite colour")
-            answer_favourite_colour = CONCHITA_VOICE.format("Nice colour")
+            question_animals = CONCHITA_VOICE.format(
+                "Amo los tigres. Cual es tu animal favorito")  # CONCHITA_VOICE.format("I love tigers. What's your favourite animal")
+            answer_animals = CONCHITA_VOICE.format("Que gran animal")  # CONCHITA_VOICE.format("What a great animal")
+
+            question_colour = CONCHITA_VOICE.format(
+                "Me encanta el color rojo. Cuál es tu color favorito")  # CONCHITA_VOICE.format("I love the colour red. What's your favourite colour")
+            answer__colour = CONCHITA_VOICE.format("Bonito color")  # CONCHITA_VOICE.format("Nice colour")
+
+            question_my_day = CONCHITA_VOICE.format(
+                "Mi día fue genial, gracias, incluso mejor ahora")  # "My day was great thanks, even better now"
+            answer_my_day = CONCHITA_VOICE.format("Mmmm")  # "Mmmm"
+
+            question_age = CONCHITA_VOICE.format(
+                "Tengo veinticuatro años, ¿cuántos años tienes?")  # "I am twenty four years old, how old are you?"
+            answer_age = CONCHITA_VOICE.format("Ahhh")  # "Ahhh"
+
+            question_movie = CONCHITA_VOICE.format(
+                "Amo Casablanca, definitivamente mi película favorita")  # "I love Casablanca, definitely my favourite film"
+            answer_movie = CONCHITA_VOICE.format("Gran película")  # "Great film"
+
+            question_book = CONCHITA_VOICE.format(
+                "Me encantan los clásicos, Great Expectations realmente me inspira")  # "I love the classics, Great Expectations really inspires me"
+            answer_book = CONCHITA_VOICE.format(
+                "Lo he leído y también me encanta.")  # "I've read that, and I also love it"
 
 
 
         class Enrique:
             ENRIQUE_VOICE = '<voice name="Enrique"><lang xml:lang="es-ES">{}</lang></voice>'
 
-            question_where_you_from = ENRIQUE_VOICE.format("I'm from Mexico. Where are you from?")
-            answer_where_you_from = ENRIQUE_VOICE.format("Wow, i love that place")
+            question_name = ENRIQUE_VOICE.format(
+                "Me llamo Enrique. ¿Cuál es su nombre?")  # "My name is Conchita. What is your name?"
+            answer_name = ENRIQUE_VOICE.format("Placer conocerte")  # "Pleasure to meet you"
 
-            question_job = ENRIQUE_VOICE.format("Im a cook. What do you do for a living")
-            answer_job = ENRIQUE_VOICE.format("That must be interesting work")
+            question_where_you_from = ENRIQUE_VOICE.format(
+                "Soy de México. ¿De donde eres?")  # CONCHITA_VOICE.format("I'm from Mexico. Where are you from?")
+            answer_where_you_from = ENRIQUE_VOICE.format(
+                "Wow, amo ese lugar")  # CONCHITA_VOICE.format("Wow, i love that place")
 
-            question_animals = ENRIQUE_VOICE.format("I love tigers. What's your favourite animal")
-            answer_animals = ENRIQUE_VOICE.format("What a great animal")
+            question_job = ENRIQUE_VOICE.format(
+                "Soy cocinera A qué se dedica")  # CONCHITA_VOICE.format("Im a cook. What do you do for a living")
+            answer_job = ENRIQUE_VOICE.format(
+                "Debe ser un trabajo interesante.")  # CONCHITA_VOICE.format("That must be interesting work")
 
-            question_favourite_colour = ENRIQUE_VOICE.format("I love the colour red. What's your favourite colour")
-            answer_favourite_colour = ENRIQUE_VOICE.format("Nice colour")
+            question_animals = ENRIQUE_VOICE.format(
+                "Amo los tigres. Cual es tu animal favorito")  # CONCHITA_VOICE.format("I love tigers. What's your favourite animal")
+            answer_animals = ENRIQUE_VOICE.format("Que gran animal")  # CONCHITA_VOICE.format("What a great animal")
+
+            question_colour = ENRIQUE_VOICE.format(
+                "Me encanta el color rojo. Cuál es tu color favorito")  # CONCHITA_VOICE.format("I love the colour red. What's your favourite colour")
+            answer_colour = ENRIQUE_VOICE.format("Bonito color")  # CONCHITA_VOICE.format("Nice colour")
+
+            question_my_day = ENRIQUE_VOICE.format(
+                "Mi día fue genial, gracias, incluso mejor ahora")  # "My day was great thanks, even better now"
+            answer_my_day = ENRIQUE_VOICE.format("Mmmm")  # "Mmmm"
+
+            question_age = ENRIQUE_VOICE.format(
+                "Tengo veinticuatro años, ¿cuántos años tienes?")  # "I am twenty four years old, how old are you?"
+            answer_age = ENRIQUE_VOICE.format("Ahhh")  # "Ahhh"
+
+            question_movie = ENRIQUE_VOICE.format(
+                "Amo Casablanca, definitivamente mi película favorita")  # "I love Casablanca, definitely my favourite film"
+            answer_movie = ENRIQUE_VOICE.format("Gran película")  # "Great film"
+
+            question_book = ENRIQUE_VOICE.format(
+                "Me encantan los clásicos, Great Expectations realmente me inspira")  # "I love the classics, Great Expectations really inspires me"
+            answer_book = ENRIQUE_VOICE.format(
+                "Lo he leído y también me encanta.")  # "I've read that, and I also love it"
+
 
     class Error:
         bad_option = "Not an option right now."
