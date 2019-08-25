@@ -92,7 +92,6 @@ class Translator():
                 "Lo he leído y también me encanta.")  # "I've read that, and I also love it"
 
 
-
         class Enrique:
             ENRIQUE_VOICE = '<voice name="Enrique"><lang xml:lang="es-ES">{}</lang></voice>'
 
