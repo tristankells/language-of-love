@@ -30,6 +30,8 @@ sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+DATE_ROUNDS = 3
+
 
 @sb.request_handler(can_handle_func=is_request_type("LaunchRequest"))
 def launch_request_handler(handler_input):
@@ -182,7 +184,7 @@ def handle_date(handler_input):
         y = 1
 
     # If date over, add finishing date dialog
-    if (session_attr.date_round is 3):
+    if (session_attr.date_round is DATE_ROUNDS):
         return finish_date(handler_input, session_attr, speech_text)
 
     handler_input.attributes_manager.session_attributes = session_attr.get_dict()
