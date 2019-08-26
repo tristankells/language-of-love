@@ -83,7 +83,7 @@ class SessionVariables:
             SessionVariables.AREA: AreaEnum.introduction,
             SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both,
             SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.EMPTY,
-            SessionVariables.CONVERSATION: 0,
+            SessionVariables.CONVERSATION: 1000,
             SessionVariables.PLACE: 0,
             SessionVariables.DATE_SCORE: 0,
             SessionVariables.TOTAL_SCORE: 0,
