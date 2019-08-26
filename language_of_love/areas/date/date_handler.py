@@ -50,10 +50,13 @@ def get_variables_not_in_conversation(handler_input, session_attr, intent_list):
 
             break
             session_attr.conversation = 1000
+    session_attr.place = 0
     session_attr.conversation = x  # set conversation
     return session_attr
 
 
 def get_variables_in_conversation(handler_input, session_attr, intent_list):
     z = session_attr.conversation
+    if is_intent_name(intent_list[z][1])(handler_input):
+        session_attr.place = 1
     return session_attr

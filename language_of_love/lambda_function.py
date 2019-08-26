@@ -30,9 +30,18 @@ sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+<< << << < HEAD
 DATE_ROUNDS = 3
 
-
+== == == =
+>> >> >> > parent
+of
+463
+ea3b...Removed
+the
+unused
+place
+variable
 @sb.request_handler(can_handle_func=is_request_type("LaunchRequest"))
 def launch_request_handler(handler_input):
     """
@@ -53,7 +62,6 @@ def launch_request_handler(handler_input):
 
     return handler_input.response_builder.response
 
-
 def player_area(handler_input):
     """
     Takes the handler_input and returns an AreaEnum representing what area the play is in
@@ -62,9 +70,10 @@ def player_area(handler_input):
     """
     if SessionVariables.AREA in handler_input.attributes_manager.session_attributes:
         session_variables = handler_input.attributes_manager.session_attributes
-        return AreaEnum(session_variables[SessionVariables.AREA])
+        area = session_variables[SessionVariables.AREA]
     else:
-        return AreaEnum.menu
+        area = 0
+    return AreaEnum(area)
 
 
 @sb.request_handler(
@@ -155,7 +164,6 @@ def speed_date_help_handler(handler_input):
 
     return handler_input.response_builder.response
 
-
 # Date intent handlers
 @sb.request_handler(can_handle_func=lambda input: can_handle_date(input))
 def handle_date(handler_input):
@@ -172,6 +180,7 @@ def handle_date(handler_input):
 
     if y == 1:
         y = 0
+        session_attr.place = 0
 
         # Gain point and put the winning point sound in front of the current speech text
         session_attr.date_round += 1
@@ -191,13 +200,12 @@ def handle_date(handler_input):
 
     handler_input.response_builder.speak(speech_text).ask("Say again")
     return handler_input.response_builder.response
-
-
 # endregion
 
 
 @sb.request_handler(can_handle_func=lambda input: not can_handle_date(input))
 def handle_date_problems(handler_input):
+
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
 
     # Lose point and put the losing point sound in front of the current speech text
@@ -220,6 +228,7 @@ def handle_date_problems(handler_input):
     speech_text = Audio.cricket_sound + speech_text
 
     session_attr.conversation = 1000
+    session_attr.place = 0
 
     # If date over, add finishing date dialog
     if (session_attr.date_round is 3):

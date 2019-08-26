@@ -10,6 +10,7 @@ class SessionVariables:
     """
     # Variable string constants
     CONVERSATION = "conversation"
+    PLACE = "place"
     FIRST_TIME = "first_time"
     NAME = "name"
     AREA = "area"
@@ -24,6 +25,7 @@ class SessionVariables:
 
     # Variables
     conversation = None
+    place = None
     first_time = None
     name = None
     area = None
@@ -54,6 +56,7 @@ class SessionVariables:
 
         self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else 1000
 
+        self.place = state_variables[self.PLACE] if self.PLACE in state_variables else 0
 
         self.date_score = state_variables[self.DATE_SCORE] if self.DATE_SCORE in state_variables else 0
 
