@@ -47,9 +47,6 @@ def get_variables_not_in_conversation(handler_input, session_attr, intent_list):
     for x in range(0, len(intent_list)):
         if is_intent_name(intent_list[x][0])(handler_input):
             session_attr.conversation = x
-
-            break
-            session_attr.conversation = 1000
     session_attr.place = 0
     session_attr.conversation = x  # set conversation
     return session_attr
