@@ -66,7 +66,7 @@ class Translator():
 
             question_colour = CONCHITA_VOICE.format(
                 "Me encanta el color rojo. Cuál es tu color favorito")  # CONCHITA_VOICE.format("I love the colour red. What's your favourite colour")
-            answer__colour = CONCHITA_VOICE.format("Bonito color")  # CONCHITA_VOICE.format("Nice colour")
+            answer_colour = CONCHITA_VOICE.format("Bonito color")  # CONCHITA_VOICE.format("Nice colour")
 
             question_my_day = CONCHITA_VOICE.format(
                 "Mi día fue genial, gracias, incluso mejor ahora")  # "My day was great thanks, even better now"

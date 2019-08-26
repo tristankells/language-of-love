@@ -15,7 +15,7 @@ class Date:
                             Intents.QUESTION_ANIMALS: date_translator.question_animals,
                             Intents.ANSWER_ANIMALS: date_translator.answer_animals,
                             Intents.QUESTION_COLOUR: date_translator.question_colour,
-                            Intents.ANSWER_COLOUR: date_translator.answer__colour,
+                            Intents.ANSWER_COLOUR: date_translator.answer_colour,
                             Intents.QUESTION_DAY: date_translator.question_my_day,
                             Intents.ANSWER_DAY: date_translator.answer_my_day,
                             Intents.QUESTION_AGE: date_translator.question_age,
