@@ -46,7 +46,7 @@ class Intents:
     QUESTION_JOB = 'QuestionJobIntent'
 
     # Samples phrases : 'I am working as a {Job}', 'I work as {Job}', 'I am an {Job}', 'I am a {Job}', 'I works as {Job}', 'My work is {Job}', '{Job}', 'My job is {Job}'
-    ANSWER_MY_JOB = 'AnswerMyJobIntent'
+    ANSWER_JOB = 'AnswerJobIntent'
 
     # Samples phrases : 'if you were an animal in the wild what would you be', 'what kind of animal do you wish to be in the next life', 'what animal would you wish to have', 'what animal do you wish to have', 'if you could be an animal what would it be', 'what is your favourite pet animal', 'what is your favourite pet', 'what animal would you like to be', 'What is your favorite animal', 'Do you like animals', 'What animal do you like', 'Do you have any pets', 'How many pets do you have', 'How old is your pet', 'How old are your pets', 'Why don't you like animals'
     QUESTION_ANIMALS = 'QuestionAnimalsIntent'

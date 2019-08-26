@@ -69,7 +69,7 @@ class SessionVariables:
 
         self.number_of_dates = state_variables[self.NUMBER_OF_DATES] if self.NUMBER_OF_DATES in state_variables else 0
 
-        self.date = DateEnum(state_variables[self.DATE]) if self.DATE in state_variables else DateEnum.tessa
+        self.date = DateEnum(state_variables[self.DATE]) if self.DATE in state_variables else DateEnum.enrique
 
 
     @staticmethod

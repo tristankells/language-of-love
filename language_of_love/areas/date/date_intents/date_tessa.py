@@ -8,7 +8,7 @@ class Tessa():
     intent_list = [[Intents.QUESTION_WHERE_YOU_FROM, Intents.ANSWER_WHERE_YOU_FROM],
                    [Intents.QUESTION_JOB, Intents.ANSWER_MY_JOB],
                    [Intents.QUESTION_ANIMALS, "AnswerAnimalIntent"],
-                   [Intents.QUESTION_FAVOURITE_COLOUR, Intents.ANSWER_FAVOURITE_COLOUR]
+                   [Intents.QUESTION_COLOUR, Intents.ANSWER_COLOUR]
                    ]
 
     response_dict: Dict[str, str] = {
@@ -18,8 +18,8 @@ class Tessa():
         Intents.ANSWER_MY_JOB: "Great",
         Intents.QUESTION_ANIMALS: "My favourite animal is a giraffe, what's yours?",
         "AnswerAnimalIntent": "Cool animal",
-        Intents.QUESTION_FAVOURITE_COLOUR: Audio.A_tessa_my_favourite_colour_is_blue + Audio.Q_tessa_whats_your_favourite_colour,
-        Intents.ANSWER_FAVOURITE_COLOUR: "Great"
+        Intents.QUESTION_COLOUR: Audio.A_tessa_my_favourite_colour_is_blue + Audio.Q_tessa_whats_your_favourite_colour,
+        Intents.ANSWER_COLOUR: "Great"
         }
 
     def conversations(self):

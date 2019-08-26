@@ -6,12 +6,6 @@ class Translator():
     Translator with full game dialog, but spoken by Alexa. Useful for player
     testing before recording lines
     """
-    CONCHITA_VOICE = '<voice name="Conchita"><lang xml:lang="es-ES">{}</lang></voice>'
-
-    ENRIQUE_VOICE = '<voice name="Enrique"><lang xml:lang="es-ES">{}</lang></voice>'
-
-    CONCHITA_VOICE.format("lecturer-practice-start")
-
     launch = Audio.Carmen_intro_1
 
     launch_first_time = Audio.welcome + Audio.welcome_2

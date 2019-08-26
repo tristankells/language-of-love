@@ -21,7 +21,7 @@ from custom_collections.intents import Intents
 
 import json
 from love import LanguageOfLove
-from areas.date.date_intents.date_picker import date_picker
+from areas.date.date_intents.date_helper import date_picker
 from areas.date.date_handler import can_handle_date
 
 SKILL_NAME = 'Language Of Love'

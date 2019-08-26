@@ -10,7 +10,7 @@ import logging
 from ask_sdk_core.skill_builder import SkillBuilder
 from ask_sdk_core.utils import is_intent_name
 from ask_sdk_core.handler_input import HandlerInput
-from areas.date.date_intents.date_picker import date_picker
+from areas.date.date_intents.date_helper import date_picker
 
 sb = SkillBuilder()
 
