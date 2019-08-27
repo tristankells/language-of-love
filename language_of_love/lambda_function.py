@@ -179,6 +179,7 @@ def can_handle_date(handler_input):
     # If player in conversation, check if intent in the intent list of questions. If it is, set conversation to the X index of the question
     elif int(session_attr.conversation) != 1000:
         if intent_list[session_attr.conversation][1] is intent_name:
+            session_attr.conversation = 1000
             can_handle = True
 
     handler_input.attributes_manager.session_attributes = session_attr.get_dict()
@@ -191,25 +192,20 @@ def can_handle_date(handler_input):
 def handle_date(handler_input):
     # type: (HandlerInput) -> Response
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
-    z = int(session_attr.conversation)
+
 
     # Use date picker to get the correct date audio depending on who you dating
     intent_list, response_dict = date_picker(session_attr.date)
     intent_list, response_dict = json.loads(intent_list), json.loads(response_dict)
 
-    speech_text = response_dict[intent_list[z][y]]
+    speech_text = response_dict[get_intent_name(handler_input)]
 
-    if y == 1:
-        y = 0
+    # If the can handle the date, and the conversation is completed, give them a point
+    if session_attr.conversation == 1000:
         # Gain point and put the winning point sound in front of the current speech text
         session_attr.date_round += 1
         session_attr.date_score += 1
         speech_text = Audio.point + speech_text
-
-        session_attr.conversation = 1000
-
-    if y == 0:
-        y = 1
 
     # If date over, add finishing date dialog
     if (session_attr.date_round is DATE_ROUNDS):
