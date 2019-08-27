@@ -170,14 +170,14 @@ def can_handle_date(handler_input):
     can_handle = False
 
     # If player not currently in a conversation, check if intent in the intent list of questions. If it is, set conversation to the X index of the question
-    if session_attr.conversation is 1000:
+    if int(session_attr.conversation) is 1000:
         for index in range(0, len(intent_list)):
             if intent_list[index][0] is intent_name:
                 session_attr.conversation = index
                 can_handle = True
 
     # If player in conversation, check if intent in the intent list of questions. If it is, set conversation to the X index of the question
-    elif session_attr.conversation is not 1000:
+    elif int(session_attr.conversation) is not 1000:
         if intent_list[session_attr.conversation][1] is intent_name:
             session_attr.conversation = 1000
             can_handle = True
