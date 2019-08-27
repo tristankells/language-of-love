@@ -10,7 +10,6 @@ class SessionVariables:
     """
     # Variable string constants
     CONVERSATION = "conversation"
-    PLACE = "place"
     FIRST_TIME = "first_time"
     NAME = "name"
     AREA = "area"
@@ -25,7 +24,6 @@ class SessionVariables:
 
     # Variables
     conversation = None
-    place = None
     first_time = None
     name = None
     area = None
@@ -56,8 +54,6 @@ class SessionVariables:
 
         self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else 1000
 
-        self.place = state_variables[self.PLACE] if self.PLACE in state_variables else 0
-
         self.date_score = state_variables[self.DATE_SCORE] if self.DATE_SCORE in state_variables else 0
 
         self.total_score = state_variables[self.TOTAL_SCORE] if self.TOTAL_SCORE in state_variables else 0
@@ -84,7 +80,6 @@ class SessionVariables:
             SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both,
             SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.EMPTY,
             SessionVariables.CONVERSATION: 1000,
-            SessionVariables.PLACE: 0,
             SessionVariables.DATE_SCORE: 0,
             SessionVariables.TOTAL_SCORE: 0,
             SessionVariables.DATE_BAD_RESPONSE_COUNT: 0,
@@ -101,7 +96,6 @@ class SessionVariables:
             SessionVariables.GENDER_PREFERENCE: self.gender_preference,
             SessionVariables.CURRENT_PRACTICE_PHRASE: self.current_practice_phrase,
             SessionVariables.CONVERSATION: self.conversation,
-            SessionVariables.PLACE: self.place,
             SessionVariables.DATE_SCORE: self.date_score,
             SessionVariables.TOTAL_SCORE: self.total_score,
             SessionVariables.DATE_BAD_RESPONSE_COUNT: self.date_bad_response_count,

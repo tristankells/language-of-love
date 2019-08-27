@@ -22,7 +22,6 @@ from custom_collections.intents import Intents
 import json
 from love import LanguageOfLove
 from areas.date.date_intents.date_helper import date_picker
-from areas.date.date_handler import can_handle_date
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
@@ -31,6 +30,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 DATE_ROUNDS = 3
+
 
 @sb.request_handler(can_handle_func=is_request_type("LaunchRequest"))
 def launch_request_handler(handler_input):
@@ -51,6 +51,7 @@ def launch_request_handler(handler_input):
     handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
 
     return handler_input.response_builder.response
+
 
 def player_area(handler_input):
     """
@@ -154,13 +155,43 @@ def speed_date_help_handler(handler_input):
 
     return handler_input.response_builder.response
 
+
+def can_handle_date(handler_input):
+    # type: (HandlerInput) -> bool
+
+    session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
+
+    intent_list, response_dict = date_picker(session_attr.date)
+
+    intent_list, response_dict = json.loads(intent_list), json.loads(response_dict)
+
+    intent_name = get_intent_name(handler_input)
+
+    can_handle = False
+
+    # If player not currently in a conversation, check if intent in the intent list of questions. If it is, set conversation to the X index of the question
+    if int(session_attr.conversation) == 1000:
+        for index in range(0, len(intent_list)):
+            if intent_list[index][0] is intent_name:
+                session_attr.conversation = index
+                can_handle = True
+
+    # If player in conversation, check if intent in the intent list of questions. If it is, set conversation to the X index of the question
+    elif int(session_attr.conversation) != 1000:
+        if intent_list[session_attr.conversation][1] is intent_name:
+            can_handle = True
+
+    handler_input.attributes_manager.session_attributes = session_attr.get_dict()
+
+    return can_handle
+
+
 # Date intent handlers
 @sb.request_handler(can_handle_func=lambda input: can_handle_date(input))
 def handle_date(handler_input):
     # type: (HandlerInput) -> Response
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
     z = int(session_attr.conversation)
-    y = int(session_attr.place)
 
     # Use date picker to get the correct date audio depending on who you dating
     intent_list, response_dict = date_picker(session_attr.date)
@@ -170,8 +201,6 @@ def handle_date(handler_input):
 
     if y == 1:
         y = 0
-        session_attr.place = 0
-
         # Gain point and put the winning point sound in front of the current speech text
         session_attr.date_round += 1
         session_attr.date_score += 1
@@ -190,12 +219,13 @@ def handle_date(handler_input):
 
     handler_input.response_builder.speak(speech_text).ask("Say again")
     return handler_input.response_builder.response
+
+
 # endregion
 
 
 @sb.request_handler(can_handle_func=lambda input: not can_handle_date(input))
 def handle_date_problems(handler_input):
-
     session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
 
     # Lose point and put the losing point sound in front of the current speech text
@@ -218,8 +248,6 @@ def handle_date_problems(handler_input):
     speech_text = Audio.cricket_sound + speech_text
 
     session_attr.conversation = 1000
-    session_attr.place = 0
-
     # If date over, add finishing date dialog
     if (session_attr.date_round is 3):
         return finish_date(handler_input, session_attr, speech_text)
