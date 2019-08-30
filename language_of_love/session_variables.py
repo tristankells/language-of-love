@@ -1,6 +1,7 @@
 from custom_collections.slots import AreaEnum
 from custom_collections.slots import GenderPreferenceEnum
 from custom_collections.slots import DateEnum
+from custom_collections.slots import ConversationEnum
 from custom_collections.practice_phrases import PracticePhrases
 
 
@@ -44,7 +45,7 @@ class SessionVariables:
 
         self.name = state_variables[self.NAME] if self.NAME in state_variables else "default"
 
-        self.area = AreaEnum(state_variables[self.AREA]) if self.AREA in state_variables else AreaEnum.speed_date
+        self.area = AreaEnum(state_variables[self.AREA]) if self.AREA in state_variables else AreaEnum.date
 
         self.gender_preference = GenderPreferenceEnum(state_variables[
                                                           self.GENDER_PREFERENCE]) if self.GENDER_PREFERENCE in state_variables else GenderPreferenceEnum.both
@@ -52,7 +53,7 @@ class SessionVariables:
         self.current_practice_phrase = state_variables[
             self.CURRENT_PRACTICE_PHRASE] if self.CURRENT_PRACTICE_PHRASE in state_variables else PracticePhrases.EMPTY
 
-        self.conversation = state_variables[self.CONVERSATION] if self.CONVERSATION in state_variables else 1000
+        self.conversation = ConversationEnum(state_variables[self.CONVERSATION]) if self.CONVERSATION in state_variables else ConversationEnum.nothing
 
         self.date_score = state_variables[self.DATE_SCORE] if self.DATE_SCORE in state_variables else 0
 
@@ -79,7 +80,7 @@ class SessionVariables:
             SessionVariables.AREA: AreaEnum.introduction,
             SessionVariables.GENDER_PREFERENCE: GenderPreferenceEnum.both,
             SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.EMPTY,
-            SessionVariables.CONVERSATION: 1000,
+            SessionVariables.CONVERSATION: ConversationEnum.nothing,
             SessionVariables.DATE_SCORE: 0,
             SessionVariables.TOTAL_SCORE: 0,
             SessionVariables.DATE_BAD_RESPONSE_COUNT: 0,

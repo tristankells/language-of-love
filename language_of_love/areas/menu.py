@@ -19,7 +19,7 @@ class Menu(Area):
         self.speech_text = self.translator.Practice.begin + self.translator.Practice.what_is_your_name
 
     def start_speed_date(self):
-        self.session_variables.area = AreaEnum.speed_date
+        self.session_variables.area = AreaEnum.date
         self.speech_text = self.translator.Date.begin
 
     def help(self):

@@ -26,7 +26,7 @@ class TestMenu(unittest.TestCase):
         response = Menu(Intents.START_SPEED_DATE, session_variables).get_response()
 
         # Check the player is in the speed date area now
-        self.assertEqual(slots.AreaEnum.speed_date, response.session_variables.area)
+        self.assertEqual(slots.AreaEnum.date, response.session_variables.area)
         # Check the correct speech text has been received
         self.assertEqual(TestTranslator.SpeedDate.begin, response.speech_text)
 

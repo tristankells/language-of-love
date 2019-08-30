@@ -35,4 +35,4 @@ class Date:
                               }
 
     def conversations(self):
-        return json.dumps(self.intent_list), json.dumps(self.response_dict)
+        return self.intent_list, self.response_dict

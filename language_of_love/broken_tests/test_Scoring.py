@@ -10,7 +10,7 @@ class TestMenu(unittest.TestCase):
 
     def test_player_score_goes_up(self):
         session_variables = {
-            SessionVariables.AREA: slots.AreaEnum.speed_date,
+            SessionVariables.AREA: slots.AreaEnum.date,
             SessionVariables.DATE_SCORE: 0,
             SessionVariables.TOTAL_SCORE: 0,
             SessionVariables.CONVERSATION: 0,

@@ -53,7 +53,7 @@ class TestPractice(unittest.TestCase):
 
         response = Practice(Intents.START_SPEED_DATE, session_variables).get_response()
         # Confirm player is in the menu area
-        self.assertEqual(response.session_variables.area, slots.AreaEnum.speed_date)
+        self.assertEqual(response.session_variables.area, slots.AreaEnum.date)
         # Confirm player gets the cancel tutorial message
         self.assertEqual(response.speech_text, Translator.Date.begin)
 

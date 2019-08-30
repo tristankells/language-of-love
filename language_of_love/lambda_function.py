@@ -5,31 +5,24 @@
 # persistence attributes and persistence adapter features in the SDK.
 import random
 import logging
-
 from ask_sdk.standard import StandardSkillBuilder
 from ask_sdk_core.utils import is_request_type, is_intent_name, get_intent_name
 from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
-from ask_sdk_model.ui import SimpleCard
 from session_variables import SessionVariables
-from custom_collections.slots import AreaEnum, DateEnum
+from custom_collections.slots import AreaEnum
 from areas.introduction import Introduction
 from areas.menu import Menu
 from areas.practice import Practice
-from custom_collections.audio import Audio
 from custom_collections.intents import Intents
-
-import json
+from areas.date_file import Date
 from love import LanguageOfLove
-from areas.date.date_intents.date_helper import date_picker
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-
-DATE_ROUNDS = 3
 
 
 @sb.request_handler(can_handle_func=is_request_type("LaunchRequest"))
@@ -143,7 +136,7 @@ def practice_handler(handler_input):
 
 
 @sb.request_handler(
-    can_handle_func=lambda input: player_area(input) is AreaEnum.speed_date and is_intent_name(Intents.HELP)(input))
+    can_handle_func=lambda input: player_area(input) is AreaEnum.date and is_intent_name(Intents.HELP)(input))
 def speed_date_help_handler(handler_input):
     session_variables = handler_input.attributes_manager.session_attributes
     handler_input.attributes_manager.session_attributes = session_variables
@@ -156,135 +149,17 @@ def speed_date_help_handler(handler_input):
     return handler_input.response_builder.response
 
 
-def can_handle_date(handler_input):
-    # type: (HandlerInput) -> bool
-
-    session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
-
-    intent_list, response_dict = date_picker(session_attr.date)
-
-    intent_list, response_dict = json.loads(intent_list), json.loads(response_dict)
-
+@sb.request_handler(
+    can_handle_func=lambda input: player_area(input) is AreaEnum.date)
+def date_handler(handler_input):
     intent_name = get_intent_name(handler_input)
+    session_variables = handler_input.attributes_manager.session_attributes
 
-    can_handle = False
+    response = Date(intent_name, session_variables).get_response()
 
-    # If player not currently in a conversation, check if intent in the intent list of questions. If it is, set conversation to the X index of the question
-    if int(session_attr.conversation) is 1000:
-        for index in range(0, len(intent_list)):
-            if intent_list[index][0] is intent_name:
-                session_attr.conversation = index
-                can_handle = True
+    handler_input.attributes_manager.session_attributes = response.session_variables.get_dict()
 
-    # If player in conversation, check if intent in the intent list of questions. If it is, set conversation to the X index of the question
-    elif int(session_attr.conversation) is not 1000:
-        if intent_list[session_attr.conversation][1] is intent_name:
-            session_attr.conversation = 1000
-            can_handle = True
-
-    handler_input.attributes_manager.session_attributes = session_attr.get_dict()
-
-    return can_handle
-
-
-# Date intent handlers
-@sb.request_handler(can_handle_func=lambda input: can_handle_date(input))
-def handle_date(handler_input):
-    # type: (HandlerInput) -> Response
-    session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
-
-
-    # Use date picker to get the correct date audio depending on who you dating
-    intent_list, response_dict = date_picker(session_attr.date)
-    intent_list, response_dict = json.loads(intent_list), json.loads(response_dict)
-
-    speech_text = response_dict[get_intent_name(handler_input)]
-
-    # If the can handle the date, and the conversation is completed, give them a point
-    if session_attr.conversation == 1000:
-        # Gain point and put the winning point sound in front of the current speech text
-        session_attr.date_round += 1
-        session_attr.date_score += 1
-        speech_text = Audio.point + speech_text
-
-    # If date over, add finishing date dialog
-    if (session_attr.date_round is DATE_ROUNDS):
-        return finish_date(handler_input, session_attr, speech_text)
-
-    handler_input.attributes_manager.session_attributes = session_attr.get_dict()
-
-    handler_input.response_builder.speak(speech_text).ask("Say again")
-    return handler_input.response_builder.response
-
-
-# endregion
-
-
-@sb.request_handler(can_handle_func=lambda input: not can_handle_date(input))
-def handle_date_problems(handler_input):
-    session_attr = SessionVariables(handler_input.attributes_manager.session_attributes)
-
-    # Lose point and put the losing point sound in front of the current speech text
-    session_attr.date_bad_response_count += 1
-    session_attr.date_round += 1
-
-    # Added different bad response audio depending on how many bad responses the player has given so far. If it is
-    # their third bad response, takes player back to menu
-    if (session_attr.date_bad_response_count is 1):
-        speech_text = Audio.Carmen_error_message_1
-    elif (session_attr.date_bad_response_count is 2):
-        speech_text = Audio.Carmen_error_message_2
-    elif (session_attr.date_bad_response_count is 3):
-        speech_text = Audio.Carmen_error_message_3
-        session_attr.area = AreaEnum.menu
-        session_attr.date_round -= 1
-    else:
-        speech_text = " No Entiedo "
-
-    speech_text = Audio.cricket_sound + speech_text
-
-    session_attr.conversation = 1000
-    # If date over, add finishing date dialog
-    if (session_attr.date_round is 3):
-        return finish_date(handler_input, session_attr, speech_text)
-
-    handler_input.attributes_manager.session_attributes = session_attr.get_dict()
-    handler_input.response_builder.speak(speech_text).set_card(
-        SimpleCard("Hello World", speech_text)).set_should_end_session(
-        False)
-    return handler_input.response_builder.response
-
-
-def get_next_date(date):
-    if date is DateEnum.tessa:
-        date = DateEnum.conchita
-
-    elif date is DateEnum.conchita:
-        date = DateEnum.enrique
-
-    elif date is DateEnum.enrique:
-        date = DateEnum.tessa
-
-    return date
-
-
-def finish_date(handler_input, session_attr, speech_text):
-    speech_text += " You finished the date, your score is " + str(
-        session_attr.date_score) + ". Not too bad, you might get another date if your lucky. The second date is about to begin, ask your date a question "
-
-    # After date is over, set number of date rounds, bad response count and date score to zero, ready for a new date to begin
-    session_attr.date_round = session_attr.date_bad_response_count = session_attr.date_score = 0
-
-    # Get next date
-    session_attr.date = get_next_date(session_attr.date)
-
-    # Increase the number of dates by one, so we can decide how many total dates they have been on and changes things accordingly
-    session_attr.number_of_dates += 1
-
-    handler_input.attributes_manager.session_attributes = session_attr.get_dict()
-    handler_input.response_builder.speak(speech_text).set_card(
-        SimpleCard("Hello World", speech_text)).set_should_end_session(
-        False)
+    handler_input.response_builder.speak(response.speech_text).ask("Say again")
     return handler_input.response_builder.response
 
 
