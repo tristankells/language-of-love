@@ -5,7 +5,7 @@ from session_variables import SessionVariables
 from custom_collections import slots
 from custom_collections.intents import Intents
 from translators.production_translator import Translator
-from areas.date_file import Date
+from areas.date_file import Date, ROUNDS_PER_DATE
 
 
 
@@ -87,7 +87,7 @@ class TestDate(unittest.TestCase):
             SessionVariables.CONVERSATION: slots.ConversationEnum.animal,
             SessionVariables.AREA: slots.AreaEnum.date,
             SessionVariables.DATE: DateEnum.conchita,
-            SessionVariables.DATE_ROUND: Date.ROUNDS_PER_DATE - 1,
+            SessionVariables.DATE_ROUND: ROUNDS_PER_DATE - 1,
             SessionVariables.DATE_SCORE: 2
         }
 
@@ -109,7 +109,7 @@ class TestDate(unittest.TestCase):
             SessionVariables.CONVERSATION: slots.ConversationEnum.name,
             SessionVariables.AREA: slots.AreaEnum.date,
             SessionVariables.DATE: DateEnum.conchita,
-            SessionVariables.DATE_ROUND: Date.ROUNDS_PER_DATE - 1,
+            SessionVariables.DATE_ROUND: ROUNDS_PER_DATE - 1,
             SessionVariables.DATE_SCORE: 2,
             SessionVariables.DATE_BAD_RESPONSE_COUNT: 1
         }
