@@ -14,9 +14,8 @@ class Date(Area):
         """
         Handler for when the player in a date will try to ask a question / start a conversation
         """
-        self.session_variables.test_message = "try_start_conversation"
         for index in range(0, len(self.intent_list)):  # Loop through list of accepted question/answer intents
-            if self.intent_list[index][0] is self.player_intent:  # If intent is in list of accepted questions
+            if self.intent_list[index][0] == self.player_intent:  # If intent == in list of accepted questions
                 self.ask_question(slots.ConversationEnum(index))  # Ask the question
                 return
 
@@ -26,8 +25,7 @@ class Date(Area):
         """
         Handler for when the player in a date will try to answer a question / continue a conversation
         """
-        self.session_variables.test_message = "try_continue_conversation"
-        if self.intent_list[self.session_variables.conversation.value][1] is self.player_intent:
+        if self.intent_list[self.session_variables.conversation.value][1] == self.player_intent:
             self.answer_question()
         else:
             self.conversation_error()
@@ -55,7 +53,7 @@ class Date(Area):
     def finish_date(self):
         self.speech_text += self.translator.Date.finish.format(self.session_variables.date_score)
 
-        # After date is over, set number of date rounds, bad response count and date score to zero, ready for a new date to begin
+        # After date == over, set number of date rounds, bad response count and date score to zero, ready for a new date to begin
         self.session_variables.date_round = self.session_variables.date_bad_response_count = self.session_variables.date_score = 0
 
         # Get next date
@@ -66,13 +64,13 @@ class Date(Area):
 
     @staticmethod
     def get_next_date(date):
-        if date is DateEnum.tessa:
+        if date == DateEnum.tessa:
             date = DateEnum.conchita
 
-        elif date is DateEnum.conchita:
+        elif date == DateEnum.conchita:
             date = DateEnum.enrique
 
-        elif date is DateEnum.enrique:
+        elif date == DateEnum.enrique:
             date = DateEnum.tessa
 
         return date
@@ -89,7 +87,7 @@ class Date(Area):
     def get_response(self):
         self.intent_list, self.response_dict = date_picker(self.session_variables.date)
 
-        if self.session_variables.conversation is slots.ConversationEnum.nothing:
+        if self.session_variables.conversation == slots.ConversationEnum.nothing:
             self.try_start_conversation()
         else:
             self.try_continue_conversation()

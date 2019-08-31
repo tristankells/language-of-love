@@ -14,7 +14,7 @@ class Area():
     def __init__(self, player_intent, session_variables, translator=None):
         self.player_intent = player_intent
         self.session_variables = SessionVariables(session_variables)
-        if (translator is not None):
+        if (translator != None):
             self.translator = translator
 
     def get_response(self):

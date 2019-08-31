@@ -1,7 +1,7 @@
 class Response:
     def __init__(self, speech_input, reprompt="repeat yourself", session_variables=None):
         # if speech_text is not null
-        if (speech_input is not None):
+        if (speech_input != None):
 
             # and if speech_text is an instance of string
             if (isinstance(speech_input, str)):
@@ -15,7 +15,7 @@ class Response:
                     self.speech_text = self.speech_text + text  # and speech text is list items combined
 
         # else if speech text is null
-        elif (speech_input is None):
+        elif (speech_input == None):
             self.speech_text = "Error logged"
 
         self.reprompt = reprompt

@@ -28,7 +28,7 @@ class Practice(Area):
         new_phrase_key = None
 
         # Keep looking for a unique key
-        while (new_phrase_key is None or new_phrase_key is current_phrase_key):
+        while (new_phrase_key == None or new_phrase_key == current_phrase_key):
             random_number = random.randint(1, 3)
             new_phrase_key = phrase_dictionary[random_number]
 

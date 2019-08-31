@@ -74,7 +74,7 @@ def cancel_and_stop_intent_handler(handler_input):
     return handler_input.response_builder.response
 
 
-@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.menu)
+@sb.request_handler(can_handle_func=lambda input: player_area(input) == AreaEnum.menu)
 def menu_handler(handler_input):
     """
     Menu handlers
@@ -85,7 +85,7 @@ def menu_handler(handler_input):
 
     response = Menu(intent_name, session_variables).get_response()
 
-    if response.session_variables is not None:
+    if response.session_variables != None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get_dict()
     else:
         handler_input.attributes_manager.session_attributes = session_variables.get_dict()
@@ -95,7 +95,7 @@ def menu_handler(handler_input):
 
 
 # Tutorial intent handlers
-@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.introduction)
+@sb.request_handler(can_handle_func=lambda input: player_area(input) == AreaEnum.introduction)
 def tutorial_handler(handler_input):
     """
     Tutorial handlers
@@ -106,7 +106,7 @@ def tutorial_handler(handler_input):
 
     response = Introduction(intent_name, session_variables).get_response()
 
-    if response.session_variables is not None:
+    if response.session_variables != None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get_dict()
 
     handler_input.response_builder.speak(response.speech_text).ask("Say again")
@@ -115,7 +115,7 @@ def tutorial_handler(handler_input):
 
 
 # Practice intent handlers
-@sb.request_handler(can_handle_func=lambda input: player_area(input) is AreaEnum.practice)
+@sb.request_handler(can_handle_func=lambda input: player_area(input) == AreaEnum.practice)
 def practice_handler(handler_input):
     """
     Practice handlers
@@ -127,7 +127,7 @@ def practice_handler(handler_input):
 
     response = Practice(intent_name, session_variables).get_response()
 
-    if response.session_variables is not None:
+    if response.session_variables != None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get_dict()
 
     handler_input.response_builder.speak(response.speech_text).ask("Say again")
@@ -136,7 +136,7 @@ def practice_handler(handler_input):
 
 
 @sb.request_handler(
-    can_handle_func=lambda input: player_area(input) is AreaEnum.date and is_intent_name(Intents.HELP)(input))
+    can_handle_func=lambda input: player_area(input) == AreaEnum.date and is_intent_name(Intents.HELP)(input))
 def speed_date_help_handler(handler_input):
     session_variables = handler_input.attributes_manager.session_attributes
     handler_input.attributes_manager.session_attributes = session_variables
@@ -150,7 +150,7 @@ def speed_date_help_handler(handler_input):
 
 
 @sb.request_handler(
-    can_handle_func=lambda input: player_area(input) is AreaEnum.date)
+    can_handle_func=lambda input: player_area(input) == AreaEnum.date)
 def date_handler(handler_input):
     intent_name = get_intent_name(handler_input)
     session_variables = handler_input.attributes_manager.session_attributes
