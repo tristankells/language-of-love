@@ -20,16 +20,16 @@ class TestDate(unittest.TestCase):
             SessionVariables.DATE: DateEnum.conchita
         }
 
-        response = Date(Intents.QUESTION_NAME, session_variables).get_response()
+        response = Date(Intents.QUESTION_WHERE_YOU_FROM, session_variables).get_response()
 
         # Confirm player still in date
         self.assertEqual(slots.AreaEnum.date, response.session_variables.area, )
 
         # Confirm player has started the right conversation
-        self.assertEqual(slots.ConversationEnum.name, response.session_variables.conversation)
+        self.assertEqual(slots.ConversationEnum.home_place, response.session_variables.conversation)
 
         # Confirm player gets the correct message
-        self.assertEqual(self.translator.question_name, response.speech_text)
+        self.assertEqual(self.translator.question_where_you_from, response.speech_text)
 
     def test__try_start_conversation__fails_if_they_do_not_ask_a_question(self):
         session_variables = {

@@ -14,6 +14,7 @@ class Date(Area):
         """
         Handler for when the player in a date will try to ask a question / start a conversation
         """
+        self.session_variables.test_message = "try_start_conversation"
         for index in range(0, len(self.intent_list)):  # Loop through list of accepted question/answer intents
             if self.intent_list[index][0] is self.player_intent:  # If intent is in list of accepted questions
                 self.ask_question(slots.ConversationEnum(index))  # Ask the question
@@ -25,6 +26,7 @@ class Date(Area):
         """
         Handler for when the player in a date will try to answer a question / continue a conversation
         """
+        self.session_variables.test_message = "try_continue_conversation"
         if self.intent_list[self.session_variables.conversation.value][1] is self.player_intent:
             self.answer_question()
         else:

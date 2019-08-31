@@ -22,6 +22,7 @@ class SessionVariables:
     DATE_ROUND = 'date_round'
     NUMBER_OF_DATES = "number_of_dates"
     DATE = "date"
+    TEST_MESSAGE = "test_message"
 
     # Variables
     conversation = None
@@ -36,6 +37,7 @@ class SessionVariables:
     date_round = None
     number_of_dates = None
     date = None
+    test_message = None
 
     def __init__(self, state_variables):
         """
@@ -68,6 +70,8 @@ class SessionVariables:
 
         self.date = DateEnum(state_variables[self.DATE]) if self.DATE in state_variables else DateEnum.enrique
 
+        self.test_message = state_variables[self.TEST_MESSAGE] if self.TEST_MESSAGE in state_variables else 'Not set'
+
 
     @staticmethod
     def get_initial_dict():
@@ -86,7 +90,8 @@ class SessionVariables:
             SessionVariables.DATE_BAD_RESPONSE_COUNT: 0,
             SessionVariables.DATE_ROUND: 0,
             SessionVariables.NUMBER_OF_DATES: 0,
-            SessionVariables.DATE: DateEnum.conchita
+            SessionVariables.DATE: DateEnum.conchita,
+            SessionVariables.TEST_MESSAGE: 'Not set'
         }
 
     def get_dict(self):
@@ -102,5 +107,6 @@ class SessionVariables:
             SessionVariables.DATE_BAD_RESPONSE_COUNT: self.date_bad_response_count,
             SessionVariables.DATE_ROUND: self.date_round,
             SessionVariables.NUMBER_OF_DATES: self.number_of_dates,
-            SessionVariables.DATE: self.date
+            SessionVariables.DATE: self.date,
+            SessionVariables.TEST_MESSAGE: self.test_message
         }
