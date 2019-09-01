@@ -1,11 +1,13 @@
 from custom_collections.audio import Audio
 
+SALLI_VOICE = '<voice name="Salli"><lang xml:lang="en-US">{}</lang></voice>'
 
 class Translator():
     """
     Translator with full game dialog, but spoken by Alexa. Useful for player
     testing before recording lines
     """
+
     launch = Audio.Carmen_intro_1
 
     launch_first_time = Audio.welcome + Audio.welcome_2
@@ -16,17 +18,17 @@ class Translator():
     class Introduction:
         answer_to_your_name = Audio.Carmen_intro_2 + Audio.pracrice_or_date
 
-        fallback = "To finish the tutorial, please say your name"
+        fallback = SALLI_VOICE.format("To finish the tutorial, please say your name")
 
     class Testing:
-        not_implemented = "Not implemented yet. Come back soon"
+        not_implemented = SALLI_VOICE.format("Not implemented yet. Come back soon")
 
-        error = "Error logged"
+        error = SALLI_VOICE.format("Error logged")
 
     class Practice:
         begin = Audio.practice_start
 
-        new_or_repeat = "Would you like to hear that phrase again, or try a new one?"
+        new_or_repeat = SALLI_VOICE.format("Would you like to hear that phrase again, or try a new one?")
 
         what_is_your_name = Audio.Q_s_lecturer_what_name + Audio.Q_e_lecturer_what_name + new_or_repeat
 
@@ -34,16 +36,16 @@ class Translator():
 
         what_is_your_job = Audio.Q_s_lecturer_what_profession + Audio.Q_e_lecturer_what_profession + new_or_repeat
 
-        end = "Practice over. Good luck out there hope you find love"
+        end = SALLI_VOICE.format("Practice over. Good luck out there hope you find love")
 
-        fallback = "Sorry didn't understand that " + new_or_repeat
+        fallback = SALLI_VOICE.format("Sorry didn't understand that. ") + new_or_repeat
 
     class Date:
         begin = '<voice name="Nicole">Your speed date is about to begin. Begin by asking your date a question. Get ready to reply</voice>'
 
         fallback = '<voice name="Nicole"> I do not understand. No entiendo </voice>'
 
-        finish = ' You finished the date, your score is {}. Not too bad, you might get another date if your lucky. The second date is about to begin, ask your date a question.'
+        finish = ' You finished the date. Your score is {}. Not too bad, you might get another date if your lucky. The another date is about to begin, ask your date a question.'
 
         class Error:
             first_mistake = Audio.Carmen_error_message_1
@@ -137,12 +139,12 @@ class Translator():
 
 
     class Error:
-        bad_option = "Not an option right now."
+        bad_option = SALLI_VOICE.format("Not an option right now.")
 
     class Reprompt:
-        menu = "You decided what you want to do yet?"
+        menu = SALLI_VOICE.format("You decided what you want to do yet?")
 
     class Menu:
-        options = "Would you like to speed date, or practice some more"
+        options = SALLI_VOICE.format("Would you like to speed date, or practice some more")
 
-        fallback = "Do you want to practice, or start speed dating"
+        fallback = SALLI_VOICE.format("Do you want to practice, or start speed dating")
