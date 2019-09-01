@@ -45,7 +45,7 @@ class Translator():
 
         fallback = '<voice name="Nicole"> I do not understand. No entiendo </voice>'
 
-        finish = ' You finished the date. Your score is {}. Not too bad, you might get another date if your lucky. The another date is about to begin, ask your date a question.'
+        finish = SALLI_VOICE.format('You finished the date. Your score is {}. Not too bad, you might get another date if your lucky. The another date is about to begin, ask your date a question.')
 
         class Error:
             first_mistake = Audio.Carmen_error_message_1
