@@ -17,6 +17,7 @@ from areas.practice import Practice
 from custom_collections.intents import Intents
 from areas.date_file import Date
 from love import LanguageOfLove
+from translators.production_translator import Translator
 
 SKILL_NAME = 'Language Of Love'
 sb = StandardSkillBuilder(table_name="Language-Of-Love", auto_create_table=True)
@@ -142,10 +143,7 @@ def speed_date_help_handler(handler_input):
     session_variables = handler_input.attributes_manager.session_attributes
     handler_input.attributes_manager.session_attributes = session_variables
 
-    handler_input.response_builder.speak("While on a date, you need to ask questions and reply when you are asked. "
-                                         " Doing so correctly will increase your score. If you finish the "
-                                         "date, asking and answering enough questions, and your score is high enough, "
-                                         "you may score a second date").ask("Say again")
+    handler_input.response_builder.speak(Translator.Date.help).ask("Say again")
 
     return handler_input.response_builder.response
 

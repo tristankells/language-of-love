@@ -47,6 +47,11 @@ class Translator():
 
         finish = SALLI_VOICE.format('You finished the date. Your score is {}. Not too bad, you might get another date if your lucky. The another date is about to begin, ask your date a question.')
 
+        help = SALLI_VOICE.format("While on a date, you need to ask questions and reply when you are asked. "
+                                         " Doing so correctly will increase your score. If you finish the "
+                                         "date, asking and answering enough questions, and your score is high enough, "
+                                         "you may score a second date")
+
         class Error:
             first_mistake = Audio.Carmen_error_message_1
             second_mistake = Audio.Carmen_error_message_2
