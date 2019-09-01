@@ -40,13 +40,13 @@ class Date(Area):
 
     def answer_question(self):
         self.session_variables.conversation = slots.ConversationEnum.nothing
-        self.speech_text = self.response_dict[self.player_intent]
+        self.speech_text = Translator.Date.point + self.response_dict[self.player_intent]
         self.session_variables.date_score += 1
 
     def conversation_error(self):
         self.session_variables.conversation = slots.ConversationEnum.nothing
         self.session_variables.date_bad_response_count += 1
-        self.speech_text = self.error_response(self.session_variables.date_bad_response_count)
+        self.speech_text = Translator.Date.crickets +  self.error_response(self.session_variables.date_bad_response_count)
         if self.session_variables.date_bad_response_count >= BAD_RESPONSE_PER_DATE:
             self.finish_date()
 

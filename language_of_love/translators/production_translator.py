@@ -2,6 +2,7 @@ from custom_collections.audio import Audio
 
 SALLI_VOICE = '<voice name="Salli"><lang xml:lang="en-US">{}</lang></voice>'
 
+
 class Translator():
     """
     Translator with full game dialog, but spoken by Alexa. Useful for player
@@ -36,21 +37,27 @@ class Translator():
 
         what_is_your_job = Audio.Q_s_lecturer_what_profession + Audio.Q_e_lecturer_what_profession + new_or_repeat
 
+
         end = SALLI_VOICE.format("Practice over. Good luck out there hope you find love")
 
         fallback = SALLI_VOICE.format("Sorry didn't understand that. ") + new_or_repeat
 
     class Date:
-        begin = '<voice name="Nicole">Your speed date is about to begin. Begin by asking your date a question. Get ready to reply</voice>'
+        begin = SALLI_VOICE.format('Your speed date is about to begin. Begin by asking your date a question. Get ready to reply')
 
         fallback = '<voice name="Nicole"> I do not understand. No entiendo </voice>'
 
-        finish = SALLI_VOICE.format('You finished the date. Your score is {}. Not too bad, you might get another date if your lucky. The another date is about to begin, ask your date a question.')
+        finish = SALLI_VOICE.format(
+            'You finished the date. Your score is {}. Not too bad, you might get another date if your lucky. The another date is about to begin, ask your date a question.')
 
         help = SALLI_VOICE.format("While on a date, you need to ask questions and reply when you are asked. "
-                                         " Doing so correctly will increase your score. If you finish the "
-                                         "date, asking and answering enough questions, and your score is high enough, "
-                                         "you may score a second date")
+                                  " Doing so correctly will increase your score. If you finish the "
+                                  "date, asking and answering enough questions, and your score is high enough, "
+                                  "you may score a second date")
+
+        point = Audio.point
+
+        crickets = Audio.cricket_sound
 
         class Error:
             first_mistake = Audio.Carmen_error_message_1
@@ -58,7 +65,7 @@ class Translator():
             third_mistake = Audio.Carmen_error_message_3
 
         class Conchita:
-            CONCHITA_VOICE = '<voice name="Conchita"><lang xml:lang="es-ES">{}</lang></voice>'
+            CONCHITA_VOICE = '<voice name="Conchita"><lang xml:lang="es-ES"><prosody rate="85%">{}</prosody></lang></voice>'
 
             question_name = CONCHITA_VOICE.format(
                 "Me llamo Conchita. ¿Cuál es su nombre?")  # "My name is Conchita. What is your name?"
@@ -99,9 +106,8 @@ class Translator():
             answer_book = CONCHITA_VOICE.format(
                 "Lo he leído y también me encanta.")  # "I've read that, and I also love it"
 
-
         class Enrique:
-            ENRIQUE_VOICE = '<voice name="Enrique"><lang xml:lang="es-ES">{}</lang></voice>'
+            ENRIQUE_VOICE = '<voice name="Enrique"><lang xml:lang="es-ES"><prosody rate="85%">{}</prosody></lang></voice>'
 
             question_name = ENRIQUE_VOICE.format(
                 "Me llamo Enrique. ¿Cuál es su nombre?")  # "My name is Conchita. What is your name?"
@@ -141,7 +147,6 @@ class Translator():
                 "Me encantan los clásicos, Great Expectations realmente me inspira")  # "I love the classics, Great Expectations really inspires me"
             answer_book = ENRIQUE_VOICE.format(
                 "Lo he leído y también me encanta.")  # "I've read that, and I also love it"
-
 
     class Error:
         bad_option = SALLI_VOICE.format("Not an option right now.")
