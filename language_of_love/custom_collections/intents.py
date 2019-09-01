@@ -83,3 +83,6 @@ class Intents:
 
     # Samples phrases : 'I love playing rugby '
     ANSWER_HOBBIES = 'AnswerHobbiesIntent'
+
+    #
+    EXIT = 'ExitGameIntent'

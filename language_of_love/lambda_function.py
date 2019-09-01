@@ -63,7 +63,8 @@ def player_area(handler_input):
 @sb.request_handler(
     can_handle_func=lambda input:
     is_intent_name("AMAZON.CancelIntent")(input) or
-    is_intent_name("AMAZON.StopIntent")(input))
+    is_intent_name("AMAZON.StopIntent")(input) or
+    is_intent_name(Intents.EXIT)(input))
 def cancel_and_stop_intent_handler(handler_input):
     """Single handler for Cancel and Stop Intent."""
     # type: (HandlerInput) -> Response
