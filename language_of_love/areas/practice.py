@@ -22,7 +22,13 @@ class Practice(Area):
         phrase_dictionary = {
             1: PracticePhrases.WHAT_IS_YOUR_NAME,
             2: PracticePhrases.DO_YOU_LIKE_TO_TRAVEL,
-            3: PracticePhrases.WHAT_IS_YOUR_JOB
+            3: PracticePhrases.WHAT_IS_YOUR_JOB,
+            4: PracticePhrases.WHERE_ARE_YOU_FROM,
+            5: PracticePhrases.WHAT_IS_YOUR_FAVOURITE_ANIMAL,
+            6: PracticePhrases.WHAT_IS_YOUR_FAVOURITE_COLOUR,
+            7: PracticePhrases.HOW_IS_YOUR_DAY,
+            8: PracticePhrases.HOW_OLD_ARE_YOU,
+            9: PracticePhrases.WHAT_IS_YOUR_FAVOURITE_BOOK
         }
 
         new_phrase_key = None

@@ -1,6 +1,12 @@
 from custom_collections.audio import Audio
 
+# US english voices voices
 SALLI_VOICE = '<voice name="Salli"><lang xml:lang="en-US">{}</lang></voice>'
+
+# Spanish voices
+CONCHITA_VOICE = '<voice name="Conchita"><lang xml:lang="es-ES"><prosody rate="85%">{}</prosody></lang></voice>' # Female
+
+ENRIQUE_VOICE = '<voice name="Enrique"><lang xml:lang="es-ES"><prosody rate="85%">{}</prosody></lang></voice>' # Male
 
 
 class Translator():
@@ -8,7 +14,6 @@ class Translator():
     Translator with full game dialog, but spoken by Alexa. Useful for player
     testing before recording lines
     """
-
     launch = Audio.Carmen_intro_1
 
     launch_first_time = Audio.welcome + Audio.welcome_2
@@ -29,7 +34,7 @@ class Translator():
     class Practice:
         begin = Audio.practice_start
 
-        new_or_repeat = SALLI_VOICE.format("Would you like to hear that phrase again, or try a new one?")
+        new_or_repeat = SALLI_VOICE.format('<break time="2s"/> Would you like to hear that phrase again, or try a new one?')
 
         what_is_your_name = Audio.Q_s_lecturer_what_name + Audio.Q_e_lecturer_what_name + new_or_repeat
 
@@ -37,6 +42,17 @@ class Translator():
 
         what_is_your_job = Audio.Q_s_lecturer_what_profession + Audio.Q_e_lecturer_what_profession + new_or_repeat
 
+        where_are_you_from =  CONCHITA_VOICE.format("de donde eres.") + SALLI_VOICE.format(" means, where are you from. ") + new_or_repeat
+
+        what_is_your_favourite_animal =  CONCHITA_VOICE.format("Cuál es tu animal favorito.") + SALLI_VOICE.format(" this means, what is your favourite animal. ") + new_or_repeat
+
+        what_is_your_favourite_colour =  CONCHITA_VOICE.format("Cuál es tu color favorito.") + SALLI_VOICE.format("means, what is your favourite colour. ") + new_or_repeat
+
+        how_is_your_day =  CONCHITA_VOICE.format("Qué tal tu día.") + SALLI_VOICE.format(" this means, how is your day. ") + new_or_repeat
+
+        how_old_are_you =  CONCHITA_VOICE.format("Cuantos años tienes.") + SALLI_VOICE.format("means, how old are you. ") + new_or_repeat
+
+        what_is_your_favourite_book =  CONCHITA_VOICE.format("cual es tu libro favorito.") + SALLI_VOICE.format("means, what is your favourite book. ") + new_or_repeat
 
         end = SALLI_VOICE.format("Practice over. Good luck out there hope you find love")
 
@@ -65,8 +81,6 @@ class Translator():
             third_mistake = Audio.Carmen_error_message_3
 
         class Conchita:
-            CONCHITA_VOICE = '<voice name="Conchita"><lang xml:lang="es-ES"><prosody rate="85%">{}</prosody></lang></voice>'
-
             question_name = CONCHITA_VOICE.format(
                 "Me llamo Conchita. ¿Cuál es su nombre?")  # "My name is Conchita. What is your name?"
             answer_name = CONCHITA_VOICE.format("Placer conocerte")  # "Pleasure to meet you"
@@ -107,8 +121,6 @@ class Translator():
                 "Lo he leído y también me encanta.")  # "I've read that, and I also love it"
 
         class Enrique:
-            ENRIQUE_VOICE = '<voice name="Enrique"><lang xml:lang="es-ES"><prosody rate="85%">{}</prosody></lang></voice>'
-
             question_name = ENRIQUE_VOICE.format(
                 "Me llamo Enrique. ¿Cuál es su nombre?")  # "My name is Conchita. What is your name?"
             answer_name = ENRIQUE_VOICE.format("Placer conocerte")  # "Pleasure to meet you"
