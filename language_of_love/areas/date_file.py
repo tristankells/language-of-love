@@ -6,7 +6,7 @@ from custom_collections import slots
 from translators.production_translator import Translator
 
 ROUNDS_PER_DATE = 3
-BAD_RESPONSE_PER_DATE = 3
+BAD_RESPONSE_PER_DATE = 3 # Consider not changing this unless you change the error_response to accommodate
 
 
 class Date(Area):
@@ -53,25 +53,18 @@ class Date(Area):
     def finish_date(self):
         self.speech_text += self.translator.Date.finish.format(self.session_variables.date_score)
 
-        # After date == over, set number of date rounds, bad response count and date score to zero, ready for a new date to begin
         self.session_variables.date_round = self.session_variables.date_bad_response_count = self.session_variables.date_score = 0
-
-        # Get next date
+        self.session_variables.number_of_dates += 1
         self.session_variables.date = self.get_next_date(self.session_variables.date)
 
-        # Increase the number of dates by one, so we can decide how many total dates they have been on and changes things accordingly
-        self.session_variables.number_of_dates += 1
 
     @staticmethod
     def get_next_date(date):
-        if date == DateEnum.tessa:
-            date = DateEnum.conchita
-
-        elif date == DateEnum.conchita:
+        if date == DateEnum.conchita:
             date = DateEnum.enrique
 
         elif date == DateEnum.enrique:
-            date = DateEnum.tessa
+            date = DateEnum.conchita
 
         return date
 

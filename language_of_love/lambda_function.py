@@ -90,7 +90,7 @@ def menu_handler(handler_input):
     if response.session_variables != None:
         handler_input.attributes_manager.session_attributes = response.session_variables.get_dict()
     else:
-        handler_input.attributes_manager.session_attributes = session_variables.get_dict()
+        handler_input.attributes_manager.session_attributes = session_variables
     handler_input.response_builder.speak(response.speech_text).ask("Say again")
 
     return handler_input.response_builder.response
@@ -144,6 +144,23 @@ def speed_date_help_handler(handler_input):
     handler_input.attributes_manager.session_attributes = session_variables
 
     handler_input.response_builder.speak(Translator.Date.help).ask("Say again")
+
+    return handler_input.response_builder.response
+
+@sb.request_handler(
+    can_handle_func=lambda input: player_area(input) == AreaEnum.date and is_intent_name(Intents.START_PRACTICE)(input))
+def speed_date_help_handler(handler_input):
+    # type: (HandlerInput) -> Response
+    intent_name = get_intent_name(handler_input)
+    session_variables = handler_input.attributes_manager.session_attributes
+
+    response = Menu(intent_name, session_variables).get_response()
+
+    if response.session_variables != None:
+        handler_input.attributes_manager.session_attributes = response.session_variables.get_dict()
+    else:
+        handler_input.attributes_manager.session_attributes = session_variables
+    handler_input.response_builder.speak(response.speech_text).ask(response.reprompt)
 
     return handler_input.response_builder.response
 
