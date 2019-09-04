@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "language of love",
+            "invocationName": "love sandbox",
             "intents": [
                 {
                     "name": "AMAZON.FallbackIntent",
