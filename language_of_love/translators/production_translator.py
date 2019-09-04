@@ -76,9 +76,9 @@ class Translator():
         crickets = Audio.cricket_sound
 
         class Error:
-            first_mistake = Audio.Carmen_error_message_1
-            second_mistake = Audio.Carmen_error_message_2
-            third_mistake = Audio.Carmen_error_message_3
+            first_mistake = SALLI_VOICE.format("Your date looks confused, I don't think they understand you. Trying asking another question.")
+            second_mistake = SALLI_VOICE.format("Your date looks a little frustrated. Be careful they don't leave.")
+            third_mistake = SALLI_VOICE.format("Oh no, your date is leaving. Bad luck. Better luck next time" )
 
         class Conchita:
             question_name = CONCHITA_VOICE.format(
