@@ -3,7 +3,9 @@ from custom_collections.slots import DateEnum
 from response import Response
 from areas.date.date_intents.date_helper import date_picker
 from custom_collections import slots
+from custom_collections.intents import Intents
 from translators.production_translator import Translator
+
 
 ROUNDS_PER_DATE = 3
 BAD_RESPONSE_PER_DATE = 3 # Consider not changing this unless you change the error_response to accommodate
@@ -52,10 +54,12 @@ class Date(Area):
 
     def finish_date(self):
         self.speech_text += self.translator.Date.finish.format(self.session_variables.date_score)
-
         self.session_variables.date_round = self.session_variables.date_bad_response_count = self.session_variables.date_score = 0
         self.session_variables.number_of_dates += 1
         self.session_variables.date = self.get_next_date(self.session_variables.date)
+
+    def ask_to_repeat(self):
+        self.speech_text = self.response_dict[self.session_variables.previous_intent]
 
 
     @staticmethod
@@ -80,9 +84,15 @@ class Date(Area):
     def get_response(self):
         self.intent_list, self.response_dict = date_picker(self.session_variables.date)
 
-        if self.session_variables.conversation == slots.ConversationEnum.nothing:
-            self.try_start_conversation()
-        else:
-            self.try_continue_conversation()
+        if(self.player_intent == Intents.REPEAT):
+            self.ask_to_repeat()
+        else :
+            self.session_variables.previous_intent = self.player_intent
+            if self.session_variables.conversation == slots.ConversationEnum.nothing:
+                self.try_start_conversation()
+            else:
+                self.try_continue_conversation()
+
+
 
         return Response(self.speech_text, self.reprompt, self.session_variables)

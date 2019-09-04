@@ -14,7 +14,7 @@ class TestPractice(unittest.TestCase):
             SessionVariables.CURRENT_PRACTICE_PHRASE: PracticePhrases.WHAT_IS_YOUR_NAME,
             SessionVariables.AREA: slots.AreaEnum.practice
         }
-        response = Practice(Intents.REPEAT_PRACTICE_PHRASE, session_variables).get_response()
+        response = Practice(Intents.REPEAT, session_variables).get_response()
 
         # Confirm player still in tutorial
         self.assertEqual(response.session_variables.area, slots.AreaEnum.practice)

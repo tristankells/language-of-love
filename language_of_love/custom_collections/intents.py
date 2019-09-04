@@ -22,7 +22,7 @@ class Intents:
     START_PRACTICE = 'StartPracticeIntent'
 
     # Samples phrases : 'i want to listen to the audio again', 'can you play that again', 'i want to hear that again', 'please repeat that ', 'repeat'
-    REPEAT_PRACTICE_PHRASE = 'RepeatPracticePhraseIntent'
+    REPEAT = 'RepeatIntent'
 
     # Samples phrases : 'give me a new one', 'new word', 'new phrase', 'i would like a new phrase please', 'new phrase please'
     NEW_PRACTICE_PHRASE = 'NewPracticePhraseIntent'
@@ -86,3 +86,4 @@ class Intents:
 
     #
     EXIT = 'ExitGameIntent'
+

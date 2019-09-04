@@ -22,6 +22,7 @@ class SessionVariables:
     DATE_ROUND = 'date_round'
     NUMBER_OF_DATES = "number_of_dates"
     DATE = "date"
+    PREVIOUS_INTENT = "previous_intent"
     TEST_MESSAGE = "test_message"
 
     # Variables
@@ -37,6 +38,7 @@ class SessionVariables:
     date_round = None
     number_of_dates = None
     date = None
+    previous_intent = None
     test_message = None
 
     def __init__(self, state_variables):
@@ -70,6 +72,8 @@ class SessionVariables:
 
         self.date = DateEnum(state_variables[self.DATE]) if self.DATE in state_variables else DateEnum.enrique
 
+        self.previous_intent = state_variables[self.PREVIOUS_INTENT] if self.PREVIOUS_INTENT in state_variables else ""
+
         self.test_message = state_variables[self.TEST_MESSAGE] if self.TEST_MESSAGE in state_variables else 'Not set'
 
 
@@ -91,6 +95,7 @@ class SessionVariables:
             SessionVariables.DATE_ROUND: 0,
             SessionVariables.NUMBER_OF_DATES: 0,
             SessionVariables.DATE: DateEnum.conchita,
+            SessionVariables.PREVIOUS_INTENT: 'Not set',
             SessionVariables.TEST_MESSAGE: 'Not set'
         }
 
@@ -108,5 +113,6 @@ class SessionVariables:
             SessionVariables.DATE_ROUND: self.date_round,
             SessionVariables.NUMBER_OF_DATES: self.number_of_dates,
             SessionVariables.DATE: self.date,
+            SessionVariables.PREVIOUS_INTENT: self.previous_intent,
             SessionVariables.TEST_MESSAGE: self.test_message
         }

@@ -66,7 +66,7 @@ class Practice(Area):
 
     intent_dictionary = {
         Intents.NEW_PRACTICE_PHRASE: new_phrase,
-        Intents.REPEAT_PRACTICE_PHRASE: repeat_phrase,
+        Intents.REPEAT: repeat_phrase,
         Intents.CANCEL: end_tutorial,
         Intents.LEAVE_AREA: end_tutorial,
         Intents.START_SPEED_DATE: start_speed_date
