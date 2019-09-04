@@ -61,7 +61,6 @@ class Date(Area):
     def ask_to_repeat(self):
         self.speech_text = self.response_dict[self.session_variables.previous_intent]
 
-
     @staticmethod
     def get_next_date(date):
         if date == DateEnum.conchita:
